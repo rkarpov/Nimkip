@@ -2,7 +2,7 @@
 
 A game inspirted by Frogger and themed around Pikmin. Win by traversing terrain while avoiding hazzards and obstacles until reaching the very top of the map. Players can optionally collect items along the way to acquire additional bonus points for a high score! A player will have 3 lives before it is finally game over
 
-MVPs
+# MVPs
 
 1) 4-directional player movement
   Players will be able to move up, down, left, and right using arrow keys and 'a' 'w' 's' 'd' keys
@@ -24,10 +24,15 @@ MVPs
 6) Score system
   Completing a level will earn player a certain score based on how many rows they traversed before game over
 
-Bonus
+# Bonus
 
 7) Bonus conditions
   Player can acquire higher score by acquiring randomly generated items on the board
 
 8) Time limit for level completion
   Player will have limited time to complete each level, and will lose 1 life upon reaching time limit
+
+# Technologies
+  - Webpack
+  - Javascript
+  - Canvas
