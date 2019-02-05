@@ -18,7 +18,7 @@ A game inspirted by Frogger and themed around Pikmin. Win by traversing terrain 
   Player loses a life when colliding with a hazzard or moving onto water tiles
   Game over when player loses 3 lives
 
-5) Wireframes
+5) Wireframe 
   Includes game board, title, controls instruction, and Navlinks
   
 6) Score system
@@ -36,3 +36,5 @@ A game inspirted by Frogger and themed around Pikmin. Win by traversing terrain 
   - Webpack
   - Javascript
   - Canvas
+  
+  ![wireframes](https://imgur.com/a/3V8ZEuZ.jpg)
