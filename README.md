@@ -37,4 +37,4 @@ A game inspirted by Frogger and themed around Pikmin. Win by traversing terrain 
   - Javascript
   - Canvas
   
-  ![wireframes](https://imgur.com/a/3V8ZEuZ.jpg)
+  ![wireframes](https://i.imgur.com/nPDgwVd.jpg)
