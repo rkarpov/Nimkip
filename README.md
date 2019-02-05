@@ -20,7 +20,7 @@ A game inspirted by Frogger and themed around Pikmin. Win by traversing terrain 
 
 5) Wireframe 
   Includes game board, title, controls instruction, and Navlinks
-  
+    ![wireframes](https://i.imgur.com/nPDgwVd.jpg)
 6) Score system
   Completing a level will earn player a certain score based on how many rows they traversed before game over
 
@@ -37,4 +37,4 @@ A game inspirted by Frogger and themed around Pikmin. Win by traversing terrain 
   - Javascript
   - Canvas
   
-  ![wireframes](https://i.imgur.com/nPDgwVd.jpg)
+
