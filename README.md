@@ -4,7 +4,7 @@ A game inspirted by Frogger and themed around Pikmin. Win by traversing terrain 
 
 MVPs
 
-1) 4 directional player movement
+1) 4-directional player movement
   Players will be able to move up, down, left, and right using arrow keys and 'a' 'w' 's' 'd' keys
   
 2) Enemies will move horizontally across certain rows in one direction
