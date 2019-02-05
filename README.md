@@ -28,3 +28,6 @@ Bonus
 
 7) Bonus conditions
   Player can acquire higher score by acquiring randomly generated items on the board
+
+8) Time limit for level completion
+  Player will have limited time to complete each level, and will lose 1 life upon reaching time limit
