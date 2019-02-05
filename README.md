@@ -1,6 +1,6 @@
 # Nimkip
 
-A game inspirted by Frogger and themed around Pikmin. Win by traversing terrain while avoiding hazzards and obstacles until reaching the very top of the map. Players can optionally collect items along the way to acquire additional bonus points for a high score! A player will have 3 lives before it is finally game over
+A game inspired by Frogger and themed around Pikmin. Win by traversing terrain while avoiding hazzards and obstacles until reaching the very top of the map. Players can optionally collect items along the way to acquire additional bonus points for a high score! A player will have 3 lives before it is finally game over
 
 # MVPs
 
