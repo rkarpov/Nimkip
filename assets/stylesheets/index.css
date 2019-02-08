@@ -3,17 +3,22 @@ body title {
     height: 30px;
 }
 
-/* body {
+body {
     display: flex;
     justify-content: center;
     background-image: url("../images/wallpaper.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-} */
+}
 
 canvas {
-    height: 500px;
-    width: 1100px;
+    margin-top: 125px;
     /* background-color: black; */
     border: 4px solid yellow;
 }
+/* 
+.sprite {
+    background: url('../images/olimar_pik_sprites.png') no-repeat -201px -13px;
+    width: 16px;
+    height: 38px;
+} */
