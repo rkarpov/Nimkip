@@ -25,7 +25,7 @@ class Enemy {
         this.tickCount += 1;
         if (this.tickCount === 3) {
             this.tickCount = 0;
-            this.frameIndex = (this.frameIndex + 1) % 4;
+            this.frameIndex = (this.frameIndex + 1) % this.animationFrame.length;
         }
         if (this.posX > 825) {
             this.posX = -65;
