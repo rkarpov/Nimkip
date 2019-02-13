@@ -13,7 +13,7 @@ body {
 
 canvas {
     margin-top: 125px;
-    background-color: white;
+    /* background-color: white; */
     border: 4px solid yellow;
 }
 /* 

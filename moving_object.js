@@ -1,7 +1,6 @@
 class MovingObject {
     constructor(image, animationFramesX, animationFramesY, width, height, posX, posY, scaledWidth, scaledHeight,
-                collides = false, floats = false,
-                movementSpeed, frameTicks, moveDir = 'startLeft') {
+                collides = false, floats = false, movementSpeed, frameTicks, moveDir = 'startLeft') {
 
         this.image = image;
         this.animationFrameY = animationFramesY;
@@ -57,16 +56,30 @@ class MovingObject {
     }
 
     handleCollision() {
+        if ((this.posX + 5) <= player.posX + player.width &&
+            (this.posX + 5) + (this.scaledWidth - 25) >= player.posX &&
+            (this.posY + 15) + (this.scaledHeight - 25) >= player.posY &&
+            (this.posY + 15) <= player.posY + player.height) {
+                player.posY = 640;
+            }
+
+        // hitbox
+        ctx.beginPath();
+        ctx.lineWidth = "2";
+        ctx.strokeStyle = "red";
+        ctx.rect(this.posX + 5, this.posY + 15, this.scaledWidth - 25, this.scaledHeight - 25);
+        ctx.stroke();
+    }
+
+    handleFloat() {
         if (this.posX <= player.posX + player.width &&
             this.posX + this.scaledWidth >= player.posX &&
             this.posY + this.scaledHeight >= player.posY &&
             this.posY <= player.posY + player.height) {
-                player.posY = 640;
-            }
-    }
-
-    handleFloat() {
-
+                if (player.posX < canvas.width - 30) {
+                    player.posX += 1;
+                }
+        }
     }
 
     drawMovingObject() {
@@ -76,12 +89,6 @@ class MovingObject {
         
         if (this.collides) { this.handleCollision() }
         if (this.floats) { this.handleFloat() }
-
-        ctx.beginPath();
-        ctx.lineWidth = "2";
-        ctx.strokeStyle = "red";
-        ctx.rect(this.posX, this.posY, this.scaledWidth, this.scaledHeight);
-        ctx.stroke();
     }
 
 }

@@ -2,7 +2,11 @@ var canvas = document.getElementById('canvas');
 canvas.width = 800;
 canvas.height = 700;
 var ctx = canvas.getContext('2d');
-ctx.imageSmoothingEnabled = false;
+
+
+
+
+// ctx.imageSmoothingEnabled = false;
 
 const image = new Image();
 image.src = './assets/images/pikmin_sprite_sheet.png';
@@ -91,6 +95,7 @@ function movePlayer(e) {
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    render();
     player.drawPlayer();
     bulborb1.drawMovingObject();
     bulborb2.drawMovingObject();
