@@ -1,7 +1,7 @@
 // const enemy = new Bulborb(image, animationFramesX, animationFrameY, width, height, posX, posY, scaledWidth, scaledHeight)
 
 class Enemy {
-    constructor(image, animationFramesX, animationFrameY, width, height, posX, posY, scaledWidth, scaledHeight, movementSpeed) {
+    constructor(image, animationFramesX, animationFrameY, width, height, posX, posY, scaledWidth, scaledHeight, movementSpeed, frameTicks = 4) {
         this.image = image;
         this.posX = posX;
         this.posY = posY;
@@ -12,6 +12,7 @@ class Enemy {
         this.scaledWidth = scaledWidth;
         this.scaledHeight = scaledHeight;
         this.movementSpeed = movementSpeed;
+        this.frameTicks = frameTicks;
 
         this.frameIndex = 0;
         this.tickCount = 0;
@@ -23,7 +24,7 @@ class Enemy {
         ctx.drawImage(this.image, this.animationFrame[this.frameIndex], this.animationFrameY, this.width, this.height, this.posX, this.posY, this.scaledWidth, this.scaledHeight);
         this.posX += this.movementSpeed;
         this.tickCount += 1;
-        if (this.tickCount === 3) {
+        if (this.tickCount === this.frameTicks) {
             this.tickCount = 0;
             this.frameIndex = (this.frameIndex + 1) % this.animationFrame.length;
         }

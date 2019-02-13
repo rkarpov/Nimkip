@@ -6,15 +6,15 @@ ctx.imageSmoothingEnabled = false;
 
 const image = new Image();
 image.src = './assets/images/pikmin_sprite_sheet.png';
-const bulborb1 = new Enemy(image, [22, 87, 151, 216], 630, 61, 60, -100, 560, 76.25, 75, 4)
-const bulborb2 = new Enemy(image, [22, 87, 151, 216], 630, 61, 60, -1550, 560, 76.25, 75, 4)
-const bulborb3 = new Enemy(image, [22, 87, 151, 216], 630, 61, 60, -570, 560, 76.25, 75, 4)
-const bulborb4 = new Enemy(image, [16, 81, 145, 210], 1406, 61, 60, -200, 480, 76.25, 75, 6)
-const bulborb5 = new Enemy(image, [16, 81, 145, 210], 1406, 61, 60, -570, 480, 76.25, 75, 6)
+const bulborb1 = new Enemy(image, [22, 87, 151, 216], 630, 61, 60, -100, 560, 76.25, 75, 4, 6)
+const bulborb2 = new Enemy(image, [22, 87, 151, 216], 630, 61, 60, -1550, 560, 76.25, 75, 4, 6)
+const bulborb3 = new Enemy(image, [22, 87, 151, 216], 630, 61, 60, -570, 560, 76.25, 75, 4, 6)
+const bulborb4 = new Enemy(image, [16, 81, 145, 210], 1406, 61, 60, -200, 480, 76.25, 75, 6, 5)
+const bulborb5 = new Enemy(image, [16, 81, 145, 210], 1406, 61, 60, -570, 480, 76.25, 75, 6, 5)
 const bulborb6 = new Enemy(image, [19, 84, 148, 213], 1155, 61, 60, -200, 400, 76.25, 75, 7)
 const bulborb7 = new Enemy(image, [19, 84, 148, 213], 1155, 61, 60, -570, 400, 76.25, 75, 7)
 
-const puffstool = new Enemy(image, [544, 709, 868], 1507, 117, 151, -200, 300, 76.05, 98.15, 3)
+const puffstool = new Enemy(image, [544, 709, 868], 1507, 117, 151, -200, 300, 76.05, 98.15, 3, 6)
 
 const whiteFlower1 = new Enemy(image, [2106], 138, 60, 52, -150, 230, 60, 52, 2)
 const whiteFlower2 = new Enemy(image, [2106], 138, 60, 52, -200, 230, 60, 52, 2)
@@ -25,7 +25,12 @@ const purpleFlower2 = new Enemy(image, [2229], 74, 60, 52, -700, 230, 60, 52, 2)
 const whiteFlower5 = new Enemy(image, [2106], 138, 60, 52, -850, 230, 60, 52, 2)
 const whiteFlower6 = new Enemy(image, [2106], 138, 60, 52, -900, 230, 60, 52, 2)
 
-const tadpole1 = new Platform(image, 546, [911, 937, 963], 40, 23, -100, 200, 40, 23, 3)
+const tadpole1 = new Platform(image, 546, [911, 937, 963], 40, 23, -100, 200, 40, 23, 3, 5)
+const tadpole2 = new Platform(image, 546, [911, 937, 963], 40, 23, -50, 200, 40, 23, 3, 5)
+const tadpole3 = new Platform(image, 546, [911, 937, 963], 40, 23, -350, 200, 40, 23, 3, 5)
+const tadpole4 = new Platform(image, 546, [911, 937, 963], 40, 23, -650, 200, 40, 23, 3, 5)
+const tadpole5 = new Platform(image, 546, [911, 937, 963], 40, 23, -700, 200, 40, 23, 3, 5)
+const tadpole6 = new Platform(image, 546, [911, 937, 963], 40, 23, -1000, 200, 40, 23, 3, 5)
 
 
 window.addEventListener("keydown", movePlayer, false);
@@ -76,6 +81,11 @@ function draw() {
     whiteFlower6.drawEnemy();
 
     tadpole1.drawPlatform();
+    // tadpole2.drawPlatform();
+    tadpole3.drawPlatform();
+    tadpole4.drawPlatform();
+    tadpole5.drawPlatform();
+    // tadpole6.drawPlatform();
 
     window.requestAnimationFrame(draw);
 }
