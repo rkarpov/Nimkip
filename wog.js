@@ -16,8 +16,8 @@ class Wog {
 
         this.frameIndex = 0;
         this.tickCount = 0;
-        this.ticksPerFrame = 3;
-        this.numberOfFrame = this.numberOfFrames || 1;
+        // this.ticksPerFrame = 3;
+        // this.numberOfFrame = this.numberOfFrames || 1;
     }
 
     drawPlatform() {
