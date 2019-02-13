@@ -1,5 +1,8 @@
 class MovingObject {
-    constructor(image, animationFramesX, animationFramesY, width, height, posX, posY, scaledWidth, scaledHeight, movementSpeed, frameTicks, moveDir = 'startLeft') {
+    constructor(image, animationFramesX, animationFramesY, width, height, posX, posY, scaledWidth, scaledHeight,
+                collides = false, floats = false,
+                movementSpeed, frameTicks, moveDir = 'startLeft') {
+
         this.image = image;
         this.animationFrameY = animationFramesY;
         this.animationFrameX = animationFramesX;
@@ -13,6 +16,9 @@ class MovingObject {
         this.movementSpeed = movementSpeed;
         this.frameTicks = frameTicks;
 
+        this.collides = collides;
+        this.floats = floats;
+
         this.frameIndex = 0;
         this.tickCount = 0;
 
@@ -20,9 +26,7 @@ class MovingObject {
         this.tickCount2 = 0;
     }
 
-    drawMovingObject() {
-        ctx.drawImage(this.image, this.animationFrameX[this.frameIndex], this.animationFrameY[this.frameIndex2], this.width, this.height, this.posX, this.posY, this.scaledWidth, this.scaledHeight);
-   
+    handleAnimation() {
         if (this.animationFrameX.length > 1) {
             this.tickCount += 1;
             if (this.tickCount === this.frameTicks) {
@@ -36,19 +40,51 @@ class MovingObject {
                 this.frameIndex2 = (this.frameIndex2 + 1) % this.animationFrameY.length;
             }
         }
+    }
 
-        if (this.moveDir === 'startLeft') {
-            this.posX += this.movementSpeed;
-            if (this.posX > 825) {
-                this.posX = -65;
+    handleMovement() {
+         if (this.moveDir === 'startLeft') {
+             this.posX += this.movementSpeed;
+             if (this.posX > 825) {
+                 this.posX = -65;
+             }
+         } else if (this.moveDir === 'startRight') { // optional movement from right to left on screen
+             this.posX -= this.movementSpeed;
+             if (this.posX < -65) {
+                 this.posX = 825;
+             }
+         }
+    }
+
+    handleCollision() {
+        if (this.posX <= player.posX + player.width &&
+            this.posX + this.scaledWidth >= player.posX &&
+            this.posY + this.scaledHeight >= player.posY &&
+            this.posY <= player.posY + player.height) {
+                player.posY = 640;
             }
-        } else if (this.moveDir === 'startRight') {
-            this.posX -= this.movementSpeed;
-            if (this.posX < -65) {
-                this.posX = 825;
-            }
-        }
+    }
+
+    handleFloat() {
 
     }
 
+    drawMovingObject() {
+        ctx.drawImage(this.image, this.animationFrameX[this.frameIndex], this.animationFrameY[this.frameIndex2], this.width, this.height, this.posX, this.posY, this.scaledWidth, this.scaledHeight);
+        this.handleAnimation();
+        this.handleMovement();
+        
+        if (this.collides) { this.handleCollision() }
+        if (this.floats) { this.handleFloat() }
+
+        ctx.beginPath();
+        ctx.lineWidth = "2";
+        ctx.strokeStyle = "red";
+        ctx.rect(this.posX, this.posY, this.scaledWidth, this.scaledHeight);
+        ctx.stroke();
+    }
+
 }
+
+
+// Red rectangle

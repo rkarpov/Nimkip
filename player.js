@@ -3,8 +3,14 @@ class Player {
         this.image = new Image();
         this.image.src = './assets/images/pikmin_sprite_sheet.png';
 
-        this.posX = 300;
-        this.posY = 640;
+        // this.posX = 300;
+        // this.posY = 640;
+
+        this.posX = 0;
+        this.posY = 0;
+
+        this.width = 22;
+        this.height = 58;
 
         this.stepDown = [12, 39, 67]
         this.stepDownIndex = 0;
