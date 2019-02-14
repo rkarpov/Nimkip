@@ -10,13 +10,16 @@ var ctx = canvas.getContext('2d');
 
 const image = new Image();
 image.src = './assets/images/pikmin_sprite_sheet.png';
+const leftImage = new Image();
+leftImage.src = './assets/images/left_sprites.png';
+
 const bulborb1 = new MovingObject(image, [22, 87, 151, 216], [630], 61, 60, -100, 560, 76.25, 75, true, false, 4, 6)
 const bulborb2 = new MovingObject(image, [22, 87, 151, 216], [630], 61, 60, -1550, 560, 76.25, 75, true, false, 4, 6)
 const bulborb3 = new MovingObject(image, [22, 87, 151, 216], [630], 61, 60, -570, 560, 76.25, 75, true, false, 4, 6)
 // const bulborb4 = new MovingObject(image, [16, 81, 145, 210], [1406], 61, 60, -200, 480, 76.25, 75, true, false, 6, 5)
 // const bulborb5 = new MovingObject(image, [16, 81, 145, 210], [1406], 61, 60, -570, 480, 76.25, 75, true, false, 6, 5)
-const bulborb4 = new MovingObject(image, [16, 81, 145, 210], [1406], 61, 60, 1200, 480, 76.25, 75, true, false, 6, 5,'startRight')
-const bulborb5 = new MovingObject(image, [16, 81, 145, 210], [1406], 61, 60, 1570, 480, 76.25, 75, true, false, 6, 5,'startRight')
+const bulborb4 = new MovingObject(leftImage, [3672, 3607, 3543, 3478], [1406], 61, 60, 1200, 480, 76.25, 75, true, false, 6, 5, 'startRight')
+const bulborb5 = new MovingObject(leftImage, [3672, 3607, 3543, 3478], [1406], 61, 60, 1570, 480, 76.25, 75, true, false, 6, 5, 'startRight')
 const bulborb6 = new MovingObject(image, [19, 84, 148, 213], [1155], 61, 60, -200, 400, 76.25, 75, true, false, 7, 4)
 const bulborb7 = new MovingObject(image, [19, 84, 148, 213], [1155], 61, 60, -570, 400, 76.25, 75, true, false, 7, 4)
 

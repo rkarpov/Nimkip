@@ -60,7 +60,7 @@ class MovingObject {
             (this.posX + 5) + (this.scaledWidth - 25) >= player.posX &&
             (this.posY + 15) + (this.scaledHeight - 25) >= player.posY &&
             (this.posY + 15) <= player.posY + player.height) {
-                player.posY = 640;
+                player.posY = 0;
             }
 
         // hitbox
@@ -83,7 +83,7 @@ class MovingObject {
          ctx.beginPath();
          ctx.lineWidth = "1";
          ctx.strokeStyle = "black";
-         ctx.rect(this.posX, this.posY, this.scaledWidth, this.scaledHeight);
+         ctx.rect(this.posX + 4, this.posY, this.scaledWidth - 10, this.scaledHeight);
          ctx.stroke();
             //   ctx.rect(this.posX + 5, this.posY + 30, this.width - 2, this.height - 30);
     }

@@ -32,9 +32,13 @@ function render() {
     row, col;
 
     for (row = 0; row < numRows; row++) {
-
         for (col = 0; col < numCols; col++) {
             ctx.drawImage(rowImages[row], col * 100, row * 100, 100, 100)
+             ctx.beginPath();
+             ctx.lineWidth = "1";
+             ctx.strokeStyle = "black";
+             ctx.rect(col * 100, row * 100, 100, 100);
+             ctx.stroke();
         }
     }
 }
