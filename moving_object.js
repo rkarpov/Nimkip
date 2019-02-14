@@ -64,11 +64,11 @@ class MovingObject {
             }
 
         // hitbox
-        ctx.beginPath();
-        ctx.lineWidth = "2";
-        ctx.strokeStyle = "red";
-        ctx.rect(this.posX + 5, this.posY + 15, this.scaledWidth - 25, this.scaledHeight - 25);
-        ctx.stroke();
+        // ctx.beginPath();
+        // ctx.lineWidth = "2";
+        // ctx.strokeStyle = "red";
+        // ctx.rect(this.posX + 5, this.posY + 15, this.scaledWidth - 25, this.scaledHeight - 25);
+        // ctx.stroke();
     }
 
     handleFloat() {

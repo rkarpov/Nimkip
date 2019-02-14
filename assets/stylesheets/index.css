@@ -12,9 +12,9 @@ body {
 }
 
 canvas {
-    margin-top: 125px;
+    margin-top: 280px;
     /* background-color: white; */
-    border: 4px solid yellow;
+    border: 4px solid rgb(214, 214, 59);
 }
 /* 
 .sprite {

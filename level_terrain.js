@@ -1,29 +1,41 @@
-const rockImage = new Image();
-rockImage.src = './assets/images/stone_terrain2.png'
+const terrainImage1 = new Image();
+const terrainImage2 = new Image();
+const terrainImage3 = new Image();
+const terrainImage4 = new Image();
+const terrainImage5 = new Image();
+const terrainImage6 = new Image();
+const terrainImage7 = new Image();
+
+terrainImage1.src = './assets/images/greener_grass.png'
+terrainImage2.src = './assets/images/water.png'
+terrainImage3.src = './assets/images/water.png'
+terrainImage4.src = './assets/images/rock_to_grass.png'
+terrainImage5.src = './assets/images/grass.png'
+terrainImage6.src = './assets/images/grass.png'
+terrainImage7.src = './assets/images/greener_grass.png'
+
+terrainTex = new Image();
+terrainTex.src = './assets/images/tex_moss'
 
 function render() {
+    var rowImages = [
+        terrainImage1,
+        terrainImage2,
+        terrainImage3,
+        terrainImage4,
+        terrainImage5,
+        terrainImage6,
+        terrainImage7
+    ],
+    numRows = 7,
+    numCols = 8,
+    row, col;
 
-       var rowImages = [
-               './assets/images/stone-block.png',
-               './assets/images/stone-block.png',
-               './assets/images/stone-block.png',
-               './assets/images/stone-block.png',
-               './assets/images/stone-block.png',
-               './assets/images/stone-block.png'
-           ],
-           numRows = 7,
-           numCols = 8,
-           row, col;
+    for (row = 0; row < numRows; row++) {
 
-        for (row = 0; row < numRows; row++) {
-            for (col = 0; col < numCols; col++) {
-                ctx.drawImage(rockImage, col * 100, row * 100)
-            //    ctx.drawImage(Resources.get(rowImages[row]), col * 101, row * 83);
-           }
-       }
-
-
-    //    renderEntiti es();
-
-    // ctx.drawImage(rockImage, 0, 0, 256, 251, 0, 0, 256, 251)
+        for (col = 0; col < numCols; col++) {
+            ctx.drawImage(rowImages[row], col * 100, row * 100, 100, 100)
+        }
+    }
 }
+
