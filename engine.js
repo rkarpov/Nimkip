@@ -22,14 +22,14 @@ const bulborb7 = new MovingObject(image, [19, 84, 148, 213], [1155], 61, 60, -57
 
 const puffstool = new MovingObject(image, [544, 709, 868], [1507], 117, 151, -200, 300, 76.05, 98.15, true, false, 3, 6)
 
-const whiteFlower1 = new MovingObject(image, [2106], [138], 60, 52, -150, 230, 60, 52, false, true, 2, 4)
-const whiteFlower2 = new MovingObject(image, [2106], [138], 60, 52, -200, 230, 60, 52, false, true, 2, 4)
-const purpleFlower1 = new MovingObject(image, [2229], [74], 60, 52, -350, 230, 60, 52, false, true, 2, 4)
-const whiteFlower3 = new MovingObject(image, [2106], [138], 60, 52, -500, 230, 60, 52, false, true, 2, 4)
-const whiteFlower4 = new MovingObject(image, [2106], [138], 60, 52, -550, 230, 60, 52, false, true, 2, 4)
-const purpleFlower2 = new MovingObject(image, [2229], [74], 60, 52, -700, 230, 60, 52, false, true, 2, 4)
-const whiteFlower5 = new MovingObject(image, [2106], [138], 60, 52, -850, 230, 60, 52, false, true, 2, 4)
-const whiteFlower6 = new MovingObject(image, [2106], [138], 60, 52, -900, 230, 60, 52, false, true, 2, 4)
+const whiteFlower1 = new MovingObject(image, [2106], [138], 60, 52, -150, 247, 60, 52, false, true, 2, 4)
+const whiteFlower2 = new MovingObject(image, [2106], [138], 60, 52, -200, 247, 60, 52, false, true, 2, 4)
+const purpleFlower1 = new MovingObject(image, [2229], [74], 60, 52, -350, 247, 60, 52, false, true, 2, 4)
+const whiteFlower3 = new MovingObject(image, [2106], [138], 60, 52, -500, 247, 60, 52, false, true, 2, 4)
+const whiteFlower4 = new MovingObject(image, [2106], [138], 60, 52, -550, 247, 60, 52, false, true, 2, 4)
+const purpleFlower2 = new MovingObject(image, [2229], [74], 60, 52, -700, 247, 60, 52, false, true, 2, 4)
+const whiteFlower5 = new MovingObject(image, [2106], [138], 60, 52, -850, 247, 60, 52, false, true, 2, 4)
+const whiteFlower6 = new MovingObject(image, [2106], [138], 60, 52, -900, 247, 60, 52, false, true, 2, 4)
 
 const wogpole1 = new MovingObject(image, [546], [911, 937, 963], 40, 23, -125, 200, 40, 23, false, true, 3, 5)
 const wogpole2 = new MovingObject(image, [546], [911, 937, 963], 40, 23, -25, 200, 40, 23, false, true, 3, 5)
@@ -44,18 +44,18 @@ const wogpole5 = new MovingObject(image, [546], [911, 937, 963], 40, 23, -675, 2
 const wogpole6 = new MovingObject(image, [546], [911, 937, 963], 40, 23, -725, 200, 40, 23, false, true, 3, 5)
 
 // const wollywog1 = new MovingObject(image, 840, [798], 47, 50, -100, 150, 47, 50, true, false, 1, 4)
-const row2Flower1 = new MovingObject(image, [2229], [74], 60, 52, -150, 145, 60, 52, false, true, 5, 4) // purple
-const row2Flower2 = new MovingObject(image, [2229], [14], 60, 52, -200, 145, 60, 52, false, true, 5, 4) // yellow
-const row2Flower3 = new MovingObject(image, [2229], [74], 60, 52, -250, 145, 60, 52, false, true, 5, 4) // purple
-// const row2Flower2 = new MovingObject(image, [2106], [138], 60, 52, -200, 145, 60, 52, false, true, 5, 4) // purple
-// const row2Flower2 = new MovingObject(image, [2109], [71], 60, 52, -200, 145, 60, 52, false, true, 5, 4)
-// const row2Flower3 = new MovingObject(image, [2106], [138], 60, 52, -250, 145, 60, 52, false, true, 5, 4)
-const row2Flower4 = new MovingObject(image, [2229], [74], 60, 52, -450, 145, 60, 52, false, true, 5, 4)
-const row2Flower5 = new MovingObject(image, [2229], [14], 60, 52, -500, 145, 60, 52, false, true, 5, 4)
-const row2Flower6 = new MovingObject(image, [2229], [74], 60, 52, -550, 145, 60, 52, false, true, 5, 4)
-const row2Flower7 = new MovingObject(image, [2229], [74], 60, 52, -750, 145, 60, 52, false, true, 5, 4)
-const row2Flower8 = new MovingObject(image, [2229], [14], 60, 52, -800, 145, 60, 52, false, true, 5, 4)
-const row2Flower9 = new MovingObject(image, [2229], [74], 60, 52, -850, 145, 60, 52, false, true, 5, 4)
+const row2Flower1 = new MovingObject(image, [2229], [74], 60, 52, -150, 100, 60, 52, false, true, 5, 4) // purple
+const row2Flower2 = new MovingObject(image, [2229], [14], 60, 52, -200, 100, 60, 52, false, true, 5, 4) // yellow
+const row2Flower3 = new MovingObject(image, [2229], [74], 60, 52, -250, 100, 60, 52, false, true, 5, 4) // purple
+// const row2Flower2 = new MovingObject(image, [2106], [138], 60, 52, -200, 100, 60, 52, false, true, 5, 4) // purple
+// const row2Flower2 = new MovingObject(image, [2109], [71], 60, 52, -200, 100, 60, 52, false, true, 5, 4)
+// const row2Flower3 = new MovingObject(image, [2106], [138], 60, 52, -250, 100, 60, 52, false, true, 5, 4)
+const row2Flower4 = new MovingObject(image, [2229], [74], 60, 52, -450, 100, 60, 52, false, true, 5, 4)
+const row2Flower5 = new MovingObject(image, [2229], [14], 60, 52, -500, 100, 60, 52, false, true, 5, 4)
+const row2Flower6 = new MovingObject(image, [2229], [74], 60, 52, -550, 100, 60, 52, false, true, 5, 4)
+const row2Flower7 = new MovingObject(image, [2229], [74], 60, 52, -750, 100, 60, 52, false, true, 5, 4)
+const row2Flower8 = new MovingObject(image, [2229], [14], 60, 52, -800, 100, 60, 52, false, true, 5, 4)
+const row2Flower9 = new MovingObject(image, [2229], [74], 60, 52, -850, 100, 60, 52, false, true, 5, 4)
 
 // const wogImage = new Image(); 
 // wogImage.src = './assets/images/wollywog.png';

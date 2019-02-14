@@ -66,20 +66,26 @@ class MovingObject {
         // hitbox
         // ctx.beginPath();
         // ctx.lineWidth = "2";
-        // ctx.strokeStyle = "red";
+        // ctx.strokeStyle = "rgb(214, 214, 59)";
         // ctx.rect(this.posX + 5, this.posY + 15, this.scaledWidth - 25, this.scaledHeight - 25);
         // ctx.stroke();
     }
 
     handleFloat() {
-        if (this.posX <= player.posX + player.width &&
-            this.posX + this.scaledWidth >= player.posX &&
-            this.posY + this.scaledHeight >= player.posY &&
-            this.posY <= player.posY + player.height) {
-                if (player.posX < canvas.width - 30) {
+        if (this.posX <= (player.posX + 5) + (player.width -2) &&
+            this.posX + this.scaledWidth >= (player.posX + 5) &&
+            this.posY + this.scaledHeight >= (player.posY + 30) &&
+            this.posY <= (player.posY + 30) + (player.height - 30)) {
+                if ((player.posX  + 5)< canvas.width - 30) {
                     player.posX += 1;
                 }
         }
+         ctx.beginPath();
+         ctx.lineWidth = "1";
+         ctx.strokeStyle = "black";
+         ctx.rect(this.posX, this.posY, this.scaledWidth, this.scaledHeight);
+         ctx.stroke();
+            //   ctx.rect(this.posX + 5, this.posY + 30, this.width - 2, this.height - 30);
     }
 
     drawMovingObject() {
