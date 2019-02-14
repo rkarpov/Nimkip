@@ -77,7 +77,7 @@ class MovingObject {
             this.posY + this.scaledHeight >= (player.posY + 30) &&
             this.posY <= (player.posY + 30) + (player.height - 30)) {
                 if ((player.posX  + 5)< canvas.width - 30) {
-                    player.posX += 1;
+                    player.posX += this.movementSpeed;
                 }
         }
          ctx.beginPath();
