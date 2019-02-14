@@ -37,7 +37,7 @@ function render() {
              ctx.beginPath();
              ctx.lineWidth = "1";
              ctx.strokeStyle = "black";
-             ctx.rect(col * 100, row * 100, 100, 100);
+            //  ctx.rect(col * 100, row * 100, 100, 100);
              ctx.stroke();
         }
     }

@@ -3,11 +3,11 @@ class Player {
         this.image = new Image();
         this.image.src = './assets/images/pikmin_sprite_sheet.png';
 
-        // this.posX = 300;
-        // this.posY = 640;
+        this.posX = 300;
+        this.posY = 0;
 
-        this.posX = 0;
-        this.posY = 600;
+        // this.posX = 0;
+        // this.posY = 600;
 
         this.width = 20;
         this.height = 58;
@@ -26,7 +26,8 @@ class Player {
         ctx.beginPath();
         ctx.lineWidth = "2";
         ctx.strokeStyle = "rgb(214, 214, 59)";
-        ctx.rect(this.posX + 5, this.posY + 30, this.width - 2, this.height - 30);
+        // ctx.rect(this.posX + 5, this.posY + 30, this.width - 2, this.height - 30); // player hitbox ground
+        ctx.rect(this.posX + 6, this.posY + 45, this.width - 8, this.height - 45); // player hitbox water
         ctx.stroke();
     }
 
