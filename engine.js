@@ -157,7 +157,7 @@ function movePlayer() {
         player.moveDir = 'down';
         player.animationFrameX = [12, 39, 67];
         player.animationFrameY = [14, 15, 14];
-        if (player.posY + 4 > 600) { }
+        if (player.posY + 4 > 640) { }
         else { player.flowerY += 4, player.posY += 4 }
     } else if (currentlyPressedKeys.ArrowLeft) {
         if (player.moveDir === 'right') { player.flowerX += 8; }
