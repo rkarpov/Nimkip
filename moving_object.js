@@ -4,9 +4,6 @@ class MovingObject {
     constructor(image, animationFramesX, animationFramesY, width, height, posX, posY, scaledWidth, scaledHeight,
                 collides = false, floats = false, movementSpeed, frameTicks, moveDir = 'startLeft') {
 
-    // super(image, animationFramesX, animationFramesY, width, height, posX, posY, scaledWidth, scaledHeight,
-    //         collides = false, floats = false, movementSpeed, frameTicks, moveDir)
-    
         this.image = image;
         this.animationFrameY = animationFramesY;
         this.animationFrameX = animationFramesX;
@@ -65,17 +62,18 @@ class MovingObject {
     handleCollision() {
         if ((this.posX + 5) <= (player.posX + 5) + (player.width - 2) &&
             (this.posX + 5) + (this.scaledWidth - 25) >= (player.posX + 5) &&
-            (this.posY + 15) + (this.scaledHeight - 25) >= (player.posY + 30) &&
+            (this.posY + 15) + (this.scaledHeight - 35) >= (player.posY + 30) &&
             (this.posY + 15) <= (player.posY + 30) + (player.height - 30)) {
                 player.posY = 640;
+                player.flowerY = 640;
             }
 
         // enemy hitbox
-        ctx.beginPath();
-        ctx.lineWidth = "2";
-        ctx.strokeStyle = "rgb(214, 214, 59)";
-        ctx.rect(this.posX + 5, this.posY + 15, this.scaledWidth - 25, this.scaledHeight - 25);
-        ctx.stroke();
+        // ctx.beginPath();
+        // ctx.lineWidth = "2";
+        // ctx.strokeStyle = "rgb(214, 214, 59)";
+        // ctx.rect(this.posX + 5, this.posY + 15, this.scaledWidth - 25, this.scaledHeight - 35);
+        // ctx.stroke();
 
         // ctx.rect(this.posX + 5, this.posY + 30, this.width - 2, this.height - 30); // player hitbox ground
     }
@@ -93,29 +91,15 @@ class MovingObject {
             this.floating = false; }
 
         // float object hitbox
-         ctx.beginPath();
-         ctx.lineWidth = "1";
-         ctx.strokeStyle = "red";
-         ctx.rect(this.posX + 3, this.posY, this.scaledWidth -5, this.scaledHeight - 4);
-         ctx.stroke();
+        //  ctx.beginPath();
+        //  ctx.lineWidth = "1";
+        //  ctx.strokeStyle = "red";
+        //  ctx.rect(this.posX + 3, this.posY, this.scaledWidth -5, this.scaledHeight - 4);
+        //  ctx.stroke();
 
         // player's hitbox
         // ctx.rect(this.posX + 6, this.posY + 50, this.width - 8, this.height - 50); // player hitbox water
     }
-
-    // drowning() {
-    //          let alive = false;
-    //          floatingObjects.forEach(obj => {
-    //              if (obj.floating === true) {
-    //                  alive = true
-    //              }
-    //          });
-
-    //          if ((player.posY >= 50) && (player.posY <= 245) && (!alive) &&
-    //              (player.posX + 4 >= 0) && (player.posX + 4 <= 800)) {
-    //              player.posY = 0
-    //          }
-    // }
   
     drawMovingObject() {
         ctx.drawImage(this.image, this.animationFrameX[this.frameIndex], this.animationFrameY[this.frameIndex2], this.width, this.height, this.posX, this.posY, this.scaledWidth, this.scaledHeight);
@@ -124,20 +108,6 @@ class MovingObject {
         
         if (this.collides) { this.handleCollision() }
         if (this.floats) { this.handleFloat() }
-        // debugger
-        // let alive = false;
-        // floatingObjects.forEach(obj => {
-        //     if (obj.floating === true) { alive = true }
-        // });
-        
-        // if ((player.posY >= 50) && (player.posY <= 245) && (!alive) &&
-        //      (player.posX + 4 >= 0) && (player.posX + 4 <= 800)) {
-        //      player.posY = 0
-        //  }
-        //  this.drowning();
     }
 
 }
-
-
-// Red rectangle

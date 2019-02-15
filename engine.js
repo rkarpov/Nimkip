@@ -7,26 +7,32 @@ var ctx = canvas.getContext('2d');
 const pikminOlimarImage = new Image();
 pikminOlimarImage.src = './assets/images/olimar_pikmin.png'
 const olimar = new MovingObject(pikminOlimarImage, [133, 223, 253], [147, 223, 149], 28, 49, 700, 0, 28, 49, false, false, 0, 12)
-const target = new MovingObject(pikminOlimarImage, [323, 345, 367], [304, 304, 304], 19, 19, 679, 45, 30, 30, false, false, 0, 15)
+const target = new MovingObject(pikminOlimarImage, [323, 345, 367], [304, 304, 304], 19, 19, 679, 50, 30, 30, false, false, 0, 15)
 // ctx.imageSmoothingEnabled = false;
 
 const image = new Image();
 image.src = './assets/images/pikmin_sprite_sheet.png';
 const leftImage = new Image();
 leftImage.src = './assets/images/left_sprites.png';
-const blueOnion = new MovingObject(image,[1237], [9, 125], 111, 113, 650, 0, 88.8, 90.4, false, false, 0, 15)
 
-const bulborb1 = new MovingObject(image, [22, 87, 151, 216], [630], 61, 60, -100, 560, 76.25, 75, true, false, 4, 6)
-const bulborb2 = new MovingObject(image, [22, 87, 151, 216], [630], 61, 60, -1550, 560, 76.25, 75, true, false, 4, 6)
-const bulborb3 = new MovingObject(image, [22, 87, 151, 216], [630], 61, 60, -570, 560, 76.25, 75, true, false, 4, 6)
+const blueOnion = new MovingObject(image,[1237], [9, 125], 111, 113, 650, 5, 88.8, 90.4, false, false, 0, 15)
+
+const bulborb1 = new MovingObject(image, [22, 87, 151, 216], [630], 61, 60, -100, 585, 76.25, 75, true, false, 3, 6)
+const bulborb2 = new MovingObject(image, [22, 87, 151, 216], [630], 61, 60, -1645, 585, 76.25, 75, true, false, 3, 6)
+const bulborb3 = new MovingObject(image, [22, 87, 151, 216], [630], 61, 60, -2040, 585, 76.25, 75, true, false, 3, 6)
+const bulborb4 = new MovingObject(image, [22, 87, 151, 216], [630], 61, 60, -590, 585, 76.25, 75, true, false, 3, 6)
 // const bulborb4 = new MovingObject(image, [16, 81, 145, 210], [1406], 61, 60, -200, 480, 76.25, 75, true, false, 6, 5)
 // const bulborb5 = new MovingObject(image, [16, 81, 145, 210], [1406], 61, 60, -570, 480, 76.25, 75, true, false, 6, 5)
-const bulborb4 = new MovingObject(leftImage, [3672, 3607, 3543, 3478], [1406], 61, 60, 1200, 480, 76.25, 75, true, false, 6, 5, 'startRight')
-const bulborb5 = new MovingObject(leftImage, [3672, 3607, 3543, 3478], [1406], 61, 60, 1570, 480, 76.25, 75, true, false, 6, 5, 'startRight')
-const bulborb6 = new MovingObject(image, [19, 84, 148, 213], [1155], 61, 60, -200, 400, 76.25, 75, true, false, 7, 4)
-const bulborb7 = new MovingObject(image, [19, 84, 148, 213], [1155], 61, 60, -570, 400, 76.25, 75, true, false, 7, 4)
+const bulborb5 = new MovingObject(leftImage, [3672, 3607, 3543, 3478], [1406], 61, 60, 1200, 525, 76.25, 75, true, false, 5, 5, 'startRight')
+const bulborb6 = new MovingObject(leftImage, [3672, 3607, 3543, 3478], [1406], 61, 60, 1650, 525, 76.25, 75, true, false, 5, 5, 'startRight')
+const bulborb7 = new MovingObject(image, [19, 84, 148, 213], [1155], 61, 60, -200, 460, 76.25, 75, true, false, 6, 4)
+const bulborb8 = new MovingObject(image, [19, 84, 148, 213], [1155], 61, 60, -570, 460, 76.25, 75, true, false, 6, 4)
+const bulborb9 = new MovingObject(leftImage, [3677, 3612, 3548, 3483], [875], 61, 60, 1200, 400, 76.25, 75, true, false, 3, 6, 'startRight')
+const bulborb10 = new MovingObject(leftImage, [3479, 3544, 3608, 3673], [1689], 61, 60, 1650, 400, 76.25, 75, true, false, 3, 6, 'startRight')
 
-const puffstool = new MovingObject(image, [544, 709, 868], [1507], 117, 151, -200, 300, 76.05, 98.15, true, false, 3, 6)
+// const puffstool = new MovingObject(image, [544, 709, 868], [1507], 117, 151, 225, 325, 76.05, 98.15, true, false, 3, 6)
+const puffstool = new MovingObject(image, [544, 709, 868], [1507], 117, 151, 225, 330, 70.2, 90.6, true, false, 3, 6)
+const breadbug = new MovingObject(image, [3449, 3524, 3617], [164], 73, 65, -200, 350, 73, 65, true, false, 3, 6)
 
 // const row1Flower1 = new MovingObject(image, [2106], [138], 60, 52, -150, 247, 60, 52, false, true, 2, 4)
 // const row1Flower2 = new MovingObject(image, [2106], [138], 60, 52, -200, 247, 60, 52, false, true, 2, 4)
@@ -124,25 +130,50 @@ const row3Flower9 = new MovingObject(image, [2106], [138], 60, 52, -700, 100, 60
 // whale.src = './assets/images/tara.png'
 // const wollywog1 = new MovingObject(whale, [11, 100, 201, 293, 385, 481], [95, 98, 97, 95, 96, 97], 72, 31, -100, 100, 72, 31, 3, 5)
 
-
 const currentlyPressedKeys = {};
 window.addEventListener('keydown', (e) => {
     currentlyPressedKeys[e.key] = true;
 });
 window.addEventListener('keyup', (e) => {
     currentlyPressedKeys[e.key] = false;
+    
 });
 
 function movePlayer() {
+  
     if (currentlyPressedKeys.ArrowUp) {
+        player.image = image;
+        player.flowerY -= 4;
         player.posY -= 4;
+        player.moveDir = 'up';
+        player.animationFrameX = [14, 41, 69]
+        player.animationFrameY = [101, 102, 101]
+        player.handleAnimation();
     } else if (currentlyPressedKeys.ArrowDown) {
+        player.image = image;
+        player.flowerY += 4
         player.posY += 4;
+        player.moveDir = 'down';
+        player.animationFrameX = [12, 39, 67]
+        player.animationFrameY = [14, 15, 14]
     } else if (currentlyPressedKeys.ArrowLeft) {
-        player.posX -= 4
+        player.image = leftImage;
+        player.flowerX -= 4;
+        player.posX -= 4;
+        player.moveDir = 'left';
+        player.animationFrameX = [3714, 3692, 3669]
+        player.animationFrameY = [58]
     } else if (currentlyPressedKeys.ArrowRight) {
+        player.image = image;
+        player.flowerX += 4;
         player.posX += 4;
+        player.moveDir = 'right';
+        player.animationFrameX = [20, 41, 65]
+        player.animationFrameY = [58]
     }
+    // if (currentlyPressedKeys.keyup === true) {
+
+    // }
 }
 
 // var floatValues = [];
@@ -204,15 +235,18 @@ function draw() {
     render();
     movePlayer();
         
+    puffstool.drawMovingObject();
+    breadbug.drawMovingObject();
+    bulborb8.drawMovingObject();
+    bulborb9.drawMovingObject();
+    bulborb10.drawMovingObject();
+    bulborb6.drawMovingObject();
+    bulborb7.drawMovingObject();
+    bulborb4.drawMovingObject();
+    bulborb5.drawMovingObject();
     bulborb1.drawMovingObject();
     bulborb2.drawMovingObject();
     bulborb3.drawMovingObject();
-    bulborb4.drawMovingObject();
-    bulborb5.drawMovingObject();
-    bulborb6.drawMovingObject();
-    bulborb7.drawMovingObject();
-
-    puffstool.drawMovingObject();
 
     row1Flower1.drawMovingObject();
     row1Flower2.drawMovingObject();
@@ -271,6 +305,7 @@ function draw() {
 
     // olimar.drawMovingObject();
     target.drawMovingObject();
+    
     player.drawPlayer();
     blueOnion.drawMovingObject();
 
