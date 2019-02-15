@@ -14,8 +14,8 @@ terrainImage5.src = './assets/images/grass.png'
 terrainImage6.src = './assets/images/grass.png'
 terrainImage7.src = './assets/images/greener_grass.png'
 
-terrainTex = new Image();
-terrainTex.src = './assets/images/tex_moss'
+// terrainTex = new Image();
+// terrainTex.src = './assets/images/tex_moss.png'
 
 function render() {
     var rowImages = [
