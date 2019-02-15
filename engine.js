@@ -4,15 +4,17 @@ canvas.width = 800;
 canvas.height = 700;
 var ctx = canvas.getContext('2d');
 
-
-
-
+const pikminOlimarImage = new Image();
+pikminOlimarImage.src = './assets/images/olimar_pikmin.png'
+const olimar = new MovingObject(pikminOlimarImage, [133, 223, 253], [147, 223, 149], 28, 49, 700, 0, 28, 49, false, false, 0, 12)
+const target = new MovingObject(pikminOlimarImage, [323, 345, 367], [304, 304, 304], 19, 19, 679, 45, 30, 30, false, false, 0, 15)
 // ctx.imageSmoothingEnabled = false;
 
 const image = new Image();
 image.src = './assets/images/pikmin_sprite_sheet.png';
 const leftImage = new Image();
 leftImage.src = './assets/images/left_sprites.png';
+const blueOnion = new MovingObject(image,[1237], [9, 125], 111, 113, 650, 0, 88.8, 90.4, false, false, 0, 15)
 
 const bulborb1 = new MovingObject(image, [22, 87, 151, 216], [630], 61, 60, -100, 560, 76.25, 75, true, false, 4, 6)
 const bulborb2 = new MovingObject(image, [22, 87, 151, 216], [630], 61, 60, -1550, 560, 76.25, 75, true, false, 4, 6)
@@ -266,7 +268,11 @@ function draw() {
     row3Flower8.drawMovingObject();
     // row3Flower9.drawMovingObject();
 
+
+    // olimar.drawMovingObject();
+    target.drawMovingObject();
     player.drawPlayer();
+    blueOnion.drawMovingObject();
 
     // debugger
     // stationaryBridge1.drawMovingObject();
