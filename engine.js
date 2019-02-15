@@ -142,40 +142,39 @@ function movePlayer() {
       if (!(currentlyPressedKeys.ArrowDown || currentlyPressedKeys.ArrowUp || currentlyPressedKeys.ArrowLeft || currentlyPressedKeys.ArrowRight)) {
           player.animate = false;
       } else { player.animate = true }
-
-    if (currentlyPressedKeys.ArrowUp) {
-        if (player.moveDir === 'right') { player.flowerX += 8;}
+    // if ((player.posX - 4 < 0) || (player.posX + 8 > 800) || (player.posY - 4 < 0) || (player.posY + 4 > 700)) { }
+     if (currentlyPressedKeys.ArrowUp) {
+        if (player.moveDir === 'right') { player.flowerX += 8; }
         player.image = image;
-        player.flowerY -= 4;
-        player.posY -= 4;
         player.moveDir = 'up';
-        player.animationFrameX = [14, 41, 69]
-        player.animationFrameY = [101, 102, 101]
-        player.handleAnimation();
+        player.animationFrameX = [14, 41, 69];
+        player.animationFrameY = [101, 102, 101];
+        if (player.posY < 3) { }
+        else { player.flowerY -= 4, player.posY -= 4 }
     } else if (currentlyPressedKeys.ArrowDown) {
-        if (player.moveDir === 'right') { player.flowerX += 8;}
+        if (player.moveDir === 'right') { player.flowerX += 8; }
         player.image = image;
-        player.flowerY += 4
-        player.posY += 4;
         player.moveDir = 'down';
-        player.animationFrameX = [12, 39, 67]
-        player.animationFrameY = [14, 15, 14]
+        player.animationFrameX = [12, 39, 67];
+        player.animationFrameY = [14, 15, 14];
+        if (player.posY + 4 > 600) { }
+        else { player.flowerY += 4, player.posY += 4 }
     } else if (currentlyPressedKeys.ArrowLeft) {
-        if (player.moveDir === 'right') { player.flowerX += 8;}
+        if (player.moveDir === 'right') { player.flowerX += 8; }
         player.image = leftImage;
-        player.flowerX -= 4;
-        player.posX -= 4;
         player.moveDir = 'left';
-        player.animationFrameX = [3714, 3692, 3669]
-        player.animationFrameY = [58]
+        player.animationFrameX = [3714, 3692, 3669];
+        player.animationFrameY = [58];
+        if (player.posX - 4 < 0) { } 
+        else { player.flowerX -= 4, player.posX -= 4 }
     } else if (currentlyPressedKeys.ArrowRight) {
         player.image = image;
-        player.flowerX += 4;
-        player.posX += 4;
-        if (player.moveDir != 'right') { player.flowerX -= 8;}
+        if (player.moveDir != 'right') { player.flowerX -= 8; }
         player.moveDir = 'right';
-        player.animationFrameX = [20, 65]
-        player.animationFrameY = [58]
+        player.animationFrameX = [20, 65];
+        player.animationFrameY = [58];
+        if (player.posX + 4 > 778) { }
+        else { player.flowerX += 4, player.posX += 4 }
     } 
   
 }
