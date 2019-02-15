@@ -136,12 +136,15 @@ window.addEventListener('keydown', (e) => {
 });
 window.addEventListener('keyup', (e) => {
     currentlyPressedKeys[e.key] = false;
-    
 });
 
 function movePlayer() {
-  
+      if (!(currentlyPressedKeys.ArrowDown || currentlyPressedKeys.ArrowUp || currentlyPressedKeys.ArrowLeft || currentlyPressedKeys.ArrowRight)) {
+          player.animate = false;
+      } else { player.animate = true }
+
     if (currentlyPressedKeys.ArrowUp) {
+        if (player.moveDir === 'right') { player.flowerX += 8;}
         player.image = image;
         player.flowerY -= 4;
         player.posY -= 4;
@@ -150,6 +153,7 @@ function movePlayer() {
         player.animationFrameY = [101, 102, 101]
         player.handleAnimation();
     } else if (currentlyPressedKeys.ArrowDown) {
+        if (player.moveDir === 'right') { player.flowerX += 8;}
         player.image = image;
         player.flowerY += 4
         player.posY += 4;
@@ -157,6 +161,7 @@ function movePlayer() {
         player.animationFrameX = [12, 39, 67]
         player.animationFrameY = [14, 15, 14]
     } else if (currentlyPressedKeys.ArrowLeft) {
+        if (player.moveDir === 'right') { player.flowerX += 8;}
         player.image = leftImage;
         player.flowerX -= 4;
         player.posX -= 4;
@@ -167,13 +172,12 @@ function movePlayer() {
         player.image = image;
         player.flowerX += 4;
         player.posX += 4;
+        if (player.moveDir != 'right') { player.flowerX -= 8;}
         player.moveDir = 'right';
-        player.animationFrameX = [20, 41, 65]
+        player.animationFrameX = [20, 65]
         player.animationFrameY = [58]
-    }
-    // if (currentlyPressedKeys.keyup === true) {
-
-    // }
+    } 
+  
 }
 
 // var floatValues = [];

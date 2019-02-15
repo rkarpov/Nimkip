@@ -33,10 +33,12 @@ class Player {
 
         this.flowerImage = this.image;
         this.flowerX = this.posX;
-        this.flowerY = this.posY;
+        this.flowerY = this.posY - 7;
     
         this.flowerFrameX = 342;
         this.flowerFrameY = 161;
+
+        this.animate = false;
         } 
     
     drowning() {
@@ -112,17 +114,22 @@ class Player {
      }
 
     drawPlayer() {
-        this.handleAnimation();
-        ctx.drawImage(this.image, this.animationFrameX[this.frameIndexX], this.animationFrameY[this.frameIndexY], this.pwidth, this.pheight, this.posX, this.posY, this.scaledWidth, this.scaledHeight); // Player scaled by 1.5
-        ctx.drawImage(this.flowerImage, this.flowerFrameX, this.flowerFrameY, 18, 12, this.flowerX, this.flowerY, 18 * 1.5, 12 * 1.5)
+        if (this.animate) {
+            this.handleAnimation() 
+            ctx.drawImage(this.image, this.animationFrameX[this.frameIndexX], this.animationFrameY[this.frameIndexY], this.pwidth, this.pheight, this.posX, this.posY, this.scaledWidth, this.scaledHeight); // Player scaled by 1.5
+            ctx.drawImage(this.flowerImage, this.flowerFrameX, this.flowerFrameY, 18, 12, this.flowerX, this.flowerY, 18 * 1.5, 12 * 1.5)
+        } else { 
+            ctx.drawImage(this.image, this.animationFrameX[0], this.animationFrameY[0], this.pwidth, this.pheight, this.posX, this.posY, this.scaledWidth, this.scaledHeight); // Player scaled by 1.5
+            ctx.drawImage(this.flowerImage, this.flowerFrameX, this.flowerFrameY, 18, 12, this.flowerX, this.flowerY, 18 * 1.5, 12 * 1.5)
+        }
         // const headFlower = new MovingObject(image, [342], [161], 18, 12, player.posX, player.posY, 18 * 1.5, 12 * 1.5, 0, 0)
 
         this.drowning();
         ctx.beginPath();
         ctx.lineWidth = "2";
         ctx.strokeStyle = "rgb(214, 214, 59)";
-        ctx.rect(this.posX + 5, this.posY + 30, this.width - 2, this.height - 30); // player hitbox ground
-        ctx.rect(this.posX + 6, this.posY + 45, this.width - 8, this.height - 45); // player hitbox water
+        // ctx.rect(this.posX + 5, this.posY + 30, this.width - 2, this.height - 30); // player hitbox ground
+        // ctx.rect(this.posX + 6, this.posY + 45, this.width - 8, this.height - 45); // player hitbox water
         ctx.stroke();
     }
 }
