@@ -46,7 +46,7 @@ class ShipTimer {
     handleMovement() {
         if (this.moveDir === 'startLeft') {
             this.posY -= this.movementSpeed;
-            if (this.posY < -100) {
+            if (this.posY < -200) {
                 this.posY = 800
             }
         }

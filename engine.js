@@ -15,7 +15,7 @@ const redTarget = new MovingObject(pikminOlimarImage, [323, 345, 367], [304, 304
 
 const shipImage = new Image();
 shipImage.src = './assets/images/ship.png'
-const ship = new ShipTimer(shipImage, [287], [236], 106, 168, 830, 750, 137.80, 218.40, false, false, 0.5, 0)
+const ship = new ShipTimer(shipImage, [287], [236], 106, 168, 835, 750, 137.80, 218.40, false, false, 0.5, 0)
 // ctx.imageSmoothingEnabled = false;
 
 const image = new Image();
@@ -314,10 +314,14 @@ function draw() {
     // ctx.rect(player.posX + 9, player.posY + 40, player.width - 15, player.height - 53); // player wins box
     ctx.stroke();
 
-    ctx.drawImage(mapImage, 800, 0, 600, 700)
+    ctx.drawImage(mapImage, 800, 0, 600, 700) // background image for ship
     ship.drawMovingObject();
 
-
+    ctx.beginPath();
+    ctx.lineWidth = "4";
+    ctx.strokeStyle = "rgb(214, 214, 59)";
+    ctx.rect(802, -2, 0, 705);
+    ctx.stroke();
 
     // debugger
     // stationaryBridge1.drawMovingObject();
