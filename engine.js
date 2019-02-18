@@ -27,12 +27,19 @@ const bulborb5 = new MovingObject(leftImage, [3672, 3607, 3543, 3478], [1406], 6
 const bulborb6 = new MovingObject(leftImage, [3672, 3607, 3543, 3478], [1406], 61, 60, 1650, 525, 76.25, 75, true, false, 5, 5, 'startRight')
 const bulborb7 = new MovingObject(image, [19, 84, 148, 213], [1155], 61, 60, -200, 460, 76.25, 75, true, false, 6, 4)
 const bulborb8 = new MovingObject(image, [19, 84, 148, 213], [1155], 61, 60, -570, 460, 76.25, 75, true, false, 6, 4)
-const bulborb9 = new MovingObject(leftImage, [3677, 3612, 3548, 3483], [875], 61, 60, 1200, 400, 76.25, 75, true, false, 3, 6, 'startRight')
-const bulborb10 = new MovingObject(leftImage, [3479, 3544, 3608, 3673], [1689], 61, 60, 1650, 400, 76.25, 75, true, false, 3, 6, 'startRight')
+const bulborb9 = new MovingObject(leftImage, [3666, 3601, 3537, 3472], [630], 61, 60, 1120, 400, 76.25, 75, true, false, 3, 6, 'startRight')
+const bulborb10 = new MovingObject(leftImage, [3677, 3612, 3548, 3483], [875], 61, 60, 1200, 400, 76.25, 75, true, false, 3, 6, 'startRight')
+const bulborb11 = new MovingObject(leftImage, [3666, 3601, 3537, 3472], [630], 61, 60, 1280, 400, 76.25, 75, true, false, 3, 6, 'startRight')
+const bulborb12 = new MovingObject(leftImage, [3666, 3601, 3537, 3472], [630], 61, 60, 1570, 400, 76.25, 75, true, false, 3, 6, 'startRight')
+const bulborb13 = new MovingObject(leftImage, [3479, 3544, 3608, 3673], [1689], 61, 60, 1650, 400, 76.25, 75, true, false, 3, 6, 'startRight')
+const bulborb14 = new MovingObject(leftImage, [3666, 3601, 3537, 3472], [630], 61, 60, 1730, 400, 76.25, 75, true, false, 3, 6, 'startRight')
 
 // const puffstool = new MovingObject(image, [544, 709, 868], [1507], 117, 151, 225, 325, 76.05, 98.15, true, false, 3, 6)
-const puffstool = new MovingObject(image, [544, 709, 868], [1507], 117, 151, 225, 330, 70.2, 90.6, true, false, 3, 6)
-const breadbug = new MovingObject(image, [3449, 3524, 3617], [164], 73, 65, -200, 350, 73, 65, true, false, 3, 6)
+const puffstool1 = new MovingObject(image, [544, 709, 868], [1507], 117, 151, -200, 328, 70.2, 90.6, true, false, 3, 6)
+const puffstool2 = new MovingObject(image, [544, 709, 868], [1507], 117, 151, -300, 328, 70.2, 90.6, true, false, 3, 6)
+
+const breadbug1 = new MovingObject(image, [3449, 3524, 3617], [164], 73, 65, -650, 355, 73, 65, true, false, 3, 6)
+const breadbug2 = new MovingObject(image, [3449, 3524, 3617], [164], 73, 65, -750, 355, 73, 65, true, false, 3, 6)
 
 // const row1Flower1 = new MovingObject(image, [2106], [138], 60, 52, -150, 247, 60, 52, false, true, 2, 4)
 // const row1Flower2 = new MovingObject(image, [2106], [138], 60, 52, -200, 247, 60, 52, false, true, 2, 4)
@@ -182,49 +189,11 @@ function movePlayer() {
 // var floatValues = [];
 
 const floatingObjects = [
-    row1Flower1,
-    row1Flower2,
-    row1Flower3,
-    row1Flower4,
-    row1Flower5,
-    row1Flower6,
-    row1Flower7,
-    row1Flower8,
-    row1Flower9,
-    wogpole1,
-    wogpole2,
-    wogpole9,
-    wogpole3,
-    wogpole7,
-    wogpole8,
-    wogpole4,
-    wogpole5,
-    wogpole6,
-    row2Flower1,
-    row2Flower2,
-    row2Flower3,
-    row2Flower4,
-    row2Flower5,
-    row2Flower6,
-    row2Flower7,
-    row2Flower8,
-    row2wogpole1,
-    row2wogpole2,
-    row2wogpole9,
-    row2wogpole3,
-    row2wogpole7,
-    row2wogpole8,
-    row2wogpole4,
-    row2wogpole5,
-    row2wogpole6,
-    row3Flower1,
-    row3Flower2,
-    row3Flower3,
-    row3Flower4,
-    row3Flower5,
-    row3Flower6,
-    row3Flower7,
-    row3Flower8,
+    row1Flower1, row1Flower2, row1Flower3, row1Flower4, row1Flower5, row1Flower6, row1Flower7, row1Flower8, row1Flower9,
+    wogpole1, wogpole2, wogpole9, wogpole3, wogpole7, wogpole8, wogpole4, wogpole5, wogpole6,
+    row2Flower1, row2Flower2, row2Flower3, row2Flower4, row2Flower5, row2Flower6, row2Flower7, row2Flower8,
+    row2wogpole1, row2wogpole2, row2wogpole9, row2wogpole3, row2wogpole7, row2wogpole8, row2wogpole4, row2wogpole5, row2wogpole6,
+    row3Flower1, row3Flower2, row3Flower3, row3Flower4, row3Flower5, row3Flower6, row3Flower7, row3Flower8,
     // row3Flower9,
     // stationaryBridge1,
     // stationaryBridge2
@@ -238,11 +207,17 @@ function draw() {
     render();
     movePlayer();
         
-    puffstool.drawMovingObject();
-    breadbug.drawMovingObject();
-    bulborb8.drawMovingObject();
-    bulborb9.drawMovingObject();
+    puffstool1.drawMovingObject();
+    puffstool2.drawMovingObject();
+    breadbug1.drawMovingObject();
+    breadbug2.drawMovingObject();
+    bulborb14.drawMovingObject();
+    bulborb13.drawMovingObject();
+    bulborb12.drawMovingObject();
+    bulborb11.drawMovingObject();
     bulborb10.drawMovingObject();
+    bulborb9.drawMovingObject();
+    bulborb8.drawMovingObject();
     bulborb6.drawMovingObject();
     bulborb7.drawMovingObject();
     bulborb4.drawMovingObject();
