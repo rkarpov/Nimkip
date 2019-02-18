@@ -65,12 +65,16 @@ class Player {
                 if ((this.posX + 6) < canvas.width - 30) {
                     this.alive = true;
                     if (obj.moveDir === 'startRight') { 
+                        if (player.posX - 4 < 0) {}
+                        else {
                         this.posX -= obj.movementSpeed;
-                        this.flowerX -= obj.movementSpeed;
+                        this.flowerX -= obj.movementSpeed; }
                     }
                     else if (obj.moveDir === 'startLeft') {
+                        if (player.posX + 4 > 778) {}
+                        else {
                         this.posX += obj.movementSpeed;
-                        this.flowerX += obj.movementSpeed;
+                        this.flowerX += obj.movementSpeed; }
                     }
                     break;
                 }
@@ -133,6 +137,6 @@ class Player {
         ctx.stroke();
     }
 }
-// const player = new Player(playerImage, [14], [102], 16, 40, 300, 640, 16 * 1.5, 40 * 1.5, 7, 4, 'up')
-const player = new Player(playerImage, [14], [102], 16, 40, 680, 70, 16 * 1.5, 40 * 1.5, 7, 4, 'up')
+const player = new Player(playerImage, [14], [102], 16, 40, 300, 640, 16 * 1.5, 40 * 1.5, 7, 4, 'up') // player starting position
+// const player = new Player(playerImage, [14], [102], 16, 40, 680, 0, 16 * 1.5, 40 * 1.5, 7, 4, 'up')
 // constructor(image, animationFramesX, animationFramesY, pwidth, pheight, posX, posY, scaledWidth, scaledHeight, movementSpeed, frameTicks, moveDir) {

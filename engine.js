@@ -209,9 +209,27 @@ const floatingObjects = [
     // stationaryBridge3,
     // stationaryBridge4,
 ]
-
+let gameOver = false;
+let gameWon = false;
 
 function draw() {
+    if (ship.posY === -199) {
+        gameOver = true;
+    }
+    if (gameOver) {
+        // const alpha = 0.5;
+        // while (alpha < 1) {
+        //     ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+        // }
+        ctx.fillStyle = "darkblue";
+        ctx.font = "150px Arial";
+        ctx.fillText("Time's Up...", canvas.width - 950, 350);
+    } else if (gameWon) {
+          ctx.fillStyle = "gold";
+          ctx.font = "150px Arial";
+          ctx.fillText("You Won!", canvas.width - 800, 350);
+    } else {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     render();
     movePlayer();
@@ -306,6 +324,7 @@ function draw() {
             player.posX = 600
             player.flowerY = 0
             player.flowerX = 600
+            gameWon = true;
     }
     ctx.beginPath();
     ctx.lineWidth = "2";
@@ -336,21 +355,17 @@ function draw() {
     
     // floatValues = false;
     window.requestAnimationFrame(draw);
-}
+}}
 
 // const redTarget = new MovingObject(pikminOlimarImage, [323, 345, 367], [304, 304, 304], 19, 19, 679, 50, 30, 30, false, false, 0, 15)
 
 gameLoop()
 function gameLoop() {
-    // if ()
-    if ((player.posY >= 40) && (player.posY <= 90) &&
-        (player.posX >= 670) && (player.posX <= 710)) {
-        player.posY = 0
-        player.flowerY = 0
-    }
-            //    ctx.rect(670, 40, 50, 40);
+    // if (!gameOver) {
+        draw();
+    // } else {
 
-    draw();
+    // }
 }
 
 
