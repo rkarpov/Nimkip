@@ -133,5 +133,6 @@ class Player {
         ctx.stroke();
     }
 }
-const player = new Player(playerImage, [14], [102], 16, 40, 300, 640, 16 * 1.5, 40 * 1.5, 7, 4, 'up')
+// const player = new Player(playerImage, [14], [102], 16, 40, 300, 640, 16 * 1.5, 40 * 1.5, 7, 4, 'up')
+const player = new Player(playerImage, [14], [102], 16, 40, 680, 70, 16 * 1.5, 40 * 1.5, 7, 4, 'up')
 // constructor(image, animationFramesX, animationFramesY, pwidth, pheight, posX, posY, scaledWidth, scaledHeight, movementSpeed, frameTicks, moveDir) {

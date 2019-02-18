@@ -7,7 +7,7 @@ var ctx = canvas.getContext('2d');
 const pikminOlimarImage = new Image();
 pikminOlimarImage.src = './assets/images/olimar_pikmin.png'
 const olimar = new MovingObject(pikminOlimarImage, [133, 223, 253], [147, 223, 149], 28, 49, 700, 0, 28, 49, false, false, 0, 12)
-const target = new MovingObject(pikminOlimarImage, [323, 345, 367], [304, 304, 304], 19, 19, 679, 50, 30, 30, false, false, 0, 15)
+const redTarget = new MovingObject(pikminOlimarImage, [323, 345, 367], [304, 304, 304], 19, 19, 679, 50, 30, 30, false, true, 0, 15)
 // ctx.imageSmoothingEnabled = false;
 
 const image = new Image();
@@ -194,6 +194,7 @@ const floatingObjects = [
     row2Flower1, row2Flower2, row2Flower3, row2Flower4, row2Flower5, row2Flower6, row2Flower7, row2Flower8,
     row2wogpole1, row2wogpole2, row2wogpole9, row2wogpole3, row2wogpole7, row2wogpole8, row2wogpole4, row2wogpole5, row2wogpole6,
     row3Flower1, row3Flower2, row3Flower3, row3Flower4, row3Flower5, row3Flower6, row3Flower7, row3Flower8,
+    redTarget
     // row3Flower9,
     // stationaryBridge1,
     // stationaryBridge2
@@ -282,10 +283,30 @@ function draw() {
 
 
     // olimar.drawMovingObject();
-    target.drawMovingObject();
+    redTarget.drawMovingObject();
     
     player.drawPlayer();
     blueOnion.drawMovingObject();
+
+
+
+        if (redTarget.posX + 14 <= (player.posX + 9) + (player.width - 15) &&
+            (redTarget.posX + 14) + (redTarget.scaledWidth - 28) >= (player.posX + 9) &&
+            redTarget.posY + 10 + redTarget.scaledHeight - 28 >= (player.posY + 40) &&
+            redTarget.posY + 10 <= (player.posY + 40) + (player.height - 53)) {
+      player.posY = 0
+      player.posX = 600
+      player.flowerY = 0
+      player.flowerX = 600
+  }
+
+      ctx.beginPath();
+      ctx.lineWidth = "2";
+      ctx.strokeStyle = "rgb(214, 214, 59)";
+    //   ctx.rect(685, 50, 20, 20); // win box
+      ctx.rect(redTarget.posX + 14, redTarget.posY + 10, redTarget.scaledWidth - 28, redTarget.scaledHeight - 28); // win box
+      ctx.rect(player.posX + 9, player.posY + 40, player.width - 15, player.height - 53); // player winning box
+      ctx.stroke();
 
     // debugger
     // stationaryBridge1.drawMovingObject();
@@ -302,4 +323,17 @@ function draw() {
     window.requestAnimationFrame(draw);
 }
 
-draw();
+// const redTarget = new MovingObject(pikminOlimarImage, [323, 345, 367], [304, 304, 304], 19, 19, 679, 50, 30, 30, false, false, 0, 15)
+
+gameLoop()
+function gameLoop() {
+    // if ()
+    if ((player.posY >= 40) && (player.posY <= 90) &&
+        (player.posX >= 670) && (player.posX <= 710)) {
+        player.posY = 0
+        player.flowerY = 0
+    }
+            //    ctx.rect(670, 40, 50, 40);
+
+    draw();
+}

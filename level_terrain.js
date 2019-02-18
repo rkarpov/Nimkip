@@ -34,6 +34,17 @@ function render() {
     for (row = 0; row < numRows; row++) {
         for (col = 0; col < numCols; col++) {
             ctx.drawImage(rowImages[row], col * 100, row * 100, 100, 100)
+
+            // if (row === 0) {
+            //     ctx.drawImage(rowImages[row], col * 200, row * 200, 200, 100)
+            // } else if (row === 5) {
+            //     ctx.drawImage(rowImages[0], col * 200, row * 100, 200, 200)
+            // }
+            // else if (row != 5 && row != 6) {
+            // ctx.drawImage(rowImages[row], col * 100, row * 100, 100, 100) }
+
+
+
              ctx.beginPath();
              ctx.lineWidth = "1";
              ctx.strokeStyle = "black";

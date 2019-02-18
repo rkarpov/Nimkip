@@ -1,8 +1,13 @@
 body title {
     width: 100px;
     height: 30px;
-}
 
+}
+.center-screen-items {
+    display: flex;
+flex-direction: column;
+align-items: center;
+}
 body {
     display: flex;
     justify-content: center;
@@ -24,3 +29,17 @@ canvas {
     width: 16px;
     height: 38px;
 } */
+
+.title-container {
+    width: 630px;
+    margin-bottom: 5px;
+    /* height: 100px; */
+    /* margin-bottom: 20px; */
+    /* background: black; */
+    background-image: url("../images/pikmin_title.png");
+    background-size: 95%;
+    background-repeat: no-repeat;
+    margin-left: 50px;
+    /* width: 600px; */
+    height: 155px;
+}
