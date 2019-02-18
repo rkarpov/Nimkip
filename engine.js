@@ -1,13 +1,21 @@
 // import { movePlayer } from './player';
 var canvas = document.getElementById('canvas');
-canvas.width = 800;
+canvas.width = 1000;
 canvas.height = 700;
 var ctx = canvas.getContext('2d');
+
+
+const mapImage = new Image();
+mapImage.src = './assets/images/Pikmin_1_Map.png';
 
 const pikminOlimarImage = new Image();
 pikminOlimarImage.src = './assets/images/olimar_pikmin.png'
 const olimar = new MovingObject(pikminOlimarImage, [133, 223, 253], [147, 223, 149], 28, 49, 700, 0, 28, 49, false, false, 0, 12)
 const redTarget = new MovingObject(pikminOlimarImage, [323, 345, 367], [304, 304, 304], 19, 19, 679, 50, 30, 30, false, true, 0, 15)
+
+const shipImage = new Image();
+shipImage.src = './assets/images/ship.png'
+const ship = new ShipTimer(shipImage, [287], [236], 106, 168, 830, 750, 137.80, 218.40, false, false, 0.5, 0)
 // ctx.imageSmoothingEnabled = false;
 
 const image = new Image();
@@ -61,17 +69,17 @@ const row1Flower7 = new MovingObject(image, [2229], [74], 60, 52, -750, 247, 60,
 const row1Flower8 = new MovingObject(image, [2229], [74], 60, 52, -800, 247, 60, 52, false, true, 2, 4)
 const row1Flower9 = new MovingObject(image, [2106], [138], 60, 52, -700, 247, 60, 52, false, true, 2, 4)
 
-const wogpole1 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1110 + 155, 150, 40, 23, false, true, 3, 5, 'startRight')
-const wogpole2 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1030 + 155, 150, 40, 23, false, true, 3, 5, 'startRight')
-const wogpole3 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1070 + 155, 150, 40, 23, false, true, 3, 5, 'startRight')
+const wogpole1 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1110 + 155, 150, 40, 23, false, true, 2, 5, 'startRight')
+const wogpole2 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1030 + 155, 150, 40, 23, false, true, 2, 5, 'startRight')
+const wogpole3 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1070 + 155, 150, 40, 23, false, true, 2, 5, 'startRight')
 
-const wogpole4 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1370 + 155, 150, 40, 23, false, true, 3, 5, 'startRight')
-const wogpole5 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1330 + 155, 150, 40, 23, false, true, 3, 5, 'startRight')
-const wogpole6 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1410 + 155, 150, 40, 23, false, true, 3, 5, 'startRight')
+const wogpole4 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1370 + 155, 150, 40, 23, false, true, 2, 5, 'startRight')
+const wogpole5 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1330 + 155, 150, 40, 23, false, true, 2, 5, 'startRight')
+const wogpole6 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1410 + 155, 150, 40, 23, false, true, 2, 5, 'startRight')
 // 146.66 spaced evenly by 3
-const wogpole7 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1630 + 155, 150, 40, 23, false, true, 3, 5, 'startRight')
-const wogpole8 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1670 + 155, 150, 40, 23, false, true, 3, 5, 'startRight')
-const wogpole9 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1710 + 155, 150, 40, 23, false, true, 3, 5, 'startRight')
+const wogpole7 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1630 + 155, 150, 40, 23, false, true, 2, 5, 'startRight')
+const wogpole8 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1670 + 155, 150, 40, 23, false, true, 2, 5, 'startRight')
+const wogpole9 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1710 + 155, 150, 40, 23, false, true, 2, 5, 'startRight')
 
 
 // const wogpole1 = new MovingObject(image, [546], [911, 937, 963], 40, 23, -125, 150, 40, 23, false, true, 3, 5)
@@ -100,17 +108,17 @@ const row2Flower8 = new MovingObject(image, [2229], [14], 60, 52, -800, 173, 60,
 const row2Flower9 = new MovingObject(image, [2229], [74], 60, 52, -850, 173, 60, 52, false, true, 4, 4)
 
 
-const row2wogpole1 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1110, 225, 40, 23, false, true, 3, 5, 'startRight')
-const row2wogpole2 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1030, 225, 40, 23, false, true, 3, 5, 'startRight')
-const row2wogpole3 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1070, 225, 40, 23, false, true, 3, 5, 'startRight')
+const row2wogpole1 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1110, 225, 40, 23, false, true, 2, 5, 'startRight')
+const row2wogpole2 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1030, 225, 40, 23, false, true, 2, 5, 'startRight')
+const row2wogpole3 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1070, 225, 40, 23, false, true, 2, 5, 'startRight')
 
-const row2wogpole4 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1370, 225, 40, 23, false, true, 3, 5, 'startRight')
-const row2wogpole5 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1330, 225, 40, 23, false, true, 3, 5, 'startRight')
-const row2wogpole6 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1410, 225, 40, 23, false, true, 3, 5, 'startRight')
+const row2wogpole4 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1370, 225, 40, 23, false, true, 2, 5, 'startRight')
+const row2wogpole5 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1330, 225, 40, 23, false, true, 2, 5, 'startRight')
+const row2wogpole6 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1410, 225, 40, 23, false, true, 2, 5, 'startRight')
 // 146.66 spaced evenly by 3
-const row2wogpole7 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1630, 225, 40, 23, false, true, 3, 5, 'startRight')
-const row2wogpole8 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1670, 225, 40, 23, false, true, 3, 5, 'startRight')
-const row2wogpole9 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1710, 225, 40, 23, false, true, 3, 5, 'startRight')
+const row2wogpole7 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1630, 225, 40, 23, false, true, 2, 5, 'startRight')
+const row2wogpole8 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1670, 225, 40, 23, false, true, 2, 5, 'startRight')
+const row2wogpole9 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1710, 225, 40, 23, false, true, 2, 5, 'startRight')
 
 const row3Flower1 = new MovingObject(image, [2229], [74], 60, 52, -180, 100, 60, 52, false, true, 2, 4)
 const row3Flower2 = new MovingObject(image, [2229], [74], 60, 52, -230, 100, 60, 52, false, true, 2, 4)
@@ -283,30 +291,33 @@ function draw() {
 
 
     // olimar.drawMovingObject();
-    redTarget.drawMovingObject();
+
     
+    // Unique mechanics to game loop logic
+    redTarget.drawMovingObject();
     player.drawPlayer();
     blueOnion.drawMovingObject();
 
+    if (redTarget.posX + 14 <= (player.posX + 9) + (player.width - 15) &&
+        (redTarget.posX + 14) + (redTarget.scaledWidth - 28) >= (player.posX + 9) &&
+        redTarget.posY + 10 + redTarget.scaledHeight - 28 >= (player.posY + 40) &&
+        redTarget.posY + 10 <= (player.posY + 40) + (player.height - 53)) {
+            player.posY = 0
+            player.posX = 600
+            player.flowerY = 0
+            player.flowerX = 600
+    }
+    ctx.beginPath();
+    ctx.lineWidth = "2";
+    ctx.strokeStyle = "rgb(214, 214, 59)";
+    // ctx.rect(redTarget.posX + 14, redTarget.posY + 10, redTarget.scaledWidth - 28, redTarget.scaledHeight - 28); // red target box
+    // ctx.rect(player.posX + 9, player.posY + 40, player.width - 15, player.height - 53); // player wins box
+    ctx.stroke();
+
+    ctx.drawImage(mapImage, 800, 0, 600, 700)
+    ship.drawMovingObject();
 
 
-        if (redTarget.posX + 14 <= (player.posX + 9) + (player.width - 15) &&
-            (redTarget.posX + 14) + (redTarget.scaledWidth - 28) >= (player.posX + 9) &&
-            redTarget.posY + 10 + redTarget.scaledHeight - 28 >= (player.posY + 40) &&
-            redTarget.posY + 10 <= (player.posY + 40) + (player.height - 53)) {
-      player.posY = 0
-      player.posX = 600
-      player.flowerY = 0
-      player.flowerX = 600
-  }
-
-      ctx.beginPath();
-      ctx.lineWidth = "2";
-      ctx.strokeStyle = "rgb(214, 214, 59)";
-    //   ctx.rect(685, 50, 20, 20); // win box
-      ctx.rect(redTarget.posX + 14, redTarget.posY + 10, redTarget.scaledWidth - 28, redTarget.scaledHeight - 28); // win box
-      ctx.rect(player.posX + 9, player.posY + 40, player.width - 15, player.height - 53); // player winning box
-      ctx.stroke();
 
     // debugger
     // stationaryBridge1.drawMovingObject();
@@ -337,3 +348,5 @@ function gameLoop() {
 
     draw();
 }
+
+

@@ -10,7 +10,7 @@ align-items: center;
 }
 body {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     background-image: url("../images/wallpaper.jpg");
     background-repeat: no-repeat;
@@ -42,4 +42,30 @@ canvas {
     margin-left: 50px;
     /* width: 600px; */
     height: 155px;
+}
+
+
+.right-column-items {
+    padding-top: 20px;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+      background-color: purple;
+    border: 4px solid rgb(214, 214, 59);
+}
+
+.github {
+    height: 150px;
+    width: 150px;
+    padding-left: 25px
+}
+
+.linkedin {
+    height: 200px;
+    width: 200px;
+}
+
+.portfolio {
+    height: 200px;
+    width: 200px;
 }
