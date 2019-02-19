@@ -223,7 +223,7 @@ let movingObjects = [puffstool1, puffstool2, breadbug1, breadbug2,
     row2wogpole1, row2wogpole2, row2wogpole3, row2wogpole4, row2wogpole5, row2wogpole6, row2wogpole7, row2wogpole8, row2wogpole9,
     row3Flower1, row3Flower2, row3Flower3, row3Flower4, row3Flower5, row3Flower6, row3Flower7, row3Flower8,
     redTarget,
-    blueOnion, redOnion, yellowOnion,
+ 
 ]
 
 let gameOver = false;
@@ -243,9 +243,13 @@ function draw() {
         ctx.font = "150px Arial";
         ctx.fillText("Time's Up...", canvas.width - 950, 350);
     } else if (gameWon) {
-          ctx.fillStyle = "gold";
-          ctx.font = "150px Arial";
-          ctx.fillText("You Won!", canvas.width - 800, 350);
+        ctx.fillStyle = "gold";
+        ctx.font = "150px Arial";
+        ctx.fillText("You Win!", canvas.width - 800, 350);
+        player.drawPlayer();
+        blueOnion.drawMovingObject();
+        redOnion.drawMovingObject();
+        yellowOnion.drawMovingObject();
     } else {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     render();
@@ -335,24 +339,24 @@ function draw() {
     // // Unique mechanics to game loop logic
     // redTarget.drawMovingObject();
     player.drawPlayer();
-    // blueOnion.drawMovingObject();
-    // redOnion.drawMovingObject();
-    // yellowOnion.drawMovingObject();
+    blueOnion.drawMovingObject();
+    redOnion.drawMovingObject();
+    yellowOnion.drawMovingObject();
 
-    if (redTarget.posX + 14 <= (player.posX + 9) + (player.width - 15) &&
-        (redTarget.posX + 14) + (redTarget.scaledWidth - 28) >= (player.posX + 9) &&
-        redTarget.posY + 10 + redTarget.scaledHeight - 28 >= (player.posY + 40) &&
-        redTarget.posY + 10 <= (player.posY + 40) + (player.height - 53)) {
-            player.posY = 0
-            player.posX = 600
-            player.flowerY = 0
-            player.flowerX = 600
+    if (redTarget.posX + 12 <= (player.posX + 9) + (player.width - 15) &&
+        (redTarget.posX + 12) + (redTarget.scaledWidth - 26) >= (player.posX + 9) &&
+        redTarget.posY + 8 + redTarget.scaledHeight - 22 >= (player.posY + 40) &&
+        redTarget.posY + 8 <= (player.posY + 40) + (player.height - 53)) {
+            // player.posY = 0
+            // player.posX = 600
+            // player.flowerY = 0
+            // player.flowerX = 600
             gameWon = true;
     }
     ctx.beginPath();
     ctx.lineWidth = "2";
     ctx.strokeStyle = "rgb(214, 214, 59)";
-    // ctx.rect(redTarget.posX + 14, redTarget.posY + 10, redTarget.scaledWidth - 28, redTarget.scaledHeight - 28); // red target box
+    // ctx.rect(redTarget.posX + 12, redTarget.posY + 8, redTarget.scaledWidth - 26, redTarget.scaledHeight - 22); // red target box
     // ctx.rect(player.posX + 9, player.posY + 40, player.width - 15, player.height - 53); // player wins box
     ctx.stroke();
 
