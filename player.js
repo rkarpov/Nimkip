@@ -88,6 +88,8 @@ class Player {
 
             if ((this.posY >= 50) && (this.posY <= 245) &&
                 (this.posX + 4 >= 0) && (this.posX + 4 <= 800) && (this.drown === true )) {
+                let cycle = new Ghost(image, [2193], [359, 332, 306], 9, 23, player.posX, player.posY, 9 * 2, 23 * 2, false, false, 3, 10)
+                movingObjects.push(cycle);
                 this.posY = 640
                 this.flowerY = 640
             }
@@ -100,6 +102,24 @@ class Player {
         // }
         // }
     }
+
+    // surviving() {
+    //     let ghostFrameTicks = 0;
+    //     if (!this.alive) {
+    //         this.animationFrameX = [2193];
+    //         this.animationFrameY = [359, 332, 306];
+    //         this.width = 9;
+    //         this.height = 22;
+    //         this.scaledWidth = this.width * 1.5;
+    //         this.scaledHeight = this.height * 1.5;
+
+    //         while (ghostFrameTicks < 30) {
+    //             this.handleAnimation()
+    //             ctx.drawImage(this.image, this.animationFrameX[this.frameIndexX], this.animationFrameY[this.frameIndexY], this.pwidth, this.pheight, this.posX, this.posY, this.scaledWidth, this.scaledHeight); // Player scaled by 1.5
+    //             ghostFrameTicks += 1;
+    //         }
+    //     }
+    // }
 
      handleAnimation() {
         if (this.animationFrameX.length > 1) {
@@ -129,6 +149,7 @@ class Player {
         // const headFlower = new MovingObject(image, [342], [161], 18, 12, player.posX, player.posY, 18 * 1.5, 12 * 1.5, 0, 0)
 
         this.drowning();
+        // this.surviving();
         ctx.beginPath();
         ctx.lineWidth = "2";
         ctx.strokeStyle = "rgb(214, 214, 59)";

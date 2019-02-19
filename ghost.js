@@ -1,8 +1,6 @@
-
-    
-class MovingObject {
+class Ghost {
     constructor(image, animationFramesX, animationFramesY, width, height, posX, posY, scaledWidth, scaledHeight,
-                collides = false, floats = false, movementSpeed, frameTicks, moveDir = 'startLeft') {
+        collides = false, floats = false, movementSpeed, frameTicks, moveDir = 'startLeft') {
 
         this.image = image;
         this.animationFrameY = animationFramesY;
@@ -46,17 +44,12 @@ class MovingObject {
     }
 
     handleMovement() {
-         if (this.moveDir === 'startLeft') {
-             this.posX += this.movementSpeed;
-             if (this.posX > 825) {
-                 this.posX = -65;
-             }
-         } else if (this.moveDir === 'startRight') { // optional movement from right to left on screen
-             this.posX -= this.movementSpeed;
-             if (this.posX < -65) {
-                 this.posX = 825;
-             }
-         }
+        if (this.moveDir === 'startLeft') {
+            this.posY -= this.movementSpeed;
+            if (this.posY < -200) {
+                // delete this class and remove from drawing array?
+            }
+        }
     }
 
     handleCollision() {
@@ -64,11 +57,9 @@ class MovingObject {
             (this.posX + 5) + (this.scaledWidth - 25) >= (player.posX + 5) &&
             (this.posY + 15) + (this.scaledHeight - 35) >= (player.posY + 30) &&
             (this.posY + 15) <= (player.posY + 30) + (player.height - 30)) {
-                let cycle = new Ghost(image, [2193], [359, 332, 306], 9, 23, player.posX, player.posY, 9 * 2, 23 * 2, false, false, 3, 10)
-                movingObjects.push(cycle);
-                player.posY = 640;
-                player.flowerY = 640;
-            }
+            player.posY = 640;
+            player.flowerY = 640;
+        }
 
         // enemy hitbox
         // ctx.beginPath();
@@ -86,11 +77,12 @@ class MovingObject {
             this.posY + this.scaledHeight - 4 >= (player.posY + 45) &&
             this.posY <= (player.posY + 45) + (player.height - 45)) {
             // if ((player.posX  + 6) < canvas.width - 30) {
-                // player.posX += this.movementSpeed;
-                this.floating = true;
+            // player.posX += this.movementSpeed;
+            this.floating = true;
             // }
-        } else { 
-            this.floating = false; }
+        } else {
+            this.floating = false;
+        }
 
         // float object hitbox
         //  ctx.beginPath();
@@ -102,14 +94,18 @@ class MovingObject {
         // player's hitbox
         // ctx.rect(this.posX + 6, this.posY + 50, this.width - 8, this.height - 50); // player hitbox water
     }
-  
+
     drawMovingObject() {
         ctx.drawImage(this.image, this.animationFrameX[this.frameIndex], this.animationFrameY[this.frameIndex2], this.width, this.height, this.posX, this.posY, this.scaledWidth, this.scaledHeight);
         this.handleAnimation();
         this.handleMovement();
-        
-        if (this.collides) { this.handleCollision() }
-        if (this.floats) { this.handleFloat() }
+
+        if (this.collides) {
+            this.handleCollision()
+        }
+        if (this.floats) {
+            this.handleFloat()
+        }
     }
 
 }

@@ -3,6 +3,7 @@ var canvas = document.getElementById('canvas');
 canvas.width = 1000;
 canvas.height = 700;
 var ctx = canvas.getContext('2d');
+// ctx.imageSmoothingEnabled = false;
 
 
 const mapImage = new Image();
@@ -16,12 +17,13 @@ const redTarget = new MovingObject(pikminOlimarImage, [323, 345, 367], [304, 304
 const shipImage = new Image();
 shipImage.src = './assets/images/ship.png'
 const ship = new ShipTimer(shipImage, [287], [236], 106, 168, 835, 750, 137.80, 218.40, false, false, 0.5, 0)
-// ctx.imageSmoothingEnabled = false;
 
 const image = new Image();
 image.src = './assets/images/pikmin_sprite_sheet.png';
 const leftImage = new Image();
 leftImage.src = './assets/images/left_sprites.png';
+
+// const redGhost = new Ghost(image,[2193], [359, 332, 306], 9, 23, 500, 600, 9 * 2, 23 * 2, false, false, 3, 10)
 
 const redOnion = new MovingObject(image, [717], [5, 128], 111, 113, 650, 5, 88.8, 90.4, false, false, 0, 15)
 const blueOnion = new MovingObject(image, [1237], [9, 125], 111, 113, 50, 5, 88.8, 90.4, false, false, 0, 15)
@@ -211,9 +213,22 @@ const floatingObjects = [
     // stationaryBridge3,
     // stationaryBridge4,
 ]
+
+let movingObjects = [puffstool1, puffstool2, breadbug1, breadbug2, 
+    bulborb14, bulborb13, bulborb12, bulborb11, bulborb10, bulborb9, bulborb8,
+    bulborb7, bulborb6, bulborb5, bulborb4, bulborb3, bulborb2, bulborb1,
+    row1Flower1, row1Flower2, row1Flower3, row1Flower4, row1Flower5, row1Flower6, row1Flower7, row1Flower8,
+    wogpole1, wogpole2, wogpole3, wogpole4, wogpole5, wogpole6, wogpole7, wogpole8, wogpole9,
+    row2Flower1, row2Flower2, row2Flower3, row2Flower4, row2Flower5, row2Flower6, row2Flower7, row2Flower8, row2Flower9,
+    row2wogpole1, row2wogpole2, row2wogpole3, row2wogpole4, row2wogpole5, row2wogpole6, row2wogpole7, row2wogpole8, row2wogpole9,
+    row3Flower1, row3Flower2, row3Flower3, row3Flower4, row3Flower5, row3Flower6, row3Flower7, row3Flower8,
+    redTarget,
+    blueOnion, redOnion, yellowOnion,
+]
+
 let gameOver = false;
 let gameWon = false;
-
+let cycle = 0;
 function draw() {
     if (ship.posY === -199) {
         gameOver = true;
@@ -236,89 +251,93 @@ function draw() {
     render();
     movePlayer();
         
-    puffstool1.drawMovingObject();
-    puffstool2.drawMovingObject();
-    breadbug1.drawMovingObject();
-    breadbug2.drawMovingObject();
-    bulborb14.drawMovingObject();
-    bulborb13.drawMovingObject();
-    bulborb12.drawMovingObject();
-    bulborb11.drawMovingObject();
-    bulborb10.drawMovingObject();
-    bulborb9.drawMovingObject();
-    bulborb8.drawMovingObject();
-    bulborb7.drawMovingObject();
-    bulborb6.drawMovingObject();
-    bulborb5.drawMovingObject();
-    bulborb4.drawMovingObject();
-    bulborb3.drawMovingObject();
-    bulborb2.drawMovingObject();
-    bulborb1.drawMovingObject();
 
-    row1Flower1.drawMovingObject();
-    row1Flower2.drawMovingObject();
-    row1Flower3.drawMovingObject();
-    row1Flower4.drawMovingObject();
-    row1Flower5.drawMovingObject();
-    row1Flower6.drawMovingObject();
-    row1Flower7.drawMovingObject();
-    row1Flower8.drawMovingObject();
-    // row1Flower9.drawMovingObject();
+    movingObjects.forEach(object => {
+        object.drawMovingObject();
+    });
+    // puffstool1.drawMovingObject();
+    // puffstool2.drawMovingObject();
+    // breadbug1.drawMovingObject();
+    // breadbug2.drawMovingObject();
+    // bulborb14.drawMovingObject();
+    // bulborb13.drawMovingObject();
+    // bulborb12.drawMovingObject();
+    // bulborb11.drawMovingObject();
+    // bulborb10.drawMovingObject();
+    // bulborb9.drawMovingObject();
+    // bulborb8.drawMovingObject();
+    // bulborb7.drawMovingObject();
+    // bulborb6.drawMovingObject();
+    // bulborb5.drawMovingObject();
+    // bulborb4.drawMovingObject();
+    // bulborb3.drawMovingObject();
+    // bulborb2.drawMovingObject();
+    // bulborb1.drawMovingObject();
 
-    wogpole1.drawMovingObject();
-    wogpole2.drawMovingObject();
-    wogpole3.drawMovingObject();
-    wogpole4.drawMovingObject();
-    wogpole5.drawMovingObject();
-    wogpole6.drawMovingObject();
-    wogpole7.drawMovingObject();
-    wogpole8.drawMovingObject();
-    wogpole9.drawMovingObject();
+    // row1Flower1.drawMovingObject();
+    // row1Flower2.drawMovingObject();
+    // row1Flower3.drawMovingObject();
+    // row1Flower4.drawMovingObject();
+    // row1Flower5.drawMovingObject();
+    // row1Flower6.drawMovingObject();
+    // row1Flower7.drawMovingObject();
+    // row1Flower8.drawMovingObject();
+    // // row1Flower9.drawMovingObject();
 
-    row2Flower1.drawMovingObject();
-    row2Flower2.drawMovingObject();
-    row2Flower3.drawMovingObject();
-    row2Flower4.drawMovingObject();
-    row2Flower5.drawMovingObject();
-    row2Flower6.drawMovingObject();
-    row2Flower7.drawMovingObject();
-    row2Flower8.drawMovingObject();
-    row2Flower9.drawMovingObject();
+    // wogpole1.drawMovingObject();
+    // wogpole2.drawMovingObject();
+    // wogpole3.drawMovingObject();
+    // wogpole4.drawMovingObject();
+    // wogpole5.drawMovingObject();
+    // wogpole6.drawMovingObject();
+    // wogpole7.drawMovingObject();
+    // wogpole8.drawMovingObject();
+    // wogpole9.drawMovingObject();
 
+    // row2Flower1.drawMovingObject();
+    // row2Flower2.drawMovingObject();
+    // row2Flower3.drawMovingObject();
+    // row2Flower4.drawMovingObject();
+    // row2Flower5.drawMovingObject();
+    // row2Flower6.drawMovingObject();
+    // row2Flower7.drawMovingObject();
+    // row2Flower8.drawMovingObject();
+    // row2Flower9.drawMovingObject();
+
+    // // row3Flower7.drawMovingObject();
+    // // row3Flower8.drawMovingObject();
+
+
+    // row2wogpole1.drawMovingObject();
+    // row2wogpole2.drawMovingObject();
+    // row2wogpole3.drawMovingObject();
+    // row2wogpole4.drawMovingObject();
+    // row2wogpole5.drawMovingObject();
+    // row2wogpole6.drawMovingObject();
+    // row2wogpole7.drawMovingObject();
+    // row2wogpole8.drawMovingObject();
+    // row2wogpole9.drawMovingObject();
+
+    // row3Flower1.drawMovingObject();
+    // row3Flower2.drawMovingObject();
+    // row3Flower3.drawMovingObject();
+    // row3Flower4.drawMovingObject();
+    // row3Flower5.drawMovingObject();
+    // row3Flower6.drawMovingObject();
     // row3Flower7.drawMovingObject();
     // row3Flower8.drawMovingObject();
+    // // row3Flower9.drawMovingObject();
 
 
-    row2wogpole1.drawMovingObject();
-    row2wogpole2.drawMovingObject();
-    row2wogpole3.drawMovingObject();
-    row2wogpole4.drawMovingObject();
-    row2wogpole5.drawMovingObject();
-    row2wogpole6.drawMovingObject();
-    row2wogpole7.drawMovingObject();
-    row2wogpole8.drawMovingObject();
-    row2wogpole9.drawMovingObject();
-
-    row3Flower1.drawMovingObject();
-    row3Flower2.drawMovingObject();
-    row3Flower3.drawMovingObject();
-    row3Flower4.drawMovingObject();
-    row3Flower5.drawMovingObject();
-    row3Flower6.drawMovingObject();
-    row3Flower7.drawMovingObject();
-    row3Flower8.drawMovingObject();
-    // row3Flower9.drawMovingObject();
-
-
-    // olimar.drawMovingObject();
+    // // olimar.drawMovingObject();
 
     
-    // Unique mechanics to game loop logic
-    redTarget.drawMovingObject();
+    // // Unique mechanics to game loop logic
+    // redTarget.drawMovingObject();
     player.drawPlayer();
-    blueOnion.drawMovingObject();
-    redOnion.drawMovingObject();
-    yellowOnion.drawMovingObject();
+    // blueOnion.drawMovingObject();
+    // redOnion.drawMovingObject();
+    // yellowOnion.drawMovingObject();
 
     if (redTarget.posX + 14 <= (player.posX + 9) + (player.width - 15) &&
         (redTarget.posX + 14) + (redTarget.scaledWidth - 28) >= (player.posX + 9) &&
@@ -339,7 +358,7 @@ function draw() {
 
     ctx.drawImage(mapImage, 800, 0, 600, 700) // background image for ship
     ship.drawMovingObject();
-
+    // redGhost.drawMovingObject();
     ctx.beginPath();
     ctx.lineWidth = "4";
     ctx.strokeStyle = "rgb(214, 214, 59)";
@@ -359,6 +378,7 @@ function draw() {
     
     // floatValues = false;
     window.requestAnimationFrame(draw);
+    cycle += 1
 }}
 
 // const redTarget = new MovingObject(pikminOlimarImage, [323, 345, 367], [304, 304, 304], 19, 19, 679, 50, 30, 30, false, false, 0, 15)
