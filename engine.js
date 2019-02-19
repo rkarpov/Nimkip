@@ -35,8 +35,8 @@ const bulborb4 = new MovingObject(image, [22, 87, 151, 216], [630], 61, 60, -590
 // const bulborb5 = new MovingObject(image, [16, 81, 145, 210], [1406], 61, 60, -570, 480, 76.25, 75, true, false, 6, 5)
 const bulborb5 = new MovingObject(leftImage, [3672, 3607, 3543, 3478], [1406], 61, 60, 1200, 525, 76.25, 75, true, false, 5, 5, 'startRight')
 const bulborb6 = new MovingObject(leftImage, [3672, 3607, 3543, 3478], [1406], 61, 60, 1650, 525, 76.25, 75, true, false, 5, 5, 'startRight')
-const bulborb7 = new MovingObject(image, [19, 84, 148, 213], [1155], 61, 60, -200, 460, 76.25, 75, true, false, 6, 4)
-const bulborb8 = new MovingObject(image, [19, 84, 148, 213], [1155], 61, 60, -570, 460, 76.25, 75, true, false, 6, 4)
+const bulborb7 = new MovingObject(image, [19, 84, 148, 213], [1155], 61, 60, -200, 460, 76.25, 75, true, false, 5, 5)
+const bulborb8 = new MovingObject(image, [19, 84, 148, 213], [1155], 61, 60, -570, 460, 76.25, 75, true, false, 5, 5)
 const bulborb9 = new MovingObject(leftImage, [3666, 3601, 3537, 3472], [630], 61, 60, 1120, 400, 76.25, 75, true, false, 3, 6, 'startRight')
 const bulborb10 = new MovingObject(leftImage, [3677, 3612, 3548, 3483], [875], 61, 60, 1200, 400, 76.25, 75, true, false, 3, 6, 'startRight')
 const bulborb11 = new MovingObject(leftImage, [3666, 3601, 3537, 3472], [630], 61, 60, 1280, 400, 76.25, 75, true, false, 3, 6, 'startRight')
@@ -247,13 +247,13 @@ function draw() {
     bulborb10.drawMovingObject();
     bulborb9.drawMovingObject();
     bulborb8.drawMovingObject();
-    bulborb6.drawMovingObject();
     bulborb7.drawMovingObject();
-    bulborb4.drawMovingObject();
+    bulborb6.drawMovingObject();
     bulborb5.drawMovingObject();
-    bulborb1.drawMovingObject();
-    bulborb2.drawMovingObject();
+    bulborb4.drawMovingObject();
     bulborb3.drawMovingObject();
+    bulborb2.drawMovingObject();
+    bulborb1.drawMovingObject();
 
     row1Flower1.drawMovingObject();
     row1Flower2.drawMovingObject();
