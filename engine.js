@@ -23,7 +23,9 @@ image.src = './assets/images/pikmin_sprite_sheet.png';
 const leftImage = new Image();
 leftImage.src = './assets/images/left_sprites.png';
 
-const blueOnion = new MovingObject(image,[1237], [9, 125], 111, 113, 650, 5, 88.8, 90.4, false, false, 0, 15)
+const redOnion = new MovingObject(image, [717], [5, 128], 111, 113, 650, 5, 88.8, 90.4, false, false, 0, 15)
+const blueOnion = new MovingObject(image, [1237], [9, 125], 111, 113, 50, 5, 88.8, 90.4, false, false, 0, 15)
+const yellowOnion = new MovingObject(image,[978], [9, 125], 111, 113, 350, 5, 88.8, 90.4, false, false, 0, 15)
 
 const bulborb1 = new MovingObject(image, [22, 87, 151, 216], [630], 61, 60, -100, 585, 76.25, 75, true, false, 3, 6)
 const bulborb2 = new MovingObject(image, [22, 87, 151, 216], [630], 61, 60, -1645, 585, 76.25, 75, true, false, 3, 6)
@@ -315,6 +317,8 @@ function draw() {
     redTarget.drawMovingObject();
     player.drawPlayer();
     blueOnion.drawMovingObject();
+    redOnion.drawMovingObject();
+    yellowOnion.drawMovingObject();
 
     if (redTarget.posX + 14 <= (player.posX + 9) + (player.width - 15) &&
         (redTarget.posX + 14) + (redTarget.scaledWidth - 28) >= (player.posX + 9) &&

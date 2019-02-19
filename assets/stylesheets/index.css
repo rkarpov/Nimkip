@@ -11,6 +11,7 @@ align-items: center;
 body {
     display: flex;
     justify-content: space-around;
+    overflow-y: hidden;
     align-items: center;
     background-image: url("../images/wallpaper.jpg");
     background-repeat: no-repeat;
@@ -19,8 +20,10 @@ body {
 
 canvas {
     /* margin-top: 280px; */
-    background-color: rgb(81, 196, 235);
+    /* background-color: rgb(81, 196, 235); */
+    background-color: rgba(95, 98, 211, 0.7);
     border: 4px solid rgb(214, 214, 59);
+    border-radius: 3px;
     
 }
 /* 
@@ -50,7 +53,8 @@ canvas {
     margin-top: 150px;
     display: flex;
     flex-direction: column;
-      background-color: purple;
+      /* background-color: purple; */
+      background-color: #40da0073;
     border: 4px solid rgb(214, 214, 59);
 }
 
