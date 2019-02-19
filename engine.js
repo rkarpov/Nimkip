@@ -345,8 +345,8 @@ function draw() {
 
     if (redTarget.posX + 12 <= (player.posX + 9) + (player.width - 15) &&
         (redTarget.posX + 12) + (redTarget.scaledWidth - 26) >= (player.posX + 9) &&
-        redTarget.posY + 8 + redTarget.scaledHeight - 22 >= (player.posY + 40) &&
-        redTarget.posY + 8 <= (player.posY + 40) + (player.height - 53)) {
+        redTarget.posY + 3 + redTarget.scaledHeight - 17 >= (player.posY + 40) &&
+        redTarget.posY + 3 <= (player.posY + 40) + (player.height - 53)) {
             // player.posY = 0
             // player.posX = 600
             // player.flowerY = 0
@@ -356,7 +356,7 @@ function draw() {
     ctx.beginPath();
     ctx.lineWidth = "2";
     ctx.strokeStyle = "rgb(214, 214, 59)";
-    // ctx.rect(redTarget.posX + 12, redTarget.posY + 8, redTarget.scaledWidth - 26, redTarget.scaledHeight - 22); // red target box
+    // ctx.rect(redTarget.posX + 12, redTarget.posY + 3, redTarget.scaledWidth - 26, redTarget.scaledHeight - 17); // red target box
     // ctx.rect(player.posX + 9, player.posY + 40, player.width - 15, player.height - 53); // player wins box
     ctx.stroke();
 
