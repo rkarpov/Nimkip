@@ -142,7 +142,7 @@ function movePlayer() {
         player.animationFrameX = [14, 41, 69];
         player.animationFrameY = [101, 102, 101];
         if (player.posY < 3) { }
-        else { player.flowerY -= 4, player.posY -= 2 }
+        else { player.flowerY -= 4, player.posY -= 4 }
     } else if (currentlyPressedKeys.ArrowDown) {
         if (player.moveDir === 'right') { player.flowerX += 8; }
         player.image = image;
@@ -150,7 +150,7 @@ function movePlayer() {
         player.animationFrameX = [12, 39, 67];
         player.animationFrameY = [14, 15, 14];
         if (player.posY + 4 > 640) { }
-        else { player.flowerY += 4, player.posY += 2 }
+        else { player.flowerY += 4, player.posY += 4 }
     } else if (currentlyPressedKeys.ArrowLeft) {
         if (player.moveDir === 'right') { player.flowerX += 8; }
         player.image = leftImage;
@@ -158,7 +158,7 @@ function movePlayer() {
         player.animationFrameX = [3714, 3692, 3669];
         player.animationFrameY = [58];
         if (player.posX - 4 < 0) { } 
-        else { player.flowerX -= 4, player.posX -= 2 }
+        else { player.flowerX -= 4, player.posX -= 4 }
     } else if (currentlyPressedKeys.ArrowRight) {
         player.image = image;
         if (player.moveDir != 'right') { player.flowerX -= 8; }
@@ -166,7 +166,7 @@ function movePlayer() {
         player.animationFrameX = [20, 65];
         player.animationFrameY = [58];
         if (player.posX + 4 > 778) { }
-        else { player.flowerX += 4, player.posX += 2 }
+        else { player.flowerX += 4, player.posX += 4 }
     } 
   
 }
@@ -185,10 +185,9 @@ const floatingObjects = [
     // stationaryBridge4,
 ]
 
-let movingObjects = [
-    // puffstool1, puffstool2, breadbug1, breadbug2, 
-    // bulborb14, bulborb13, bulborb12, bulborb11, bulborb10, bulborb9, bulborb8,
-    // bulborb7, bulborb6, bulborb5, bulborb4, bulborb3, bulborb2, bulborb1,
+let movingObjects = [puffstool1, puffstool2, breadbug1, breadbug2, 
+    bulborb14, bulborb13, bulborb12, bulborb11, bulborb10, bulborb9, bulborb8,
+    bulborb7, bulborb6, bulborb5, bulborb4, bulborb3, bulborb2, bulborb1,
     row1Flower1, row1Flower2, row1Flower3, row1Flower4, row1Flower5, row1Flower6, row1Flower7, row1Flower8,
     wogpole1, wogpole2, wogpole3, wogpole4, wogpole5, wogpole6, wogpole7, wogpole8, wogpole9,
     row2Flower1, row2Flower2, row2Flower3, row2Flower4, row2Flower5, row2Flower6, row2Flower7, row2Flower8, row2Flower9,
