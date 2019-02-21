@@ -155,6 +155,7 @@ class Player {
         ctx.strokeStyle = "rgb(214, 214, 59)";
         // ctx.rect(this.posX + 5, this.posY + 30, this.width - 2, this.height - 30); // player hitbox ground
         // ctx.rect(this.posX + 6, this.posY + 45, this.width - 8, this.height - 45); // player hitbox water
+        // ctx.rect(this.posX + 6, this.posY + 52, this.width - 8, this.height - 55); // player hitbox water
         ctx.stroke();
     }
 }
