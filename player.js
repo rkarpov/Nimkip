@@ -158,6 +158,9 @@ class Player {
         ctx.stroke();
     }
 }
-const player = new Player(playerImage, [14], [102], 16, 40, 300, 640, 16 * 1.5, 40 * 1.5, 7, 4, 'up') // player starting position
+const red = new Player(playerImage, [14], [102], 16, 40, 300, 640, 16 * 1.5, 40 * 1.5, 7, 4, 'up') // player starting position
+let player = red
+// const yellow = new Player(playerImage, [101, 102])
+
 // const player = new Player(playerImage, [14], [102], 16, 40, 680, 0, 16 * 1.5, 40 * 1.5, 7, 4, 'up')
 // constructor(image, animationFramesX, animationFramesY, pwidth, pheight, posX, posY, scaledWidth, scaledHeight, movementSpeed, frameTicks, moveDir) {

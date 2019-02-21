@@ -1,10 +1,7 @@
-// import { movePlayer } from './player';
 var canvas = document.getElementById('canvas');
 canvas.width = 1000;
 canvas.height = 700;
 var ctx = canvas.getContext('2d');
-// ctx.imageSmoothingEnabled = false;
-
 
 const mapImage = new Image();
 mapImage.src = './assets/images/Pikmin_1_Map.png';
@@ -33,8 +30,6 @@ const bulborb1 = new MovingObject(image, [22, 87, 151, 216], [630], 61, 60, -100
 const bulborb2 = new MovingObject(image, [22, 87, 151, 216], [630], 61, 60, -1645, 585, 76.25, 75, true, false, 3, 6)
 const bulborb3 = new MovingObject(image, [22, 87, 151, 216], [630], 61, 60, -2040, 585, 76.25, 75, true, false, 3, 6)
 const bulborb4 = new MovingObject(image, [22, 87, 151, 216], [630], 61, 60, -590, 585, 76.25, 75, true, false, 3, 6)
-// const bulborb4 = new MovingObject(image, [16, 81, 145, 210], [1406], 61, 60, -200, 480, 76.25, 75, true, false, 6, 5)
-// const bulborb5 = new MovingObject(image, [16, 81, 145, 210], [1406], 61, 60, -570, 480, 76.25, 75, true, false, 6, 5)
 const bulborb5 = new MovingObject(leftImage, [3672, 3607, 3543, 3478], [1406], 61, 60, 1200, 525, 76.25, 75, true, false, 5, 5, 'startRight')
 const bulborb6 = new MovingObject(leftImage, [3672, 3607, 3543, 3478], [1406], 61, 60, 1650, 525, 76.25, 75, true, false, 5, 5, 'startRight')
 const bulborb7 = new MovingObject(image, [19, 84, 148, 213], [1155], 61, 60, -200, 460, 76.25, 75, true, false, 5, 5)
@@ -46,22 +41,11 @@ const bulborb12 = new MovingObject(leftImage, [3666, 3601, 3537, 3472], [630], 6
 const bulborb13 = new MovingObject(leftImage, [3479, 3544, 3608, 3673], [1689], 61, 60, 1650, 400, 76.25, 75, true, false, 3, 6, 'startRight')
 const bulborb14 = new MovingObject(leftImage, [3666, 3601, 3537, 3472], [630], 61, 60, 1730, 400, 76.25, 75, true, false, 3, 6, 'startRight')
 
-// const puffstool = new MovingObject(image, [544, 709, 868], [1507], 117, 151, 225, 325, 76.05, 98.15, true, false, 3, 6)
 const puffstool1 = new MovingObject(image, [544, 709, 868], [1507], 117, 151, -200, 328, 70.2, 90.6, true, false, 3, 6)
 const puffstool2 = new MovingObject(image, [544, 709, 868], [1507], 117, 151, -300, 328, 70.2, 90.6, true, false, 3, 6)
 
 const breadbug1 = new MovingObject(image, [3449, 3524, 3617], [164], 73, 65, -650, 355, 73, 65, true, false, 3, 6)
 const breadbug2 = new MovingObject(image, [3449, 3524, 3617], [164], 73, 65, -750, 355, 73, 65, true, false, 3, 6)
-
-// const row1Flower1 = new MovingObject(image, [2106], [138], 60, 52, -150, 247, 60, 52, false, true, 2, 4)
-// const row1Flower2 = new MovingObject(image, [2106], [138], 60, 52, -200, 247, 60, 52, false, true, 2, 4)
-// const row1Flower3 = new MovingObject(image, [2229], [74], 60, 52, -350, 247, 60, 52, false, true, 2, 4)
-// const row1Flower4 = new MovingObject(image, [2106], [138], 60, 52, -500, 247, 60, 52, false, true, 2, 4)
-// const row1Flower5 = new MovingObject(image, [2106], [138], 60, 52, -550, 247, 60, 52, false, true, 2, 4)
-// const row1Flower6 = new MovingObject(image, [2229], [74], 60, 52, -700, 247, 60, 52, false, true, 2, 4)
-// const row1Flower7 = new MovingObject(image, [2106], [138], 60, 52, -850, 247, 60, 52, false, true, 2, 4)
-// const row1Flower8 = new MovingObject(image, [2106], [138], 60, 52, -900, 247, 60, 52, false, true, 2, 4)
-// const row1Flower9 = new MovingObject(image, [2106], [138], 60, 52, -950, 247, 60, 52, false, true, 2, 4)
 
 const row1Flower1 = new MovingObject(image, [2106], [138], 60, 52, -75, 247, 60, 52, false, true, 2, 4)
 const row1Flower2 = new MovingObject(image, [2106], [138], 60, 52, -125, 247, 60, 52, false, true, 2, 4)
@@ -85,32 +69,15 @@ const wogpole7 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 16
 const wogpole8 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1670 + 155, 150, 40, 23, false, true, 2, 5, 'startRight')
 const wogpole9 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1710 + 155, 150, 40, 23, false, true, 2, 5, 'startRight')
 
-
-// const wogpole1 = new MovingObject(image, [546], [911, 937, 963], 40, 23, -125, 150, 40, 23, false, true, 3, 5)
-// const wogpole2 = new MovingObject(image, [546], [911, 937, 963], 40, 23, -25, 150, 40, 23, false, true, 3, 5)
-// const wogpole9 = new MovingObject(image, [546], [911, 937, 963], 40, 23, -75, 150, 40, 23, false, true, 3, 5)
-
-// const wogpole3 = new MovingObject(image, [546], [911, 937, 963], 40, 23, -375, 150, 40, 23, false, true, 3, 5)
-// const wogpole7 = new MovingObject(image, [546], [911, 937, 963], 40, 23, -325, 150, 40, 23, false, true, 3, 5)
-// const wogpole8 = new MovingObject(image, [546], [911, 937, 963], 40, 23, -425, 150, 40, 23, false, true, 3, 5)
-
-// const wogpole4 = new MovingObject(image, [546], [911, 937, 963], 40, 23, -625, 150, 40, 23, false, true, 3, 5)
-// const wogpole5 = new MovingObject(image, [546], [911, 937, 963], 40, 23, -675, 150, 40, 23, false, true, 3, 5)
-// const wogpole6 = new MovingObject(image, [546], [911, 937, 963], 40, 23, -725, 150, 40, 23, false, true, 3, 5)
-
 const row2Flower1 = new MovingObject(image, [2229], [74], 60, 52, -150, 173, 60, 52, false, true, 4, 4) // purple
 const row2Flower2 = new MovingObject(image, [2229], [14], 60, 52, -200, 173, 60, 52, false, true, 4, 4) // yellow
 const row2Flower3 = new MovingObject(image, [2229], [74], 60, 52, -250, 173, 60, 52, false, true, 4, 4) // purple
-// const row2Flower2 = new MovingObject(image, [2106], [138], 60, 52, -200, 173, 60, 52, false, true, 4, 4) // purple
-// const row2Flower2 = new MovingObject(image, [2109], [71], 60, 52, -200, 173, 60, 52, false, true, 4, 4)
-// const row2Flower3 = new MovingObject(image, [2106], [138], 60, 52, -250, 173, 60, 52, false, true, 4, 4)
 const row2Flower4 = new MovingObject(image, [2229], [74], 60, 52, -450, 173, 60, 52, false, true, 4, 4)
 const row2Flower5 = new MovingObject(image, [2229], [14], 60, 52, -500, 173, 60, 52, false, true, 4, 4)
 const row2Flower6 = new MovingObject(image, [2229], [74], 60, 52, -550, 173, 60, 52, false, true, 4, 4)
 const row2Flower7 = new MovingObject(image, [2229], [74], 60, 52, -750, 173, 60, 52, false, true, 4, 4)
 const row2Flower8 = new MovingObject(image, [2229], [14], 60, 52, -800, 173, 60, 52, false, true, 4, 4)
 const row2Flower9 = new MovingObject(image, [2229], [74], 60, 52, -850, 173, 60, 52, false, true, 4, 4)
-
 
 const row2wogpole1 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1110, 225, 40, 23, false, true, 2, 5, 'startRight')
 const row2wogpole2 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1030, 225, 40, 23, false, true, 2, 5, 'startRight')
@@ -139,15 +106,8 @@ const row3Flower9 = new MovingObject(image, [2106], [138], 60, 52, -700, 100, 60
 // const stationaryBridge2 = new MovingObject(image, [2229], [74], 60, 52, 300, 100, 200, 200, false, true, 3, 0)
 // const stationaryBridge2 = new MovingObject(image, [2229], [74], 60, 52, 300, 100, 200, 200, false, true, 3, 0)
 
-// const wogImage = new Image(); 
-// wogImage.src = './assets/images/wollywog.png';
-// // const wollywog1 = new MovingObject(wogImage, [382, 335, 286], [551, 534, 507], 31, 33, -100, 100, 31, 33, 3, 5)
-// const wollywog1 = new MovingObject(wogImage, [286, 507], [507, 411], 31, 33, -100, 100, 31, 33, 3, 5)
-
-
 // const whale = new Image();
 // whale.src = './assets/images/tara.png'
-// const wollywog1 = new MovingObject(whale, [11, 100, 201, 293, 385, 481], [95, 98, 97, 95, 96, 97], 72, 31, -100, 100, 72, 31, 3, 5)
 
 const currentlyPressedKeys = {};
 window.addEventListener('keydown', (e) => {
@@ -156,6 +116,19 @@ window.addEventListener('keydown', (e) => {
 window.addEventListener('keyup', (e) => {
     currentlyPressedKeys[e.key] = false;
 });
+
+// red yellow, blue
+// const framesUpX = [[14, 41, 69], [101, 128, 156], [201, 228, 256]]
+// const framesUpY = [[101, 102, 101]]
+// const framesDownX = [[12, 39, 67], [100, 127, 155], [201, 228, 256]]
+// const framesDownY = [[14, 15, 14], [14, 15, 14], [13, 14, 13]]
+// const framesRightX = [[20, 65], [107, 129, 152], [208, 229, 253]]
+// const framesRightY = [[58], [60], [58]]
+// const framesLeftX = [[3714, 3692, 3669], [3628, 3606, 3583], [3529, 3507, 3484]]
+// const framesLeftY = [[58], [60], [58]]
+// const redGhostX = [[2193], [2203]]
+// const redGhostY = [[359, 332, 306], [359, 332, 306]]
+
 
 function movePlayer() {
       if (!(currentlyPressedKeys.ArrowDown || currentlyPressedKeys.ArrowUp || currentlyPressedKeys.ArrowLeft || currentlyPressedKeys.ArrowRight)) {
@@ -198,8 +171,6 @@ function movePlayer() {
   
 }
 
-// var floatValues = [];
-
 const floatingObjects = [
     row1Flower1, row1Flower2, row1Flower3, row1Flower4, row1Flower5, row1Flower6, row1Flower7, row1Flower8, row1Flower9,
     wogpole1, wogpole2, wogpole9, wogpole3, wogpole7, wogpole8, wogpole4, wogpole5, wogpole6,
@@ -223,22 +194,19 @@ let movingObjects = [puffstool1, puffstool2, breadbug1, breadbug2,
     row2wogpole1, row2wogpole2, row2wogpole3, row2wogpole4, row2wogpole5, row2wogpole6, row2wogpole7, row2wogpole8, row2wogpole9,
     row3Flower1, row3Flower2, row3Flower3, row3Flower4, row3Flower5, row3Flower6, row3Flower7, row3Flower8,
     redTarget,
- 
 ]
+
+
 
 let gameOver = false;
 let gameWon = false;
 let cycle = 0;
+
 function draw() {
     if (ship.posY === -199) {
         gameOver = true;
     }
     if (gameOver) {
-        // const alpha = 0.5;
-        // while (alpha < 1) {
-        //     ctx.fillRect(0, 0, canvas.width, canvas.height)
-
-        // }
         ctx.fillStyle = "darkblue";
         ctx.font = "150px Arial";
         ctx.fillText("Time's Up...", canvas.width - 950, 350);
@@ -259,85 +227,7 @@ function draw() {
     movingObjects.forEach(object => {
         object.drawMovingObject();
     });
-    // puffstool1.drawMovingObject();
-    // puffstool2.drawMovingObject();
-    // breadbug1.drawMovingObject();
-    // breadbug2.drawMovingObject();
-    // bulborb14.drawMovingObject();
-    // bulborb13.drawMovingObject();
-    // bulborb12.drawMovingObject();
-    // bulborb11.drawMovingObject();
-    // bulborb10.drawMovingObject();
-    // bulborb9.drawMovingObject();
-    // bulborb8.drawMovingObject();
-    // bulborb7.drawMovingObject();
-    // bulborb6.drawMovingObject();
-    // bulborb5.drawMovingObject();
-    // bulborb4.drawMovingObject();
-    // bulborb3.drawMovingObject();
-    // bulborb2.drawMovingObject();
-    // bulborb1.drawMovingObject();
 
-    // row1Flower1.drawMovingObject();
-    // row1Flower2.drawMovingObject();
-    // row1Flower3.drawMovingObject();
-    // row1Flower4.drawMovingObject();
-    // row1Flower5.drawMovingObject();
-    // row1Flower6.drawMovingObject();
-    // row1Flower7.drawMovingObject();
-    // row1Flower8.drawMovingObject();
-    // // row1Flower9.drawMovingObject();
-
-    // wogpole1.drawMovingObject();
-    // wogpole2.drawMovingObject();
-    // wogpole3.drawMovingObject();
-    // wogpole4.drawMovingObject();
-    // wogpole5.drawMovingObject();
-    // wogpole6.drawMovingObject();
-    // wogpole7.drawMovingObject();
-    // wogpole8.drawMovingObject();
-    // wogpole9.drawMovingObject();
-
-    // row2Flower1.drawMovingObject();
-    // row2Flower2.drawMovingObject();
-    // row2Flower3.drawMovingObject();
-    // row2Flower4.drawMovingObject();
-    // row2Flower5.drawMovingObject();
-    // row2Flower6.drawMovingObject();
-    // row2Flower7.drawMovingObject();
-    // row2Flower8.drawMovingObject();
-    // row2Flower9.drawMovingObject();
-
-    // // row3Flower7.drawMovingObject();
-    // // row3Flower8.drawMovingObject();
-
-
-    // row2wogpole1.drawMovingObject();
-    // row2wogpole2.drawMovingObject();
-    // row2wogpole3.drawMovingObject();
-    // row2wogpole4.drawMovingObject();
-    // row2wogpole5.drawMovingObject();
-    // row2wogpole6.drawMovingObject();
-    // row2wogpole7.drawMovingObject();
-    // row2wogpole8.drawMovingObject();
-    // row2wogpole9.drawMovingObject();
-
-    // row3Flower1.drawMovingObject();
-    // row3Flower2.drawMovingObject();
-    // row3Flower3.drawMovingObject();
-    // row3Flower4.drawMovingObject();
-    // row3Flower5.drawMovingObject();
-    // row3Flower6.drawMovingObject();
-    // row3Flower7.drawMovingObject();
-    // row3Flower8.drawMovingObject();
-    // // row3Flower9.drawMovingObject();
-
-
-    // // olimar.drawMovingObject();
-
-    
-    // // Unique mechanics to game loop logic
-    // redTarget.drawMovingObject();
     player.drawPlayer();
     blueOnion.drawMovingObject();
     redOnion.drawMovingObject();
@@ -362,38 +252,21 @@ function draw() {
 
     ctx.drawImage(mapImage, 800, 0, 600, 700) // background image for ship
     ship.drawMovingObject();
-    // redGhost.drawMovingObject();
     ctx.beginPath();
     ctx.lineWidth = "4";
     ctx.strokeStyle = "rgb(214, 214, 59)";
     ctx.rect(802, -2, 0, 705);
     ctx.stroke();
 
-    // debugger
     // stationaryBridge1.drawMovingObject();
     // stationaryBridge2.drawMovingObject();
     // stationaryBridge3.drawMovingObject();
     // stationaryBridge4.drawMovingObject();
 
-    // wollywog1.drawMovingObject();
-
     // whale.drawMovingObject();
     // player.drawPlayer();
-    
-    // floatValues = false;
-    window.requestAnimationFrame(draw);
+        window.requestAnimationFrame(draw);
     cycle += 1
 }}
 
-// const redTarget = new MovingObject(pikminOlimarImage, [323, 345, 367], [304, 304, 304], 19, 19, 679, 50, 30, 30, false, false, 0, 15)
-
-gameLoop()
-function gameLoop() {
-    // if (!gameOver) {
-        draw();
-    // } else {
-
-    // }
-}
-
-
+draw()
