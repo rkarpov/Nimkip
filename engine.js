@@ -51,8 +51,8 @@ cliff1 = new MovingObject(cliff, [945], [123], 161, 62, 614, 39, 161, 62, false,
 // waterfall1 = new MovingObject(water, [14, 206, 390, 587], [375], 173, 233, 157, 0, 173, 233 * .53, false, false, 0, 5)
 // waterfall2 = new MovingObject(water, [14, 206, 390, 587], [375], 173, 233, 460, 0, 173, 233 * .53, false, false, 0, 5)
 
-waterfall1 = new MovingObject(water, [14, 206, 390, 587], [375], 173, 233, 175, 0, 173 * .8, 233 * .5, false, false, 0, 5)
-waterfall2 = new MovingObject(water, [14, 206, 390, 587], [375], 173, 233, 475, 0, 173 * .8, 233 * .5, false, false, 0, 5)
+waterfall1 = new MovingObject(water, [14, 206, 390, 587], [375], 173, 233, 175, 0, 173 * .8, 233 * .5, false, false, 0, 4)
+waterfall2 = new MovingObject(water, [14, 206, 390, 587], [375], 173, 233, 475, 0, 173 * .8, 233 * .5, false, false, 0, 4)
 // waters = [
 //     water1, water2, water3, water4
 //     // water1
