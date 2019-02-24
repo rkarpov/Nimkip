@@ -9,9 +9,9 @@ mapImage.src = './assets/images/Pikmin_1_Map.png';
 const pikminOlimarImage = new Image();
 pikminOlimarImage.src = './assets/images/olimar_pikmin.png'
 // const olimar = new MovingObject(pikminOlimarImage, [133, 223, 253], [147, 223, 149], 28, 49, 700, 0, 28, 49, false, false, 0, 12)
-const redTarget = new MovingObject(pikminOlimarImage, [323, 345, 367], [304, 304, 304], 19, 19, 679, 50, 30, 30, false, true, 0, 15)
+const redTarget = new MovingObject(pikminOlimarImage, [323, 345, 367], [304, 304, 304], 19, 19, 704, 50, 30, 30, false, true, 0, 15)
 const yellowTarget = new MovingObject(pikminOlimarImage, [323, 345, 367], [304, 304, 304], 19, 19, 379, 50, 30, 30, false, true, 0, 15)
-const blueTarget = new MovingObject(pikminOlimarImage, [323, 345, 367], [304, 304, 304], 19, 19, 79, 50, 30, 30, false, true, 0, 15)
+const blueTarget = new MovingObject(pikminOlimarImage, [323, 345, 367], [304, 304, 304], 19, 19, 57, 50, 30, 30, false, true, 0, 15)
 const targets = [redTarget, yellowTarget, blueTarget]
 let target = targets[0]
 
@@ -42,24 +42,28 @@ water0 = new MovingObject(water, [765], [59], 317, 426, 0, 0, 317, 426, false, f
 water1 = new MovingObject(water, [765], [59], 317, 426, 0, 0, 317, 426, false, false, 0, 0)
 water2 = new MovingObject(water, [765], [59], 317, 426, 300, 0, 317, 426, false, false, 0, 0)
 water3 = new MovingObject(water, [765], [59], 317, 426, 600, 0, 317, 426, false, false, 0, 0)
-cliff1 = new MovingObject(cliff, [31], [135], 151, 43, 10, 56, 151 * 1.1, 43 * 1.1, false, true, 0, 0)
-// cliff2 = new MovingObject(cliff, [467], [123], 385, 63, 220, 35, 385, 63 * 1.1, false, true, 0, 0)
-cliff3 = new MovingObject(cliff, [945], [123], 161, 62, 15, 39, 161, 62, false, true, 0, 0)
-cliff2 = new MovingObject(cliff, [945], [123], 161, 62, 310, 39, 161, 62, false, true, 0, 0)
-cliff1 = new MovingObject(cliff, [945], [123], 161, 62, 614, 39, 161, 62, false, true, 0, 0)
+// cliff1 = new MovingObject(cliff, [31], [135], 151, 43, 10, 56, 151 * 1.1, 43 * 1.1, false, true, 0, 0)
+
+cliff1 = new MovingObject(cliff, [467], [123], 385, 63, -35, 35, 385 * .5, 63 * 1.1, false, true, 0, 0)
+cliff2 = new MovingObject(cliff, [467], [123], 385, 63, 296, 35, 385 * .5, 63 * 1.1, false, true, 0, 0)
+cliff3 = new MovingObject(cliff, [467], [123], 385, 63, 630, 35, 385 * .5, 63 * 1.1, false, true, 0, 0)
+
+// cliff3 = new MovingObject(cliff, [945], [123], 161, 62, 33, 39, 161 * .75, 62, false, true, 0, 0)
+// cliff2 = new MovingObject(cliff, [945], [123], 161, 62, 310, 39, 161, 62, false, true, 0, 0)
+// cliff1 = new MovingObject(cliff, [945], [123], 161, 62, 633, 39, 161 * .75, 62, false, true, 0, 0)
 
 // waterfall1 = new MovingObject(water, [14, 206, 390, 587], [375], 173, 233, 157, 0, 173, 233 * .53, false, false, 0, 5)
 // waterfall2 = new MovingObject(water, [14, 206, 390, 587], [375], 173, 233, 460, 0, 173, 233 * .53, false, false, 0, 5)
 
-waterfall1 = new MovingObject(water, [14, 206, 390, 587], [375], 173, 233, 175, 0, 173 * .8, 233 * .5, false, false, 0, 4)
-waterfall2 = new MovingObject(water, [14, 206, 390, 587], [375], 173, 233, 475, 0, 173 * .8, 233 * .5, false, false, 0, 4)
+waterfall1 = new MovingObject(water, [14, 206, 390, 587], [375], 173, 233, 152, 0, 173 * .85, 233 * .5, false, false, 0, 4)
+waterfall2 = new MovingObject(water, [14, 206, 390, 587], [375], 173, 233, 487, 0, 173 * .85, 233 * .5, false, false, 0, 4)
 // waters = [
 //     water1, water2, water3, water4
 //     // water1
 // ]
 
-const redOnion = new MovingObject(image, [717], [5, 128], 111, 113, 650, 5, 88.8, 90.4, false, false, 0, 15)
-const blueOnion = new MovingObject(image, [1237], [9, 125], 111, 113, 50, 5, 88.8, 90.4, false, false, 0, 15)
+const redOnion = new MovingObject(image, [717], [5, 128], 111, 113, 675, 5, 88.8, 90.4, false, false, 0, 15)
+const blueOnion = new MovingObject(image, [1237], [9, 125], 111, 113, 28, 5, 88.8, 90.4, false, false, 0, 15)
 const yellowOnion = new MovingObject(image,[978], [9, 125], 111, 113, 350, 5, 88.8, 90.4, false, false, 0, 15)
 
 const bulborb1 = new MovingObject(image, [22, 87, 151, 216], [630], 61, 60, -100, 585, 76.25, 75, true, false, 3, 6)

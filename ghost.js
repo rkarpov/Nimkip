@@ -47,9 +47,9 @@ class Ghost {
     handleMovement() {
         if (this.moveDir === 'startLeft') {
             this.posY -= this.movementSpeed;
-            if (this.posY < -200) {
-                // delete this class and remove from drawing array?
-            }
+            // if (this.posY < -200) {
+            //     // delete this class and remove from drawing array?
+            // }
         }
     }
 
