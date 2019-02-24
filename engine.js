@@ -25,7 +25,7 @@ const leftImage = new Image();
 leftImage.src = './assets/images/left_sprites.png';
 
 const water = new Image();
-water.src = './assets/images/wfall2.gif';
+water.src = './assets/images/wfall2.png';
 const cliff = new Image();
 cliff.src = './assets/images/cliffs.gif';
 
