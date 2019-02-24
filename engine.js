@@ -8,8 +8,12 @@ mapImage.src = './assets/images/Pikmin_1_Map.png';
 
 const pikminOlimarImage = new Image();
 pikminOlimarImage.src = './assets/images/olimar_pikmin.png'
-const olimar = new MovingObject(pikminOlimarImage, [133, 223, 253], [147, 223, 149], 28, 49, 700, 0, 28, 49, false, false, 0, 12)
+// const olimar = new MovingObject(pikminOlimarImage, [133, 223, 253], [147, 223, 149], 28, 49, 700, 0, 28, 49, false, false, 0, 12)
 const redTarget = new MovingObject(pikminOlimarImage, [323, 345, 367], [304, 304, 304], 19, 19, 679, 50, 30, 30, false, true, 0, 15)
+const yellowTarget = new MovingObject(pikminOlimarImage, [323, 345, 367], [304, 304, 304], 19, 19, 379, 50, 30, 30, false, true, 0, 15)
+const blueTarget = new MovingObject(pikminOlimarImage, [323, 345, 367], [304, 304, 304], 19, 19, 79, 50, 30, 30, false, true, 0, 15)
+const targets = [redTarget, yellowTarget, blueTarget]
+let target = targets[0]
 
 const shipImage = new Image();
 shipImage.src = './assets/images/ship.png'
@@ -19,8 +23,6 @@ const image = new Image();
 image.src = './assets/images/pikmin_sprite_sheet.png';
 const leftImage = new Image();
 leftImage.src = './assets/images/left_sprites.png';
-
-// const redGhost = new Ghost(image,[2193], [359, 332, 306], 9, 23, 500, 600, 9 * 2, 23 * 2, false, false, 3, 10)
 
 const redOnion = new MovingObject(image, [717], [5, 128], 111, 113, 650, 5, 88.8, 90.4, false, false, 0, 15)
 const blueOnion = new MovingObject(image, [1237], [9, 125], 111, 113, 50, 5, 88.8, 90.4, false, false, 0, 15)
@@ -57,17 +59,17 @@ const row1Flower7 = new MovingObject(image, [2229], [74], 60, 52, -750, 247, 60,
 const row1Flower8 = new MovingObject(image, [2229], [74], 60, 52, -800, 247, 60, 52, false, true, 2, 4)
 const row1Flower9 = new MovingObject(image, [2106], [138], 60, 52, -700, 247, 60, 52, false, true, 2, 4)
 
-const wogpole1 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1110 + 155, 150, 40, 23, false, true, 2, 5, 'startRight')
-const wogpole2 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1030 + 155, 150, 40, 23, false, true, 2, 5, 'startRight')
-const wogpole3 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1070 + 155, 150, 40, 23, false, true, 2, 5, 'startRight')
+const wogpole1 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1110 + 155, 152, 40, 23, false, true, 2, 5, 'startRight')
+const wogpole2 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1030 + 155, 152, 40, 23, false, true, 2, 5, 'startRight')
+const wogpole3 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1070 + 155, 152, 40, 23, false, true, 2, 5, 'startRight')
 
-const wogpole4 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1370 + 155, 150, 40, 23, false, true, 2, 5, 'startRight')
-const wogpole5 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1330 + 155, 150, 40, 23, false, true, 2, 5, 'startRight')
-const wogpole6 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1410 + 155, 150, 40, 23, false, true, 2, 5, 'startRight')
+const wogpole4 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1370 + 155, 152, 40, 23, false, true, 2, 5, 'startRight')
+const wogpole5 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1330 + 155, 152, 40, 23, false, true, 2, 5, 'startRight')
+const wogpole6 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1410 + 155, 152, 40, 23, false, true, 2, 5, 'startRight')
 // 146.66 spaced evenly by 3
-const wogpole7 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1630 + 155, 150, 40, 23, false, true, 2, 5, 'startRight')
-const wogpole8 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1670 + 155, 150, 40, 23, false, true, 2, 5, 'startRight')
-const wogpole9 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1710 + 155, 150, 40, 23, false, true, 2, 5, 'startRight')
+const wogpole7 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1630 + 155, 152, 40, 23, false, true, 2, 5, 'startRight')
+const wogpole8 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1670 + 155, 152, 40, 23, false, true, 2, 5, 'startRight')
+const wogpole9 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1710 + 155, 152, 40, 23, false, true, 2, 5, 'startRight')
 
 const row2Flower1 = new MovingObject(image, [2229], [74], 60, 52, -150, 173, 60, 52, false, true, 2.5, 4) // purple
 const row2Flower2 = new MovingObject(image, [2229], [14], 60, 52, -200, 173, 60, 52, false, true, 2.5, 4) // yellow
@@ -112,64 +114,18 @@ const row3Flower9 = new MovingObject(image, [2106], [138], 60, 52, -700, 100, 60
 const currentlyPressedKeys = {};
 window.addEventListener('keydown', (e) => {
     currentlyPressedKeys[e.key] = true;
+    if ((e.keyCode === 13) && (gameOver === true)) {
+        location.reload();
+        draw();
+    }
 });
 window.addEventListener('keyup', (e) => {
     currentlyPressedKeys[e.key] = false;
+    if (e.keycode === 13 ) {
+   
+    }
 });
 
-// red yellow, blue
-// const framesUpX = [[14, 41, 69], [101, 128, 156], [201, 228, 256]]
-// const framesUpY = [[101, 102, 101]]
-// const framesDownX = [[12, 39, 67], [100, 127, 155], [201, 228, 256]]
-// const framesDownY = [[14, 15, 14], [14, 15, 14], [13, 14, 13]]
-// const framesRightX = [[20, 65], [107, 129, 152], [208, 229, 253]]
-// const framesRightY = [[58], [60], [58]]
-// const framesLeftX = [[3714, 3692, 3669], [3628, 3606, 3583], [3529, 3507, 3484]]
-// const framesLeftY = [[58], [60], [58]]
-// const redGhostX = [[2193], [2203]]
-// const redGhostY = [[359, 332, 306], [359, 332, 306]]
-
-
-function movePlayer() {
-      if (!(currentlyPressedKeys.ArrowDown || currentlyPressedKeys.ArrowUp || currentlyPressedKeys.ArrowLeft || currentlyPressedKeys.ArrowRight)) {
-          player.animate = false;
-      } else { player.animate = true }
-    // if ((player.posX - 4 < 0) || (player.posX + 8 > 800) || (player.posY - 4 < 0) || (player.posY + 4 > 700)) { }
-     if (currentlyPressedKeys.ArrowUp) {
-        if (player.moveDir === 'right') { player.flowerX += 8; }
-        player.image = image;
-        player.moveDir = 'up';
-        player.animationFrameX = [14, 41, 69];
-        player.animationFrameY = [101, 102, 101];
-        if (player.posY < 3) { }
-        else { player.flowerY -= 4, player.posY -= 4 }
-    } else if (currentlyPressedKeys.ArrowDown) {
-        if (player.moveDir === 'right') { player.flowerX += 8; }
-        player.image = image;
-        player.moveDir = 'down';
-        player.animationFrameX = [12, 39, 67];
-        player.animationFrameY = [14, 15, 14];
-        if (player.posY + 4 > 640) { }
-        else { player.flowerY += 4, player.posY += 4 }
-    } else if (currentlyPressedKeys.ArrowLeft) {
-        if (player.moveDir === 'right') { player.flowerX += 8; }
-        player.image = leftImage;
-        player.moveDir = 'left';
-        player.animationFrameX = [3714, 3692, 3669];
-        player.animationFrameY = [58];
-        if (player.posX - 4 < 0) { } 
-        else { player.flowerX -= 4, player.posX -= 4 }
-    } else if (currentlyPressedKeys.ArrowRight) {
-        player.image = image;
-        if (player.moveDir != 'right') { player.flowerX -= 8; }
-        player.moveDir = 'right';
-        player.animationFrameX = [20, 65];
-        player.animationFrameY = [58];
-        if (player.posX + 4 > 778) { }
-        else { player.flowerX += 4, player.posX += 4 }
-    } 
-  
-}
 
 const floatingObjects = [
     row1Flower1, row1Flower2, row1Flower3, row1Flower4, row1Flower5, row1Flower6, row1Flower7, row1Flower8, row1Flower9,
@@ -177,12 +133,6 @@ const floatingObjects = [
     row2Flower1, row2Flower2, row2Flower3, row2Flower4, row2Flower5, row2Flower6, row2Flower7, row2Flower8,
     row2wogpole1, row2wogpole2, row2wogpole9, row2wogpole3, row2wogpole7, row2wogpole8, row2wogpole4, row2wogpole5, row2wogpole6,
     row3Flower1, row3Flower2, row3Flower3, row3Flower4, row3Flower5, row3Flower6, row3Flower7, row3Flower8,
-    redTarget
-    // row3Flower9,
-    // stationaryBridge1,
-    // stationaryBridge2
-    // stationaryBridge3,
-    // stationaryBridge4,
 ]
 
 let movingObjects = [puffstool1, puffstool2, breadbug1, breadbug2, 
@@ -193,14 +143,23 @@ let movingObjects = [puffstool1, puffstool2, breadbug1, breadbug2,
     row2Flower1, row2Flower2, row2Flower3, row2Flower4, row2Flower5, row2Flower6, row2Flower7, row2Flower8, row2Flower9,
     row2wogpole1, row2wogpole2, row2wogpole3, row2wogpole4, row2wogpole5, row2wogpole6, row2wogpole7, row2wogpole8, row2wogpole9,
     row3Flower1, row3Flower2, row3Flower3, row3Flower4, row3Flower5, row3Flower6, row3Flower7, row3Flower8,
-    redTarget,
 ]
 
+// const player = 
+const red = new Player(playerImage, [14], [102], 16, 40, 300, 640, 16 * 1.5, 40 * 1.5, 7, 4, 'up') // player starting position
+// const yellow = new Player(playerImage, [101, 102])
+const yellow = new Player(playerImage, [101], [102], 22, 40, 300, 640, 22 * 1.5, 40 * 1.5, 7, 4, 'up') // player starting position
+let player = red
+
+
+// const player = new Player(playerImage, [14], [102], 16, 40, 680, 0, 16 * 1.5, 40 * 1.5, 7, 4, 'up')
+// constructor(image, animationFramesX, animationFramesY, pwidth, pheight, posX, posY, scaledWidth, scaledHeight, movementSpeed, frameTicks, moveDir) {
 
 
 let gameOver = false;
 let gameWon = false;
-let cycle = 0;
+let drawCycle = 0;
+
 
 function draw() {
     if (ship.posY === -199) {
@@ -228,15 +187,16 @@ function draw() {
         object.drawMovingObject();
     });
 
+    targets[rotation % 3].drawMovingObject();
     player.drawPlayer();
     blueOnion.drawMovingObject();
     redOnion.drawMovingObject();
     yellowOnion.drawMovingObject();
 
-    if (redTarget.posX + 12 <= (player.posX + 9) + (player.width - 15) &&
-        (redTarget.posX + 12) + (redTarget.scaledWidth - 26) >= (player.posX + 9) &&
-        redTarget.posY + 3 + redTarget.scaledHeight - 17 >= (player.posY + 40) &&
-        redTarget.posY + 3 <= (player.posY + 40) + (player.height - 53)) {
+    if (target.posX + 12 <= (player.posX + 9) + (player.width - 15) &&
+        (target.posX + 12) + (target.scaledWidth - 26) >= (player.posX + 9) &&
+        target.posY + 3 + target.scaledHeight - 17 >= (player.posY + 40) &&
+        target.posY + 3 <= (player.posY + 40) + (player.height - 53)) {
             // player.posY = 0
             // player.posX = 600
             // player.flowerY = 0
@@ -246,12 +206,12 @@ function draw() {
     ctx.beginPath();
     ctx.lineWidth = "2";
     ctx.strokeStyle = "rgb(214, 214, 59)";
-    // ctx.rect(redTarget.posX + 12, redTarget.posY + 3, redTarget.scaledWidth - 26, redTarget.scaledHeight - 17); // red target box
+    ctx.rect(redTarget.posX + 12, redTarget.posY + 3, redTarget.scaledWidth - 26, redTarget.scaledHeight - 17); // red target box
     // ctx.rect(player.posX + 9, player.posY + 40, player.width - 15, player.height - 53); // player wins box
     ctx.stroke();
 
     ctx.drawImage(mapImage, 800, 0, 600, 700) // background image for ship
-    ship.drawMovingObject();
+    // ship.drawMovingObject();
     ctx.beginPath();
     ctx.lineWidth = "4";
     ctx.strokeStyle = "rgb(214, 214, 59)";
@@ -266,7 +226,76 @@ function draw() {
     // whale.drawMovingObject();
     // player.drawPlayer();
         window.requestAnimationFrame(draw);
-    cycle += 1
+    drawCycle += 1
 }}
 
 draw()
+
+
+
+
+
+
+
+
+function movePlayer() {
+    if (!(currentlyPressedKeys.ArrowDown || currentlyPressedKeys.ArrowUp || currentlyPressedKeys.ArrowLeft || currentlyPressedKeys.ArrowRight)) {
+        player.animate = false;
+    } else {
+        player.animate = true
+    }
+    // if ((player.posX - 4 < 0) || (player.posX + 8 > 800) || (player.posY - 4 < 0) || (player.posY + 4 > 700)) { }
+    if (currentlyPressedKeys.ArrowUp) {
+        if (player.moveDir === 'right') {
+            player.flowerX += 8;
+        }
+        player.image = image;
+        player.moveDir = 'up';
+        // player.animationFrameX = [14, 41, 69];
+        // player.animationFrameY = [101, 102, 101];
+        player.animationFrameX = framesUpX[rotation % 3]
+        player.animationFrameY = framesUpY[rotation % 3]
+        if (player.posY < 3) {} else {
+            player.flowerY -= 4, player.posY -= 4
+        }
+    } else if (currentlyPressedKeys.ArrowDown) {
+        if (player.moveDir === 'right') {
+            player.flowerX += 8;
+        }
+        player.image = image;
+        player.moveDir = 'down';
+        // player.animationFrameX = [12, 39, 67];
+        // player.animationFrameY = [14, 15, 14];
+        player.animationFrameX = framesDownX[rotation % 3]
+        player.animationFrameY = framesDownY[rotation % 3]
+        if (player.posY + 4 > 640) {} else {
+            player.flowerY += 4, player.posY += 4
+        }
+    } else if (currentlyPressedKeys.ArrowLeft) {
+        if (player.moveDir === 'right') {
+            player.flowerX += 8;
+        }
+        player.image = leftImage;
+        player.moveDir = 'left';
+        // player.animationFrameX = [3714, 3692, 3669];
+        // player.animationFrameY = [58];
+        player.animationFrameX = framesLeftX[rotation % 3];
+        player.animationFrameY = framesLeftY[rotation % 3];
+        if (player.posX - 4 < 0) {} else {
+            player.flowerX -= 4, player.posX -= 4
+        }
+    } else if (currentlyPressedKeys.ArrowRight) {
+        player.image = image;
+        if (player.moveDir != 'right') {
+            player.flowerX -= 8;
+        }
+        player.moveDir = 'right';
+        // player.animationFrameX = [20, 65];
+        // player.animationFrameY = [58];
+        player.animationFrameX = framesRightX[rotation % 3];
+        player.animationFrameY = framesRightY[rotation % 3];
+        if (player.posX + 4 > 778) {} else {
+            player.flowerX += 4, player.posX += 4
+        }
+    }
+}

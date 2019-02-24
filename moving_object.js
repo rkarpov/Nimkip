@@ -64,10 +64,7 @@ class MovingObject {
             (this.posX + 5) + (this.scaledWidth - 25) >= (player.posX + 5) &&
             (this.posY + 15) + (this.scaledHeight - 35) >= (player.posY + 30) &&
             (this.posY + 15) <= (player.posY + 30) + (player.height - 30)) {
-                let cycle = new Ghost(image, [2193], [359, 332, 306], 9, 23, player.posX, player.posY, 9 * 2, 23 * 2, false, false, 3, 10)
-                movingObjects.push(cycle);
-                player.posY = 640;
-                player.flowerY = 640;
+                player.handleDying()
             }
 
         // enemy hitbox
@@ -93,11 +90,11 @@ class MovingObject {
             this.floating = false; }
 
         // float object hitbox
-        //  ctx.beginPath();
-        //  ctx.lineWidth = "1";
-        //  ctx.strokeStyle = "red";
-        //  ctx.rect(this.posX + 3, this.posY, this.scaledWidth -5, this.scaledHeight - 4);
-        //  ctx.stroke();
+         ctx.beginPath();
+         ctx.lineWidth = "1";
+         ctx.strokeStyle = "red";
+         ctx.rect(this.posX + 3, this.posY, this.scaledWidth -5, this.scaledHeight - 4);
+         ctx.stroke();
 
         // player's hitbox
         // ctx.rect(this.posX + 6, this.posY + 50, this.width - 8, this.height - 50); // player hitbox water
