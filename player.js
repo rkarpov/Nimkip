@@ -139,6 +139,8 @@ class Player {
         this.animationFrameY = framesUpY[rotation % 3];
         this.image = image ;
         this.drawPlayer();
+        sound.load();
+        sound.play();
     }
 
 

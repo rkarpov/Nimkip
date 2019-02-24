@@ -3,6 +3,8 @@ canvas.width = 1000;
 canvas.height = 700;
 var ctx = canvas.getContext('2d');
 
+var sound = document.getElementById('sound')
+
 const mapImage = new Image();
 mapImage.src = './assets/images/Pikmin_1_Map.png';
 
