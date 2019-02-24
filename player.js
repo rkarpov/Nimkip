@@ -88,8 +88,8 @@ class Player {
             const obj = floatingObjects[i];
             if (obj.posX + 3 <= (this.posX + 6) + (this.width - 8) &&
                 (obj.posX + 3) + (obj.scaledWidth - 5) >= (this.posX + 6) &&
-                obj.posY + obj.scaledHeight >= (this.posY + 45) &&
-                obj.posY <= (this.posY + 45) + (this.height - 45)) {
+                obj.posY + obj.scaledHeight - 1 >= (this.posY + 54) &&
+                obj.posY <= (this.posY + 54) + (this.height - 54)) {
                 if ((this.posX + 6) < canvas.width - 30) {
                     // this.alive = true;
                     if (obj.moveDir === 'startRight') { 
@@ -170,13 +170,12 @@ class Player {
         ctx.lineWidth = "2";
         ctx.strokeStyle = "rgb(214, 214, 59)";
         // ctx.rect(this.posX + 5, this.posY + 30, this.width - 2, this.height - 30); // player hitbox ground
-        // ctx.rect(this.posX + 6, this.posY + 45, this.width - 8, this.height - 45); // player hitbox water
+        // ctx.rect(this.posX + 6, this.posY + 45, this.width - 8, this.height - 45); // player hitbox water previously
         if (this.moveDir === 'left' && rotation % 3 === 1) {
-            // ctx.rect(this.posX + playerFloatposX[rotation % 3] - 5, this.posY + 45, this.width - 8, this.height - (45)); // player hitbox water
+            // ctx.rect(this.posX + playerFloatposX[rotation % 3] - 5, this.posY + 54, this.width - 8, this.height - (54)); // player hitbox water
         } else {
-        // ctx.rect(this.posX + playerFloatposX[rotation % 3], this.posY + 45, this.width - 8, this.height - (45)); // player hitbox water
+        // ctx.rect(this.posX + playerFloatposX[rotation % 3], this.posY + 54, this.width - 8, this.height - (54)); // player hitbox water
         }
-        // ctx.rect(this.posX + 6, this.posY + 52, this.width - 8, this.height - 55); // player hitbox water
         ctx.stroke();
     }
 }

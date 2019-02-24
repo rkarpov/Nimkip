@@ -80,23 +80,23 @@ class MovingObject {
     handleFloat() {
         if ((!yellow) && this.posX + 3 <= (player.posX + 6) + (player.width - 8) &&
             (this.posX + 3) + (this.scaledWidth - 5) >= (player.posX + 6) &&
-            this.posY + this.scaledHeight - 4 >= (player.posY + 45) &&
-            this.posY <= (player.posY + 45) + (player.height - 45)) {
+            this.posY + this.scaledHeight - 1 >= (player.posY + 54) &&
+            this.posY <= (player.posY + 54) + (player.height - 54)) {
             // if ((player.posX  + 6) < canvas.width - 30) {
                 // player.posX += this.movementSpeed;
                 this.floating = true;
             // }
         } else if ((rotation % 3 === 1 && player.moveDir === 'left') && this.posX + 3 <= (player.posX + playerFloatposX[rotation % 3] - 5) + (player.width - 8) &&
                 (this.posX + 3) + (this.scaledWidth - 5) >= (player.posX + playerFloatposX[rotation % 3] - 5) &&
-                this.posY + this.scaledHeight - 4 >= (player.posY + 45) &&
-                this.posY <= (player.posY + 45) + (player.height - 45)) {
+                this.posY + this.scaledHeight - 1 >= (player.posY + 54) &&
+                this.posY <= (player.posY + 54) + (player.height - 54)) {
         } else { this.floating = false; }
 
         // float object hitbox
          ctx.beginPath();
          ctx.lineWidth = "1";
          ctx.strokeStyle = "red";
-        //  ctx.rect(this.posX + 3, this.posY, this.scaledWidth -5, this.scaledHeight - 4);
+        //  ctx.rect(this.posX + 3, this.posY, this.scaledWidth -5, this.scaledHeight - 1);
          ctx.stroke();
 
         // player's hitbox

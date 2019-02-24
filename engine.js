@@ -24,6 +24,22 @@ image.src = './assets/images/pikmin_sprite_sheet.png';
 const leftImage = new Image();
 leftImage.src = './assets/images/left_sprites.png';
 
+const water = new Image();
+water.src = './assets/images/water_terrain.png'
+
+// water1 = new MovingObject(water, [11], [277, 369, 474, 577], 1199, 57, 0, 99, 1199, 300, false, false, 0, 15)
+// water2 = new MovingObject(water, [11], [277, 369, 474, 577], 1199, 57, 0, 149, 1199, 60, false, false, 0, 15)
+// water3 = new MovingObject(water, [11], [277, 369, 474, 577], 1199, 57, 0, 299, 1199, 60, false, false, 0, 15)
+// water4 = new MovingObject(water, [11], [277, 369, 474, 577], 1199, 57, 0, 399, 1199, 60, false, false, 0, 15)
+// water2 = new MovingObject(water, [11], [369], 1199, 57, 0, 100, 1199, 60, false, false, 0, 15)
+// water3 = new MovingObject(water, [11], [474], 1199, 57, 0, 100, 1199, 60, false, false, 0, 15)
+// water4 = new MovingObject(water, [11], [577], 1199, 57, 0, 100, 1199, 60, false, false, 0, 15)
+
+// waters = [
+//     // water1, water2, water3, water4
+//     water1
+// ]
+
 const redOnion = new MovingObject(image, [717], [5, 128], 111, 113, 650, 5, 88.8, 90.4, false, false, 0, 15)
 const blueOnion = new MovingObject(image, [1237], [9, 125], 111, 113, 50, 5, 88.8, 90.4, false, false, 0, 15)
 const yellowOnion = new MovingObject(image,[978], [9, 125], 111, 113, 350, 5, 88.8, 90.4, false, false, 0, 15)
@@ -59,17 +75,17 @@ const row1Flower7 = new MovingObject(image, [2229], [74], 60, 52, -750, 247, 60,
 const row1Flower8 = new MovingObject(image, [2229], [74], 60, 52, -800, 247, 60, 52, false, true, 2, 4)
 const row1Flower9 = new MovingObject(image, [2106], [138], 60, 52, -700, 247, 60, 52, false, true, 2, 4)
 
-const wogpole1 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1110 + 155, 152, 40, 23, false, true, 2, 5, 'startRight')
-const wogpole2 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1030 + 155, 152, 40, 23, false, true, 2, 5, 'startRight')
-const wogpole3 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1070 + 155, 152, 40, 23, false, true, 2, 5, 'startRight')
+const wogpole1 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1110 + 155, 151, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
+const wogpole2 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1030 + 155, 151, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
+const wogpole3 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1070 + 155, 151, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
 
-const wogpole4 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1370 + 155, 152, 40, 23, false, true, 2, 5, 'startRight')
-const wogpole5 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1330 + 155, 152, 40, 23, false, true, 2, 5, 'startRight')
-const wogpole6 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1410 + 155, 152, 40, 23, false, true, 2, 5, 'startRight')
+const wogpole4 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1370 + 155, 151, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
+const wogpole5 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1330 + 155, 151, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
+const wogpole6 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1410 + 155, 151, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
 // 146.66 spaced evenly by 3
-const wogpole7 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1630 + 155, 152, 40, 23, false, true, 2, 5, 'startRight')
-const wogpole8 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1670 + 155, 152, 40, 23, false, true, 2, 5, 'startRight')
-const wogpole9 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1710 + 155, 152, 40, 23, false, true, 2, 5, 'startRight')
+const wogpole7 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1630 + 155, 151, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
+const wogpole8 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1670 + 155, 151, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
+const wogpole9 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1710 + 155, 151, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
 
 const row2Flower1 = new MovingObject(image, [2229], [74], 60, 52, -150, 173, 60, 52, false, true, 2.5, 4) // purple
 const row2Flower2 = new MovingObject(image, [2229], [14], 60, 52, -200, 173, 60, 52, false, true, 2.5, 4) // yellow
@@ -81,17 +97,17 @@ const row2Flower7 = new MovingObject(image, [2229], [74], 60, 52, -750, 173, 60,
 const row2Flower8 = new MovingObject(image, [2229], [14], 60, 52, -800, 173, 60, 52, false, true, 2.5, 4)
 const row2Flower9 = new MovingObject(image, [2229], [74], 60, 52, -850, 173, 60, 52, false, true, 2.5, 4)
 
-const row2wogpole1 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1110, 225, 40, 23, false, true, 2, 5, 'startRight')
-const row2wogpole2 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1030, 225, 40, 23, false, true, 2, 5, 'startRight')
-const row2wogpole3 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1070, 225, 40, 23, false, true, 2, 5, 'startRight')
+const row2wogpole1 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1110, 225, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
+const row2wogpole2 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1030, 225, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
+const row2wogpole3 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1070, 225, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
 
-const row2wogpole4 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1370, 225, 40, 23, false, true, 2, 5, 'startRight')
-const row2wogpole5 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1330, 225, 40, 23, false, true, 2, 5, 'startRight')
-const row2wogpole6 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1410, 225, 40, 23, false, true, 2, 5, 'startRight')
+const row2wogpole4 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1370, 225, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
+const row2wogpole5 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1330, 225, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
+const row2wogpole6 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1410, 225, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
 // 146.66 spaced evenly by 3
-const row2wogpole7 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1630, 225, 40, 23, false, true, 2, 5, 'startRight')
-const row2wogpole8 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1670, 225, 40, 23, false, true, 2, 5, 'startRight')
-const row2wogpole9 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1710, 225, 40, 23, false, true, 2, 5, 'startRight')
+const row2wogpole7 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1630, 225, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
+const row2wogpole8 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1670, 225, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
+const row2wogpole9 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1710, 225, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
 
 const row3Flower1 = new MovingObject(image, [2229], [74], 60, 52, -180, 100, 60, 52, false, true, 2, 4)
 const row3Flower2 = new MovingObject(image, [2229], [74], 60, 52, -230, 100, 60, 52, false, true, 2, 4)
@@ -206,7 +222,7 @@ function draw() {
     ctx.beginPath();
     ctx.lineWidth = "2";
     ctx.strokeStyle = "rgb(214, 214, 59)";
-    ctx.rect(redTarget.posX + 12, redTarget.posY + 3, redTarget.scaledWidth - 26, redTarget.scaledHeight - 17); // red target box
+    // ctx.rect(redTarget.posX + 12, redTarget.posY + 3, redTarget.scaledWidth - 26, redTarget.scaledHeight - 17); // red target box
     // ctx.rect(player.posX + 9, player.posY + 40, player.width - 15, player.height - 53); // player wins box
     ctx.stroke();
 

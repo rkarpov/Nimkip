@@ -1,5 +1,5 @@
-const ghostWidthScale = [18, 15, 18];
-const ghostHeightScale = [49, 45, 49];
+const ghostWidthScale = [18, 14.5, 18];
+const ghostHeightScale = [49, 44.5, 49];
 
 class Ghost {
     constructor(image, animationFramesX, animationFramesY, width, height, posX, posY, scaledWidth, scaledHeight,

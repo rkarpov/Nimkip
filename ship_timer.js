@@ -1,3 +1,12 @@
+const exaustFramesX = [[2034], [2028], [2025]]
+const exaustFramesY = [[261], [280], [318]]
+const exhaustWidthX = [[18], [33], [38]]
+const exhaustWidthY = [[16], [30], [34]]
+const exhaustPosX = [[835 + 52], [835+ 43], [835+ 37]]
+const exhaustPosY = [[750 + 210], [750+ 225], [750+ 235]]
+// const exhaustPosY = []
+// ship.posX + 60, ship.posY + 250,
+
 class ShipTimer {
     constructor(image, animationFramesX, animationFramesY, width, height, posX, posY, scaledWidth, scaledHeight,
         collides = false, floats = false, movementSpeed, frameTicks, moveDir = 'startLeft') {
@@ -20,10 +29,19 @@ class ShipTimer {
 
         this.frameIndex2 = 0;
         this.tickCount2 = 0;
+       
+        this.exhaustFrameIndex = 0;
+        this.exhaustTickCount = 0;
 
     }
 
     handleAnimation() {
+        this.exhaustTickCount += 1;
+        if (this.exhaustTickCount === 3) {
+            this.exhaustTickCount = 0;
+            this.exhaustFrameIndex = (this.exhaustFrameIndex += 1) % exaustFramesX.length;
+        }
+
         if (this.animationFrameX.length > 1) {
             this.tickCount += 1;
             if (this.tickCount === this.frameTicks) {
@@ -48,6 +66,7 @@ class ShipTimer {
     }
 
     drawMovingObject() {
+        ctx.drawImage(image, exaustFramesX[this.exhaustFrameIndex], exaustFramesY[this.exhaustFrameIndex], exhaustWidthX[this.exhaustFrameIndex], exhaustWidthY[this.exhaustFrameIndex], exhaustPosX[this.exhaustFrameIndex], ship.posY + [220, 210, 210][this.exhaustFrameIndex] - 25, exhaustWidthX[this.exhaustFrameIndex] * 1.5, exhaustWidthY[this.exhaustFrameIndex] * 1.5)
         ctx.drawImage(this.image, this.animationFrameX[this.frameIndex], this.animationFrameY[this.frameIndex2], this.width, this.height, this.posX, this.posY, this.scaledWidth, this.scaledHeight);
         this.handleAnimation();
         this.handleMovement();
