@@ -48,7 +48,11 @@ cliff3 = new MovingObject(cliff, [945], [123], 161, 62, 15, 39, 161, 62, false, 
 cliff2 = new MovingObject(cliff, [945], [123], 161, 62, 310, 39, 161, 62, false, true, 0, 0)
 cliff1 = new MovingObject(cliff, [945], [123], 161, 62, 614, 39, 161, 62, false, true, 0, 0)
 
+// waterfall1 = new MovingObject(water, [14, 206, 390, 587], [375], 173, 233, 157, 0, 173, 233 * .53, false, false, 0, 5)
+// waterfall2 = new MovingObject(water, [14, 206, 390, 587], [375], 173, 233, 460, 0, 173, 233 * .53, false, false, 0, 5)
 
+waterfall1 = new MovingObject(water, [14, 206, 390, 587], [375], 173, 233, 175, 0, 173 * .8, 233 * .5, false, false, 0, 5)
+waterfall2 = new MovingObject(water, [14, 206, 390, 587], [375], 173, 233, 475, 0, 173 * .8, 233 * .5, false, false, 0, 5)
 // waters = [
 //     water1, water2, water3, water4
 //     // water1
@@ -206,8 +210,9 @@ function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     render();
     movePlayer();
-        
 
+    waterfall1.drawMovingObject();
+    waterfall2.drawMovingObject();
     movingObjects.forEach(object => {
         object.drawMovingObject();
     });
