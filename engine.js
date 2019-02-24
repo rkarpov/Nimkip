@@ -42,10 +42,10 @@ water0 = new MovingObject(water, [765], [59], 317, 426, 0, 0, 317, 426, false, f
 water1 = new MovingObject(water, [765], [59], 317, 426, 0, 0, 317, 426, false, false, 0, 0)
 water2 = new MovingObject(water, [765], [59], 317, 426, 300, 0, 317, 426, false, false, 0, 0)
 water3 = new MovingObject(water, [765], [59], 317, 426, 600, 0, 317, 426, false, false, 0, 0)
-// cliff1 = new MovingObject(cliff, [31], [135], 151, 43, 10, 56, 151 * 1.1, 43 * 1.1, false, true, 0, 0)
-cliff2 = new MovingObject(cliff, [467], [123], 385, 63, 220, 35, 385, 63 * 1.1, false, true, 0, 0)
+cliff1 = new MovingObject(cliff, [31], [135], 151, 43, 10, 56, 151 * 1.1, 43 * 1.1, false, true, 0, 0)
+// cliff2 = new MovingObject(cliff, [467], [123], 385, 63, 220, 35, 385, 63 * 1.1, false, true, 0, 0)
 cliff3 = new MovingObject(cliff, [945], [123], 161, 62, 15, 39, 161, 62, false, true, 0, 0)
-// cliff2 = new MovingObject(cliff, [945], [123], 161, 62, 310, 39, 161, 62, false, true, 0, 0)
+cliff2 = new MovingObject(cliff, [945], [123], 161, 62, 310, 39, 161, 62, false, true, 0, 0)
 cliff1 = new MovingObject(cliff, [945], [123], 161, 62, 614, 39, 161, 62, false, true, 0, 0)
 
 
