@@ -47,10 +47,17 @@ function render() {
             // else if (row != 5 && row != 6) {
             // ctx.drawImage(rowImages[row], col * 100, row * 100, 100, 100) }
             if (row === 0) {
-                ctx.drawImage(rowImages[row], col * 200, row * 200, 200, 100)
+                // ctx.drawImage(rowImages[row], col * 200, row * 200, 200, 100)
+                                    water0.drawMovingObject();
+
             }
-            if ((row === 1) || (row === 2)) {
-                ctx.drawImage(rowImages[row], col * 100, row * 100, 100, 100)
+            if ((row === 1) ) {
+                // ctx.drawImage(rowImages[row], col * 100, row * 100, 100, 100)
+                // waters.forEach(water => {
+                    water1.drawMovingObject();
+                    water2.drawMovingObject();
+                    water3.drawMovingObject();
+                // });
             }
             if (row === 3) {
                 ctx.drawImage(rowImages[row], col * 100, row * 100, 100, 100)
@@ -60,7 +67,10 @@ function render() {
 
             // ctx.drawImage(terrainImage1, 0, 365, 800, 700) // 1 smooth green image
 
-            
+                                cliff1.drawMovingObject();
+                                cliff2.drawMovingObject();
+                                cliff3.drawMovingObject();
+
             if (row === 4) { ctx.drawImage(terrainImage1, 0, 360, 400, 400)}
             if (row === 4) { ctx.drawImage(terrainImage1, 400, 360, 400, 400)}
 

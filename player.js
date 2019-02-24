@@ -67,15 +67,20 @@ class Player {
         } 
     
     drowning() {
-        for (let i = 0; i < floatingObjects.length; i++) {
-            const obj = floatingObjects[i];
-            if (obj.floating === true) { 
-                this.died = false; 
-                break;
-            } else {
-                this.died = true;
-            }
-        }
+        // for (let i = 0; i < floatingObjects.length; i++) {
+        //     const obj = floatingObjects[i];
+        //     if (obj.floating === true) { 
+        //         this.died = false; 
+        //         break;
+        //     } else {
+        //         this.died = true;
+        //     }
+        // }
+        this.died = true;
+        (floatingObjects.filter(obj => {
+            if (obj.floating === true) { this.died = false};
+        })) 
+        // else { this.died = true; }
         
         let i;
         let condition;
@@ -87,7 +92,7 @@ class Player {
         for (let i = 0; i < floatingObjects.length; i++) {
             const obj = floatingObjects[i];
             if (obj.posX + 3 <= (this.posX + 6) + (this.width - 8) &&
-                (obj.posX + 3) + (obj.scaledWidth - 5) >= (this.posX + 6) &&
+                (obj.posX + 3) + (obj.scaledWidth - 9) >= (this.posX + 6) &&
                 obj.posY + obj.scaledHeight - 1 >= (this.posY + 54) &&
                 obj.posY <= (this.posY + 54) + (this.height - 54)) {
                 if ((this.posX + 6) < canvas.width - 30) {
@@ -108,7 +113,7 @@ class Player {
                 }
             }
 
-            if ((this.posY >= 50) && (this.posY <= 245) &&
+            if ((this.posY >= 0) && (this.posY <= 245) &&
                 (this.posX + 4 >= 0) && (this.posX + 4 <= 800) && (this.died === true )) {
                 // let drawCycle = new Ghost(image, [2193], [359, 332, 306], 9, 23, player.posX, player.posY, 9 * 2, 23 * 2, false, false, 3, 10)
                 // movingObjects.push(drawCycle);

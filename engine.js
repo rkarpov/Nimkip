@@ -25,19 +25,33 @@ const leftImage = new Image();
 leftImage.src = './assets/images/left_sprites.png';
 
 const water = new Image();
-water.src = './assets/images/water_terrain.png'
+water.src = './assets/images/wfall2.gif';
+const cliff = new Image();
+cliff.src = './assets/images/cliffs.gif';
 
-// water1 = new MovingObject(water, [11], [277, 369, 474, 577], 1199, 57, 0, 99, 1199, 300, false, false, 0, 15)
-// water2 = new MovingObject(water, [11], [277, 369, 474, 577], 1199, 57, 0, 149, 1199, 60, false, false, 0, 15)
-// water3 = new MovingObject(water, [11], [277, 369, 474, 577], 1199, 57, 0, 299, 1199, 60, false, false, 0, 15)
-// water4 = new MovingObject(water, [11], [277, 369, 474, 577], 1199, 57, 0, 399, 1199, 60, false, false, 0, 15)
+// water.src = './assets/images/water_terrain.png'
+
+// water1 = new MovingObject(water, [11], [277, 369, 474, 577], 1199, 57, 0, 99, 1199, 300, false, false, 0, 515)
+// water2 = new MovingObject(water, [11], [277, 369, 474, 577], 1199, 57, 0, 149, 1199, 60, false, false, 0, 515)
+// water3 = new MovingObject(water, [11], [277, 369, 474, 577], 1199, 57, 0, 299, 1199, 60, false, false, 0, 515)
+// water4 = new MovingObject(water, [11], [277, 369, 474, 577], 1199, 57, 0, 399, 1199, 60, false, false, 0, 515)
 // water2 = new MovingObject(water, [11], [369], 1199, 57, 0, 100, 1199, 60, false, false, 0, 15)
 // water3 = new MovingObject(water, [11], [474], 1199, 57, 0, 100, 1199, 60, false, false, 0, 15)
 // water4 = new MovingObject(water, [11], [577], 1199, 57, 0, 100, 1199, 60, false, false, 0, 15)
+water0 = new MovingObject(water, [765], [59], 317, 426, 0, 0, 317, 426, false, false, 0, 0)
+water1 = new MovingObject(water, [765], [59], 317, 426, 0, 0, 317, 426, false, false, 0, 0)
+water2 = new MovingObject(water, [765], [59], 317, 426, 300, 0, 317, 426, false, false, 0, 0)
+water3 = new MovingObject(water, [765], [59], 317, 426, 600, 0, 317, 426, false, false, 0, 0)
+// cliff1 = new MovingObject(cliff, [31], [135], 151, 43, 10, 56, 151 * 1.1, 43 * 1.1, false, true, 0, 0)
+cliff2 = new MovingObject(cliff, [467], [123], 385, 63, 220, 35, 385, 63 * 1.1, false, true, 0, 0)
+cliff3 = new MovingObject(cliff, [945], [123], 161, 62, 15, 39, 161, 62, false, true, 0, 0)
+// cliff2 = new MovingObject(cliff, [945], [123], 161, 62, 310, 39, 161, 62, false, true, 0, 0)
+cliff1 = new MovingObject(cliff, [945], [123], 161, 62, 614, 39, 161, 62, false, true, 0, 0)
+
 
 // waters = [
-//     // water1, water2, water3, water4
-//     water1
+//     water1, water2, water3, water4
+//     // water1
 // ]
 
 const redOnion = new MovingObject(image, [717], [5, 128], 111, 113, 650, 5, 88.8, 90.4, false, false, 0, 15)
@@ -87,19 +101,19 @@ const wogpole7 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 16
 const wogpole8 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1670 + 155, 151, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
 const wogpole9 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1710 + 155, 151, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
 
-const row2Flower1 = new MovingObject(image, [2229], [74], 60, 52, -150, 173, 60, 52, false, true, 2.5, 4) // purple
-const row2Flower2 = new MovingObject(image, [2229], [14], 60, 52, -200, 173, 60, 52, false, true, 2.5, 4) // yellow
-const row2Flower3 = new MovingObject(image, [2229], [74], 60, 52, -250, 173, 60, 52, false, true, 2.5, 4) // purple
-const row2Flower4 = new MovingObject(image, [2229], [74], 60, 52, -450, 173, 60, 52, false, true, 2.5, 4)
-const row2Flower5 = new MovingObject(image, [2229], [14], 60, 52, -500, 173, 60, 52, false, true, 2.5, 4)
-const row2Flower6 = new MovingObject(image, [2229], [74], 60, 52, -550, 173, 60, 52, false, true, 2.5, 4)
-const row2Flower7 = new MovingObject(image, [2229], [74], 60, 52, -750, 173, 60, 52, false, true, 2.5, 4)
-const row2Flower8 = new MovingObject(image, [2229], [14], 60, 52, -800, 173, 60, 52, false, true, 2.5, 4)
-const row2Flower9 = new MovingObject(image, [2229], [74], 60, 52, -850, 173, 60, 52, false, true, 2.5, 4)
+const row2Flower1 = new MovingObject(image, [2229], [74], 60, 52, -150, 173, 60, 52, false, true, 3, 4) // purple
+const row2Flower2 = new MovingObject(image, [2229], [14], 60, 52, -200, 173, 60, 52, false, true, 3, 4) // yellow
+const row2Flower3 = new MovingObject(image, [2229], [74], 60, 52, -250, 173, 60, 52, false, true, 3, 4) // purple
+const row2Flower4 = new MovingObject(image, [2229], [74], 60, 52, -450, 173, 60, 52, false, true, 3, 4)
+const row2Flower5 = new MovingObject(image, [2229], [14], 60, 52, -500, 173, 60, 52, false, true, 3, 4)
+const row2Flower6 = new MovingObject(image, [2229], [74], 60, 52, -550, 173, 60, 52, false, true, 3, 4)
+const row2Flower7 = new MovingObject(image, [2229], [74], 60, 52, -750, 173, 60, 52, false, true, 3, 4)
+const row2Flower8 = new MovingObject(image, [2229], [14], 60, 52, -800, 173, 60, 52, false, true, 3, 4)
+const row2Flower9 = new MovingObject(image, [2229], [74], 60, 52, -850, 173, 60, 52, false, true, 3, 4)
 
 const row2wogpole1 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1110, 225, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
-const row2wogpole2 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1030, 225, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
-const row2wogpole3 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1070, 225, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
+const row2wogpole2 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1070, 225, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
+const row2wogpole3 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1030, 225, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
 
 const row2wogpole4 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1370, 225, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
 const row2wogpole5 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1330, 225, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
@@ -130,28 +144,23 @@ const row3Flower9 = new MovingObject(image, [2106], [138], 60, 52, -700, 100, 60
 const currentlyPressedKeys = {};
 window.addEventListener('keydown', (e) => {
     currentlyPressedKeys[e.key] = true;
-    if ((e.keyCode === 13) && (gameOver === true)) {
-        location.reload();
-        draw();
-    }
 });
 window.addEventListener('keyup', (e) => {
     currentlyPressedKeys[e.key] = false;
-    if (e.keycode === 13 ) {
-   
-    }
 });
 
 
 const floatingObjects = [
     row1Flower1, row1Flower2, row1Flower3, row1Flower4, row1Flower5, row1Flower6, row1Flower7, row1Flower8, row1Flower9,
-    wogpole1, wogpole2, wogpole9, wogpole3, wogpole7, wogpole8, wogpole4, wogpole5, wogpole6,
+    wogpole3, wogpole2, wogpole1, wogpole6, wogpole5, wogpole4, wogpole9, wogpole8, wogpole7,
     row2Flower1, row2Flower2, row2Flower3, row2Flower4, row2Flower5, row2Flower6, row2Flower7, row2Flower8,
     row2wogpole1, row2wogpole2, row2wogpole9, row2wogpole3, row2wogpole7, row2wogpole8, row2wogpole4, row2wogpole5, row2wogpole6,
     row3Flower1, row3Flower2, row3Flower3, row3Flower4, row3Flower5, row3Flower6, row3Flower7, row3Flower8,
+    cliff3, cliff2, cliff1
 ]
 
-let movingObjects = [puffstool1, puffstool2, breadbug1, breadbug2, 
+let movingObjects = [
+    puffstool1, puffstool2, breadbug1, breadbug2, 
     bulborb14, bulborb13, bulborb12, bulborb11, bulborb10, bulborb9, bulborb8,
     bulborb7, bulborb6, bulborb5, bulborb4, bulborb3, bulborb2, bulborb1,
     row1Flower1, row1Flower2, row1Flower3, row1Flower4, row1Flower5, row1Flower6, row1Flower7, row1Flower8,
@@ -178,7 +187,7 @@ let drawCycle = 0;
 
 
 function draw() {
-    if (ship.posY === -199) {
+    if (ship.posY === -220) {
         gameOver = true;
     }
     if (gameOver) {

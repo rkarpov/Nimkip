@@ -4,8 +4,6 @@ const exhaustWidthX = [[18], [33], [38]]
 const exhaustWidthY = [[16], [30], [34]]
 const exhaustPosX = [[835 + 52], [835+ 43], [835+ 37]]
 const exhaustPosY = [[750 + 210], [750+ 225], [750+ 235]]
-// const exhaustPosY = []
-// ship.posX + 60, ship.posY + 250,
 
 class ShipTimer {
     constructor(image, animationFramesX, animationFramesY, width, height, posX, posY, scaledWidth, scaledHeight,
