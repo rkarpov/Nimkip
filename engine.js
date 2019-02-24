@@ -148,7 +148,7 @@ let movingObjects = [puffstool1, puffstool2, breadbug1, breadbug2,
 // const player = 
 const red = new Player(playerImage, [14], [102], 16, 40, 300, 640, 16 * 1.5, 40 * 1.5, 7, 4, 'up') // player starting position
 // const yellow = new Player(playerImage, [101, 102])
-const yellow = new Player(playerImage, [101], [102], 22, 40, 300, 640, 22 * 1.5, 40 * 1.5, 7, 4, 'up') // player starting position
+// const yellow = new Player(playerImage, [101], [102], 22, 40, 300, 640, 22 * 1.5, 40 * 1.5, 7, 4, 'up') // player starting position
 let player = red
 
 
@@ -211,7 +211,7 @@ function draw() {
     ctx.stroke();
 
     ctx.drawImage(mapImage, 800, 0, 600, 700) // background image for ship
-    // ship.drawMovingObject();
+    ship.drawMovingObject();
     ctx.beginPath();
     ctx.lineWidth = "4";
     ctx.strokeStyle = "rgb(214, 214, 59)";

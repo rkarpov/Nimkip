@@ -3,6 +3,8 @@ const playerImage = new Image();
 playerImage.src = './assets/images/pikmin_sprite_sheet.png';
 
 let rotation = 0;
+const yellow = (rotation % 3 === 1);
+
 const playerWidth = [[16], [22], [16]]
 const playerFloatposX = [6, 12, 6];
 
@@ -169,7 +171,11 @@ class Player {
         ctx.strokeStyle = "rgb(214, 214, 59)";
         // ctx.rect(this.posX + 5, this.posY + 30, this.width - 2, this.height - 30); // player hitbox ground
         // ctx.rect(this.posX + 6, this.posY + 45, this.width - 8, this.height - 45); // player hitbox water
-        ctx.rect(this.posX + playerFloatposX[rotation % 3], this.posY + 45, this.width - 8, this.height - (45)); // player hitbox water
+        if (this.moveDir === 'left' && rotation % 3 === 1) {
+            // ctx.rect(this.posX + playerFloatposX[rotation % 3] - 5, this.posY + 45, this.width - 8, this.height - (45)); // player hitbox water
+        } else {
+        // ctx.rect(this.posX + playerFloatposX[rotation % 3], this.posY + 45, this.width - 8, this.height - (45)); // player hitbox water
+        }
         // ctx.rect(this.posX + 6, this.posY + 52, this.width - 8, this.height - 55); // player hitbox water
         ctx.stroke();
     }
