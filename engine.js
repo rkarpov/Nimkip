@@ -223,15 +223,15 @@ function draw() {
         // bgm.pause();
         ctx.fillStyle = "darkblue";
         ctx.font = "150px Arial";
-        ctx.fillText("Time's Up...", canvas.width - 950, 350);
+        ctx.fillText("Time's Up...", canvas.width - 990, 350);
         // startBtn.style.display = 'inline';
         resetBtn.style.display = 'inline';
     } else if (gameWon) {
-        bgm.pause();
+        // bgm.pause();
         // bgm.load();
         ctx.fillStyle = "gold";
         ctx.font = "150px Arial";
-        ctx.fillText("You Win!", canvas.width - 800, 350);
+        ctx.fillText("You Win!", canvas.width - 900, 350);
         player.drawPlayer();
         blueOnion.drawMovingObject();
         redOnion.drawMovingObject();
@@ -256,9 +256,9 @@ function draw() {
     redOnion.drawMovingObject();
     yellowOnion.drawMovingObject();
 
-    if (target.posX + 12 <= (player.posX + 9) + (player.width - 15) &&
-        (target.posX + 12) + (target.scaledWidth - 26) >= (player.posX + 9) &&
-        target.posY + 3 + target.scaledHeight - 17 >= (player.posY + 40) &&
+    if (target.posX + 8 <= (player.posX + 12) + (player.width - 15) &&
+        (target.posX + 8) + (target.scaledWidth - 17) >= (player.posX + 12) &&
+        target.posY + 3 + target.scaledHeight - 12 >= (player.posY + 40) &&
         target.posY + 3 <= (player.posY + 40) + (player.height - 53)) {
             // player.posY = 0
             // player.posX = 600
@@ -269,8 +269,8 @@ function draw() {
     ctx.beginPath();
     ctx.lineWidth = "2";
     ctx.strokeStyle = "rgb(214, 214, 59)";
-    // ctx.rect(redTarget.posX + 12, redTarget.posY + 3, redTarget.scaledWidth - 26, redTarget.scaledHeight - 17); // red target box
-    // ctx.rect(player.posX + 9, player.posY + 40, player.width - 15, player.height - 53); // player wins box
+    // ctx.rect(redTarget.posX + 8, redTarget.posY + 3, redTarget.scaledWidth - 17, redTarget.scaledHeight - 12); // red target box
+    // ctx.rect(player.posX + 12, player.posY + 40, player.width - 15, player.height - 53); // player wins box
     ctx.stroke();
 
     ctx.drawImage(mapImage, 800, 0, 600, 700) // background image for ship
@@ -298,6 +298,8 @@ function reset() {
     ship.posY = 900;
     player.posY = 640;
     player.posX = 300;
+    // player.posY = 0;
+    // player.posX = 800;
     player.flowerY = player.posY - 8;
     player.flowerX = player.posX;
     gameOver = false;
