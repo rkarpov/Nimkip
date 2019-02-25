@@ -9,15 +9,14 @@
     <link rel="stylesheet" type="text/css" href="./assets/stylesheets/index.css">
     <div class="left-column-items">
         <h1>Instructions</h1>
-        <h3>Move holding arrow keys
-            Command + R resets game</h3>
-        <h3>Mute: 'm' unmute: 'n'</h3>
-        <h3>Your goal is to reach the very top</h3>
-        <h3>Win by standing on flashing red circle</h3>
-        <h3>You have inifinite lives, however...</h3>
-        <h3>Time runs out when space ship leaves</h3>
-        <h3>Avoid being eaten by enemies on grass</h3>
-        <h3>Walk on flowers & tadpoles to cross water</h3>
+        <h4>Move holding arrow keys. Command + R resets game</h4>
+        <h4>Mute: 'm' unmute: 'n'</h4>
+        <h4>Your goal is to reach the very top</h4>
+        <h4>Win by standing on flashing red circle</h4>
+        <h4>You have inifinite lives, however...</h4>
+        <h4>Time runs out when space ship leaves</h4>
+        <h4>Avoid being eaten by enemies on grass</h4>
+        <h4>Walk on flowers & tadpoles to cross water</h4>
     </div>
     <div class="center-screen-items">
         <div class="title-container">
@@ -28,34 +27,24 @@
             <canvas id="canvas"></canvas>
             <audio src="./assets/sounds/death2.wav" id="sound"></audio>
             <audio src="./assets/sounds/title.mp3" id="bgm"></audio>
+            <button type="button" id="startBtn" onClick="draw()">START</button>
+            <button type="button" id="resetBtn" onClick="reset()">RESET</button>
         </div>
     </div>
 
     <div class="right-column-items">
-        <!-- <li > -->
             <a href="https://github.com/rkarpov">
                 <img class="github" src="./assets/images/github.png" alt=""/>
-            </a>
-        <!-- </li> -->
-        <!-- <li > -->
+            </a>       
             <a href="https://www.linkedin.com/in/roman-karpov-206182145/">
                 <img class="linkedin" src="./assets/images/linkedin.png" alt=""/>
-            </a>
-        <!-- </li> -->
-       
-            
+            </a>        
             <a href="https://angel.co/roman-karpov">
                 <img class="angellist" src="./assets/images/angellist.png" alt="" />
             </a>
-            
-       
-
-        <!-- <li > -->
             <a href="https://rkarpov.github.io./">
                 <img class="portfolio" src="./assets/images/portfolio.png" alt=""/>
-            </a>
-        <!-- </li> -->
-    </div>
+            </a>    </div>
     <script type="application/javascript" src="./player.js"></script>
     <script type="application/javascript" src="./moving_object.js"></script>
     <script type="application/javascript" src="./ship_timer.js"></script>

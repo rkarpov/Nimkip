@@ -2,10 +2,12 @@ var canvas = document.getElementById('canvas');
 canvas.width = 1000;
 canvas.height = 700;
 var ctx = canvas.getContext('2d');
-var now = Date.now();
+// var now = Date.now();
 
-var sound = document.getElementById('sound')
-var bgm = document.getElementById('bgm')
+var sound = document.getElementById('sound');
+var bgm = document.getElementById('bgm');
+var startBtn = document.getElementById('startBtn');
+var resetBtn = document.getElementById('resetBtn');
 
 const mapImage = new Image();
 mapImage.src = './assets/images/Pikmin_1_Map.png';
@@ -113,15 +115,15 @@ const wogpole7 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 16
 const wogpole8 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1670 + 155, 151, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
 const wogpole9 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1710 + 155, 151, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
 
-const row2Flower1 = new MovingObject(image, [2229], [74], 60, 52, -150, 173, 60, 52, false, true, 3, 4) // purple
-const row2Flower2 = new MovingObject(image, [2229], [14], 60, 52, -200, 173, 60, 52, false, true, 3, 4) // yellow
-const row2Flower3 = new MovingObject(image, [2229], [74], 60, 52, -250, 173, 60, 52, false, true, 3, 4) // purple
-const row2Flower4 = new MovingObject(image, [2229], [74], 60, 52, -450, 173, 60, 52, false, true, 3, 4)
-const row2Flower5 = new MovingObject(image, [2229], [14], 60, 52, -500, 173, 60, 52, false, true, 3, 4)
-const row2Flower6 = new MovingObject(image, [2229], [74], 60, 52, -550, 173, 60, 52, false, true, 3, 4)
-const row2Flower7 = new MovingObject(image, [2229], [74], 60, 52, -750, 173, 60, 52, false, true, 3, 4)
-const row2Flower8 = new MovingObject(image, [2229], [14], 60, 52, -800, 173, 60, 52, false, true, 3, 4)
-const row2Flower9 = new MovingObject(image, [2229], [74], 60, 52, -850, 173, 60, 52, false, true, 3, 4)
+const row2Flower1 = new MovingObject(image, [2229], [74], 60, 52, -150, 173, 60, 52, false, true, 2.5, 4) // purple
+const row2Flower2 = new MovingObject(image, [2229], [14], 60, 52, -200, 173, 60, 52, false, true, 2.5, 4) // yellow
+const row2Flower3 = new MovingObject(image, [2229], [74], 60, 52, -250, 173, 60, 52, false, true, 2.5, 4) // purple
+const row2Flower4 = new MovingObject(image, [2229], [74], 60, 52, -450, 173, 60, 52, false, true, 2.5, 4)
+const row2Flower5 = new MovingObject(image, [2229], [14], 60, 52, -500, 173, 60, 52, false, true, 2.5, 4)
+const row2Flower6 = new MovingObject(image, [2229], [74], 60, 52, -550, 173, 60, 52, false, true, 2.5, 4)
+const row2Flower7 = new MovingObject(image, [2229], [74], 60, 52, -750, 173, 60, 52, false, true, 2.5, 4)
+const row2Flower8 = new MovingObject(image, [2229], [14], 60, 52, -800, 173, 60, 52, false, true, 2.5, 4)
+const row2Flower9 = new MovingObject(image, [2229], [74], 60, 52, -850, 173, 60, 52, false, true, 2.5, 4)
 
 const row2wogpole1 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1110, 225, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
 const row2wogpole2 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1070, 225, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
@@ -208,7 +210,8 @@ let playBgm = true;
 let playSound = true;
 
 function draw() {
-    // bgm.load();
+    startBtn.style.display = 'none';
+    resetBtn.style.display = 'none';
     if (playBgm) {
         bgm.play();
     } else { bgm.pause() }
@@ -217,10 +220,12 @@ function draw() {
         gameOver = true;
     }
     if (gameOver) {
-        bgm.pause();
+        // bgm.pause();
         ctx.fillStyle = "darkblue";
         ctx.font = "150px Arial";
         ctx.fillText("Time's Up...", canvas.width - 950, 350);
+        // startBtn.style.display = 'inline';
+        resetBtn.style.display = 'inline';
     } else if (gameWon) {
         bgm.pause();
         // bgm.load();
@@ -231,6 +236,9 @@ function draw() {
         blueOnion.drawMovingObject();
         redOnion.drawMovingObject();
         yellowOnion.drawMovingObject();
+        // startBtn.style.display = 'inline';
+        resetBtn.style.display = 'inline';
+
     } else {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     render();
@@ -284,10 +292,19 @@ function draw() {
     drawCycle += 1
 }}
 
-draw()
 
-
-
+function reset() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ship.posY = 900;
+    player.posY = 640;
+    player.posX = 300;
+    player.flowerY = player.posY - 8;
+    player.flowerX = player.posX;
+    gameOver = false;
+    gameWon = false;
+    draw();
+    // ctx.restore();
+}
 
 
 var key = event.keycode;
