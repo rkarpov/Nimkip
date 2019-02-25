@@ -241,8 +241,8 @@ function draw() {
 
     } else {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    render();
     movePlayer();
+    render();
 
     waterfall1.drawMovingObject();
     waterfall2.drawMovingObject();

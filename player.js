@@ -92,7 +92,7 @@ class Player {
         for (let i = 0; i < floatingObjects.length; i++) {
             const obj = floatingObjects[i];
             if (obj.posX + 3 <= (this.posX + 6) + (this.width - 8) &&
-                (obj.posX + 3) + (obj.scaledWidth - 9) >= (this.posX + 6) &&
+                (obj.posX + 3) + (obj.scaledWidth - 10) >= (this.posX + 6) &&
                 obj.posY + obj.scaledHeight - 1 >= (this.posY + 54) &&
                 obj.posY <= (this.posY + 54) + (this.height - 54)) {
                 if ((this.posX + 6) < canvas.width - 30) {
