@@ -2,8 +2,10 @@ var canvas = document.getElementById('canvas');
 canvas.width = 1000;
 canvas.height = 700;
 var ctx = canvas.getContext('2d');
+var now = Date.now();
 
 var sound = document.getElementById('sound')
+var bgm = document.getElementById('bgm')
 
 const mapImage = new Image();
 mapImage.src = './assets/images/Pikmin_1_Map.png';
@@ -154,11 +156,19 @@ const row3Flower9 = new MovingObject(image, [2106], [138], 60, 52, -700, 100, 60
 const currentlyPressedKeys = {};
 window.addEventListener('keydown', (e) => {
     currentlyPressedKeys[e.key] = true;
+    if (e.keycode === 13) {
+        mute()
+    }
 });
 window.addEventListener('keyup', (e) => {
     currentlyPressedKeys[e.key] = false;
 });
 
+// window.addEventListener('ke')
+
+function mute() {
+    bgm.pause();
+}
 
 const floatingObjects = [
     row1Flower1, row1Flower2, row1Flower3, row1Flower4, row1Flower5, row1Flower6, row1Flower7, row1Flower8, row1Flower9,
@@ -194,17 +204,26 @@ let player = red
 let gameOver = false;
 let gameWon = false;
 let drawCycle = 0;
-
+let playBgm = true;
+let playSound = true;
 
 function draw() {
+    // bgm.load();
+    if (playBgm) {
+        bgm.play();
+    } else { bgm.pause() }
+
     if (ship.posY === -220) {
         gameOver = true;
     }
     if (gameOver) {
+        bgm.pause();
         ctx.fillStyle = "darkblue";
         ctx.font = "150px Arial";
         ctx.fillText("Time's Up...", canvas.width - 950, 350);
     } else if (gameWon) {
+        bgm.pause();
+        // bgm.load();
         ctx.fillStyle = "gold";
         ctx.font = "150px Arial";
         ctx.fillText("You Win!", canvas.width - 800, 350);
@@ -261,7 +280,7 @@ function draw() {
 
     // whale.drawMovingObject();
     // player.drawPlayer();
-        window.requestAnimationFrame(draw);
+    window.requestAnimationFrame(draw);
     drawCycle += 1
 }}
 
@@ -271,10 +290,19 @@ draw()
 
 
 
-
+var key = event.keycode;
 
 
 function movePlayer() {
+     if (currentlyPressedKeys.m) {
+        playBgm = false;
+        playSound = false;
+     } 
+     if (currentlyPressedKeys.n) {
+        playBgm = true;
+        playSound = true;
+     }
+
     if (!(currentlyPressedKeys.ArrowDown || currentlyPressedKeys.ArrowUp || currentlyPressedKeys.ArrowLeft || currentlyPressedKeys.ArrowRight)) {
         player.animate = false;
     } else {
