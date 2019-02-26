@@ -32,20 +32,16 @@ canvas {
 }
 
 .startBtn {
-    /* display: flex; */
-    /* position: absolute; */
-    /* z-index: 100; */
-    /* top: 70%;
-    left: 60%; */
-    width: 150px;
+
+    width: 154px;
     height: 100px;
     font-size: 30px;
-    /* padding: 5px 8px 5px 6px; */
     font-family: sans-serif;
     border-radius: 3px;
     color: white;
     /* background: #3e78ad; */
-    background-color: rgb(67, 42, 42);
+    /* background-color: rgb(67, 42, 42); */
+    background: #3e78ad;
     border: 1px solid rgb(78, 83, 162);
     box-shadow: 0 0 5px #888;
     animation-name: flash;
@@ -63,16 +59,15 @@ canvas {
 
 .Btn-container {
     border-bottom: 4px solid rgb(214, 214, 59);
-    width: 150px;
+    width: 154px;
     height: 100px;
-    /* background-color: black; */
     background-color: rgb(67, 42, 42);
     margin-bottom: 10px;
 }
 
 .resetBtn {
     display: none;
-    width: 150px;
+    width: 154px;
     height: 100px;
     font-size: 30px;;
     padding: 5px 8px 5px 6px;
