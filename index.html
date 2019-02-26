@@ -29,22 +29,36 @@
             <audio src="./assets/sounds/title.mp3" id="bgm"></audio>
         </div>
     </div>
-    <button type="button" id="startBtn" class="startBtn" onClick="draw()">PRESS START</button>
-<button type="button" id="resetBtn" class="resetBtn" onClick="reset()">PLAY AGAIN</button>
-
+    
     <div class="right-column-items">
-            <a href="https://github.com/rkarpov">
-                <img class="github" src="./assets/images/github.png" alt=""/>
-            </a>       
-            <a href="https://www.linkedin.com/in/roman-karpov-206182145/">
-                <img class="linkedin" src="./assets/images/linkedin.png" alt=""/>
-            </a>        
-            <a href="https://angel.co/roman-karpov">
-                <img class="angellist" src="./assets/images/angellist.png" alt="" />
-            </a>
-            <a href="https://rkarpov.github.io./">
-                <img class="portfolio" src="./assets/images/portfolio.png" alt=""/>
-            </a>    </div>
+        <div class="Btn-container">
+            <button type="button" id="resetBtn" class="resetBtn" onClick="reset()">PLAY AGAIN</button>
+            <button type="button" id="startBtn" class="startBtn" onClick="draw()">PRESS START</button>
+        </div>
+        <a href="https://github.com/rkarpov">
+            <img class="github" src="./assets/images/github.png" alt=""/>
+        </a>       
+        <a href="https://www.linkedin.com/in/roman-karpov-206182145/">
+            <img class="linkedin" src="./assets/images/linkedin.png" alt=""/>
+        </a>        
+        <a href="https://angel.co/roman-karpov">
+            <img class="angellist" src="./assets/images/angellist.png" alt="" />
+        </a>
+        <a href="https://rkarpov.github.io./">
+            <img class="portfolio" src="./assets/images/portfolio.png" alt=""/>
+        </a> 
+        <div class="sound-img-container">
+            M : MUTE <br>
+            N : UNMUTE
+            <img src="./assets/sounds/device-volume-loudspeaker-speaker-mute-glyph-512.png" class="muteBtn" id="muteBtn">
+        </img>
+            <img src="./assets//sounds/Volume-512.png" class="soundBtn" id="soundBtn">
+            <!-- <p class="sound-instruction">
+                M: MUTE <br>
+                N: UNMUTE
+            </p> -->
+        </div>
+    </div>
     <script type="application/javascript" src="./player.js"></script>
     <script type="application/javascript" src="./moving_object.js"></script>
     <script type="application/javascript" src="./ship_timer.js"></script>

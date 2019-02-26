@@ -8,6 +8,8 @@ var sound = document.getElementById('sound');
 var bgm = document.getElementById('bgm');
 var startBtn = document.getElementById('startBtn');
 var resetBtn = document.getElementById('resetBtn');
+var muteBtn = document.getElementById('muteBtn');
+var soundBtn = document.getElementById('soundBtn');
 
 const mapImage = new Image();
 mapImage.src = './assets/images/Pikmin_1_Map.png';
@@ -312,10 +314,14 @@ function movePlayer() {
      if (currentlyPressedKeys.m) {
         playBgm = false;
         playSound = false;
+        soundBtn.style.display = 'none';
+        muteBtn.style.display = 'inline';
      } 
      if (currentlyPressedKeys.n) {
         playBgm = true;
         playSound = true;
+        soundBtn.style.display = 'inline';
+        muteBtn.style.display = 'none';
      }
 
     if (!(currentlyPressedKeys.ArrowDown || currentlyPressedKeys.ArrowUp || currentlyPressedKeys.ArrowLeft || currentlyPressedKeys.ArrowRight)) {

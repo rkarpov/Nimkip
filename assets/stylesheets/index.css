@@ -33,21 +33,23 @@ canvas {
 
 .startBtn {
     /* display: flex; */
-    position: absolute;
-    top: 550;
-    left: 840;
+    /* position: absolute; */
+    /* z-index: 100; */
+    /* top: 70%;
+    left: 60%; */
     width: 150px;
     height: 100px;
     font-size: 30px;
-    padding: 5px 8px 5px 6px;
+    /* padding: 5px 8px 5px 6px; */
     font-family: sans-serif;
     border-radius: 3px;
     color: white;
-    background: #3e78ad;
+    /* background: #3e78ad; */
+    background-color: rgb(67, 42, 42);
     border: 1px solid rgb(78, 83, 162);
     box-shadow: 0 0 5px #888;
     animation-name: flash;
-    animation-duration: 1s;
+    animation-duration: 1.5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     cursor: pointer;
@@ -59,11 +61,17 @@ canvas {
     100% { opacity: 1.0; }
 }
 
+.Btn-container {
+    border-bottom: 4px solid rgb(214, 214, 59);
+    width: 150px;
+    height: 100px;
+    /* background-color: black; */
+    background-color: rgb(67, 42, 42);
+    margin-bottom: 10px;
+}
+
 .resetBtn {
     display: none;
-    position: absolute;
-    top: 300;
-    left: 897;
     width: 150px;
     height: 100px;
     font-size: 30px;;
@@ -80,12 +88,43 @@ canvas {
     animation-iteration-count: infinite;
     cursor: pointer;
 }
-/* 
-.sprite {
-    background: url('../images/olimar_pik_sprites.png') no-repeat -201px -13px;
-    width: 16px;
-    height: 38px;
-} */
+
+.sound-img-container {
+    width: 135px;
+    padding-left: 18px;
+    padding-top: 10px;
+    background-color: rgb(67, 42, 42);
+    border-top: 4px solid rgb(214, 214, 59);
+    font-size: 20px;
+    color: white;
+}
+
+.muteBtn {
+    display: none;
+    width: 90px;
+    height: 75px;
+    padding: 5px 8px 5px 6px;
+    font-family: sans-serif;
+    border-radius: 3px;
+    background-color: rgb(67, 42, 42);
+}
+
+.soundBtn {
+    display: inline;
+    width: 90px;
+    height: 75px;
+    font-size: 30px;
+    padding: 5px 8px 5px 6px;
+    font-family: sans-serif;
+    border-radius: 3px;
+    color: white;
+    background-color: rgb(67, 42, 42);
+}
+
+.sound-instruction {
+    font-size: 20px;
+    color: white;
+}
 
 /* .title-container {
     width: 630px;
@@ -119,35 +158,39 @@ canvas {
 }
 
 .right-column-items {
-    padding-top: 20px;
+    /* padding-top: 20px; */
     /* margin-top: 150px; */
     display: flex;
     flex-direction: column;
-      /* background-color: purple; */
-      /* background-color: #40da0073; */
-           background-color: #0aa300bd;
+    align-items: center;
+    /* background-color: purple; */
+    /* background-color: #40da0073; */
+    background-color: #0aa300bd;
     border: 4px solid rgb(214, 214, 59);
+    border-radius: 3px;
+    height: 670px;
 }
 
 .github {
-    height: 125px;
-    width: 125px;
-    padding-left: 25px
+    height: 85px;
+    width: 85px;
+    /* padding-left: 25px */
 }
 
 .linkedin {
-    height: 175px;
-    width: 175px;
+    /* margin-left: 10px; */
+    height: 110px;
+    width: 110px;
 }
 
 .angellist {
-    margin-left: 10px;
-    height: 150px;
-    width: 150px;
+    /* margin-left: 17px; */
+    height: 95px;
+    width: 95px;
 }
 
 .portfolio {
-    margin-left: 8px;
-    height: 150px;
-    width: 150px;
+    /* margin-left: 8px; */
+    height: 120px;
+    width: 120px;
 }
