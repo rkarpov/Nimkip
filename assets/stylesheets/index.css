@@ -34,11 +34,11 @@ canvas {
 .startBtn {
     /* display: flex; */
     position: absolute;
-    top: 600;
-    left: 850;
+    top: 550;
+    left: 840;
     width: 150px;
     height: 100px;
-    font-size: 20px;
+    font-size: 30px;
     padding: 5px 8px 5px 6px;
     font-family: sans-serif;
     border-radius: 3px;
@@ -46,31 +46,39 @@ canvas {
     background: #3e78ad;
     border: 1px solid rgb(78, 83, 162);
     box-shadow: 0 0 5px #888;
-    margin-top: 13px;
+    animation-name: flash;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    cursor: pointer;
+}
+
+@keyframes flash {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1.0; }
 }
 
 .resetBtn {
     display: none;
     position: absolute;
-    /* position: absolute;
-    top: 400px;
-    left: 250px;
+    top: 300;
+    left: 897;
     width: 150px;
     height: 100px;
-    font-size: 20px; */
-        top: 335;
-        left: 897;
-        width: 150px;
-        height: 100px;
-        font-size: 20px;
-        padding: 5px 8px 5px 6px;
-        font-family: sans-serif;
-        border-radius: 3px;
-        color: white;
-        background: #3e78ad;
-        border: 1px solid rgb(78, 83, 162);
-        box-shadow: 0 0 5px #888;
-        margin-top: 13px;
+    font-size: 30px;;
+    padding: 5px 8px 5px 6px;
+    font-family: sans-serif;
+    border-radius: 3px;
+    color: white;
+    background: #3e78ad;
+    border: 1px solid rgb(78, 83, 162);
+    box-shadow: 0 0 5px #888;
+    animation-name: flash;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    cursor: pointer;
 }
 /* 
 .sprite {
