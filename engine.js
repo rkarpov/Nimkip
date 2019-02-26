@@ -48,25 +48,20 @@ water0 = new MovingObject(water, [765], [59], 317, 426, 0, 0, 317, 426, false, f
 water1 = new MovingObject(water, [765], [59], 317, 426, 0, 0, 317, 426, false, false, 0, 0)
 water2 = new MovingObject(water, [765], [59], 317, 426, 300, 0, 317, 426, false, false, 0, 0)
 water3 = new MovingObject(water, [765], [59], 317, 426, 600, 0, 317, 426, false, false, 0, 0)
-// cliff1 = new MovingObject(cliff, [31], [135], 151, 43, 10, 56, 151 * 1.1, 43 * 1.1, false, true, 0, 0)
 
 cliff1 = new MovingObject(cliff, [467], [123], 385, 63, -35, 35, 385 * .5, 63 * 1.1, false, true, 0, 0)
 cliff2 = new MovingObject(cliff, [467], [123], 385, 63, 296, 35, 385 * .5, 63 * 1.1, false, true, 0, 0)
 cliff3 = new MovingObject(cliff, [467], [123], 385, 63, 630, 35, 385 * .5, 63 * 1.1, false, true, 0, 0)
 
+waterfall1 = new MovingObject(water, [14, 206, 390, 587], [375], 173, 233, 152, 0, 173 * .85, 233 * .5, false, false, 0, 4)
+waterfall2 = new MovingObject(water, [14, 206, 390, 587], [375], 173, 233, 487, 0, 173 * .85, 233 * .5, false, false, 0, 4)
+// cliff1 = new MovingObject(cliff, [31], [135], 151, 43, 10, 56, 151 * 1.1, 43 * 1.1, false, true, 0, 0)
 // cliff3 = new MovingObject(cliff, [945], [123], 161, 62, 33, 39, 161 * .75, 62, false, true, 0, 0)
 // cliff2 = new MovingObject(cliff, [945], [123], 161, 62, 310, 39, 161, 62, false, true, 0, 0)
 // cliff1 = new MovingObject(cliff, [945], [123], 161, 62, 633, 39, 161 * .75, 62, false, true, 0, 0)
-
 // waterfall1 = new MovingObject(water, [14, 206, 390, 587], [375], 173, 233, 157, 0, 173, 233 * .53, false, false, 0, 5)
 // waterfall2 = new MovingObject(water, [14, 206, 390, 587], [375], 173, 233, 460, 0, 173, 233 * .53, false, false, 0, 5)
 
-waterfall1 = new MovingObject(water, [14, 206, 390, 587], [375], 173, 233, 152, 0, 173 * .85, 233 * .5, false, false, 0, 4)
-waterfall2 = new MovingObject(water, [14, 206, 390, 587], [375], 173, 233, 487, 0, 173 * .85, 233 * .5, false, false, 0, 4)
-// waters = [
-//     water1, water2, water3, water4
-//     // water1
-// ]
 
 const redOnion = new MovingObject(image, [717], [5, 128], 111, 113, 675, 5, 88.8, 90.4, false, false, 0, 15)
 const blueOnion = new MovingObject(image, [1237], [9, 125], 111, 113, 28, 5, 88.8, 90.4, false, false, 0, 15)
@@ -194,6 +189,7 @@ let movingObjects = [
 
 // const player = 
 const red = new Player(playerImage, [14], [102], 16, 40, 300, 640, 16 * 1.5, 40 * 1.5, 7, 4, 'up') // player starting position
+// const red = new Player(playerImage, [14], [102], 16, 40, 700, 0, 16 * 1.5, 40 * 1.5, 7, 4, 'up') // player starting position
 // const yellow = new Player(playerImage, [101, 102])
 // const yellow = new Player(playerImage, [101], [102], 22, 40, 300, 640, 22 * 1.5, 40 * 1.5, 7, 4, 'up') // player starting position
 let player = red
