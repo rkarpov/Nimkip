@@ -155,7 +155,7 @@ let gameStarted = false;
 const currentlyPressedKeys = {};
 window.addEventListener('keydown', (e) => {
     currentlyPressedKeys[e.key] = true;
-    if ((gameStarted === false) && currentlyPressedKeys.Enter) { draw(), gameStarted = true }
+    if ((gameStarted === false) && currentlyPressedKeys.Enter) { draw() }
     if ((resetBtn.style.display === 'inline') && currentlyPressedKeys.Enter) { reset() }
 });
 window.addEventListener('keyup', (e) => {
@@ -205,6 +205,7 @@ let playBgm = true;
 let playSound = true;
 
 function draw() {
+    gameStarted = true;
     startBtn.style.display = 'none';
     resetBtn.style.display = 'none';
     if (playBgm) {
