@@ -151,19 +151,16 @@ const row3Flower9 = new MovingObject(image, [2106], [138], 60, 52, -700, 100, 60
 
 // const whale = new Image();
 // whale.src = './assets/images/tara.png'
-
+let gameStarted = false;
 const currentlyPressedKeys = {};
 window.addEventListener('keydown', (e) => {
     currentlyPressedKeys[e.key] = true;
-    if (e.keycode === 13) {
-        mute()
-    }
+    if ((gameStarted === false) && currentlyPressedKeys.Enter) { draw(), gameStarted = true }
+    if ((resetBtn.style.display === 'inline') && currentlyPressedKeys.Enter) { reset() }
 });
 window.addEventListener('keyup', (e) => {
     currentlyPressedKeys[e.key] = false;
 });
-
-// window.addEventListener('ke')
 
 function mute() {
     bgm.pause();
@@ -230,13 +227,12 @@ function draw() {
         ctx.fillStyle = "gold";
         ctx.font = "150px Arial";
         ctx.fillText("You Win!", canvas.width - 900, 350);
-        player.drawPlayer();
+        // player.drawPlayer();
         blueOnion.drawMovingObject();
         redOnion.drawMovingObject();
         yellowOnion.drawMovingObject();
         // startBtn.style.display = 'inline';
         resetBtn.style.display = 'inline';
-
     } else {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     movePlayer();
@@ -286,6 +282,7 @@ function draw() {
 
     // whale.drawMovingObject();
     // player.drawPlayer();
+        // setTimeout(10000).then(window.requestAnimationFrame(draw))
     window.requestAnimationFrame(draw);
     drawCycle += 1
 }}
@@ -307,7 +304,6 @@ function reset() {
 }
 
 
-var key = event.keycode;
 
 
 function movePlayer() {
