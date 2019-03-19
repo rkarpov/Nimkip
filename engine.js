@@ -205,6 +205,13 @@ let playBgm = true;
 let playSound = true;
 
 function draw() {
+    if (isNaN(canvas.width)) {
+        return;
+    }
+    if (isNaN(canvas.height)) {
+        return;
+    }
+
     gameStarted = true;
     startBtn.style.display = 'none';
     resetBtn.style.display = 'none';
