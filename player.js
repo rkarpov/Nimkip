@@ -36,12 +36,9 @@ class Player {
         this.ghostX = GhostX[rotation % 3]
         this.ghostY = GhostY[rotation % 3]
 
-        // this.scaledWidth = scaledWidth;
-        // this.scaledHeight = scaledHeight;
         this.scaledWidth = this.pwidth * 1.5;
         this.scaledHeight = this.pheight * 1.5;
 
-        // this.width = this.pwidth;
         this.width = playerWidth[rotation % 3]
         this.height = 58;
 
@@ -67,20 +64,10 @@ class Player {
         } 
     
     drowning() {
-        // for (let i = 0; i < floatingObjects.length; i++) {
-        //     const obj = floatingObjects[i];
-        //     if (obj.floating === true) { 
-        //         this.died = false; 
-        //         break;
-        //     } else {
-        //         this.died = true;
-        //     }
-        // }
         this.died = true;
         (floatingObjects.filter(obj => {
             if (obj.floating === true) { this.died = false};
         })) 
-        // else { this.died = true; }
         
         let i;
         let condition;
@@ -96,7 +83,6 @@ class Player {
                 obj.posY + obj.scaledHeight - 1 >= (this.posY + 54) &&
                 obj.posY <= (this.posY + 54) + (this.height - 54)) {
                 if ((this.posX + 6) < canvas.width - 30) {
-                    // this.alive = true;
                     if (obj.moveDir === 'startRight') { 
                         if (player.posX - 4 < 0) {}
                         else {
@@ -115,10 +101,6 @@ class Player {
 
             if ((this.posY >= 0) && (this.posY <= 245) &&
                 (this.posX + 4 >= 0) && (this.posX + 4 <= 800) && (this.died === true )) {
-                // let drawCycle = new Ghost(image, [2193], [359, 332, 306], 9, 23, player.posX, player.posY, 9 * 2, 23 * 2, false, false, 3, 10)
-                // movingObjects.push(drawCycle);
-                // this.posY = 640
-                // this.flowerY = 640
                 this.handleDying();
             }
 
@@ -126,7 +108,6 @@ class Player {
     }
 
     handleDying(){
-        // let drawCycle = new Ghost(image, [2193], [359, 306, 332, 306], 9, 23, player.posX, player.posY, 9 * 2, 23 * 2, false, false, 3, 10)
         let drawCycle = new Ghost(image, GhostX[rotation % 3], [306, 332, 306, 359], 9, 23, player.posX, player.posY, 9 * 2, 23 * 2, false, false, 3, 5)
         movingObjects.push(drawCycle);
         rotation += 1
@@ -144,7 +125,6 @@ class Player {
             sound.play();
         }
     }
-
 
      handleAnimation() {
         if (this.animationFrameX.length > 1) {
@@ -171,10 +151,8 @@ class Player {
             ctx.drawImage(this.image, this.animationFrameX[0], this.animationFrameY[0], playerWidth[rotation % 3], this.pheight, this.posX, this.posY, playerWidth[rotation % 3] * 1.5, this.scaledHeight); // Player scaled by 1.5
             ctx.drawImage(this.flowerImage, this.flowerFrameX, this.flowerFrameY, 18, 12, this.flowerX, this.flowerY, 18 * 1.5, 12 * 1.5)
         }
-        // const headFlower = new MovingObject(image, [342], [161], 18, 12, player.posX, player.posY, 18 * 1.5, 12 * 1.5, 0, 0)
 
         this.drowning();
-        // this.surviving();
         ctx.beginPath();
         ctx.lineWidth = "2";
         ctx.strokeStyle = "rgb(214, 214, 59)";
@@ -188,4 +166,3 @@ class Player {
         ctx.stroke();
     }
 }
-// playerFloatposX[rotation % 3];

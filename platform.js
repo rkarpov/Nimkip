@@ -1,5 +1,3 @@
-// const enemy = new Bulborb(image, animationFramesX, animationFrameY, width, height, posX, posY, scaledWidth, scaledHeight)
-
 class Platform {
     constructor(image, animationFrameY, animationFramesX, width, height, posX, posY, scaledWidth, scaledHeight, movementSpeed, frameTicks = 4) {
         this.image = image;
@@ -35,7 +33,3 @@ class Platform {
     }
 
 }
-
-
-// const bulborb = new Bulborb()
-// const bulborb2 = new Bulborb()

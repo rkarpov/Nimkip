@@ -91,7 +91,6 @@ class MovingObject {
                 this.posY + this.scaledHeight - 1 >= (player.posY + 54) &&
                 this.posY <= (player.posY + 54) + (player.height - 54)) {
         } else { 
-            // if (player.posY + )
             this.floating = false; }
 
         // float object hitbox
@@ -101,9 +100,9 @@ class MovingObject {
         //  ctx.rect(this.posX + 3, this.posY, this.scaledWidth - 10, this.scaledHeight - 1);
          ctx.stroke();
 
-        // player's hitbox
-        // ctx.rect(this.posX + 6, this.posY + 50, this.width - 8, this.height - 50); // player hitbox water
-        // ctx.rect(this.posX + playerFloatposX[rotation % 3] - 5, this.posY + 45, this.width - 8, this.height - (45)); // yellow hitbox water
+        // player's hitbox for water section
+        // ctx.rect(this.posX + 6, this.posY + 50, this.width - 8, this.height - 50); // red & blue player
+        // ctx.rect(this.posX + playerFloatposX[rotation % 3] - 5, this.posY + 45, this.width - 8, this.height - (45)); // yellow player
 
     }
   

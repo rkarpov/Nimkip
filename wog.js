@@ -1,5 +1,3 @@
-// const enemy = new Bulborb(image, animationFramesX, animationFrameY, width, height, posX, posY, scaledWidth, scaledHeight)
-
 class Wog {
     constructor(image, animationFrameY, animationFramesX, width, height, posX, posY, scaledWidth, scaledHeight, movementSpeed, frameTicks = 4) {
         this.image = image;
@@ -16,8 +14,6 @@ class Wog {
 
         this.frameIndex = 0;
         this.tickCount = 0;
-        // this.ticksPerFrame = 3;
-        // this.numberOfFrame = this.numberOfFrames || 1;
     }
 
     drawPlatform() {
@@ -31,11 +27,6 @@ class Wog {
         if (this.posX > 825) {
             this.posX = -65;
         }
-
     }
 
 }
-
-
-// const bulborb = new Bulborb()
-// const bulborb2 = new Bulborb()

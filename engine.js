@@ -2,8 +2,6 @@ var canvas = document.getElementById('canvas');
 canvas.width = 1000;
 canvas.height = 700;
 var ctx = canvas.getContext('2d');
-// var now = Date.now();
-
 var sound = document.getElementById('sound');
 var bgm = document.getElementById('bgm');
 var startBtn = document.getElementById('startBtn');
@@ -37,15 +35,6 @@ water.src = './assets/images/wfall2.png';
 const cliff = new Image();
 cliff.src = './assets/images/cliffs.gif';
 
-// water.src = './assets/images/water_terrain.png'
-
-// water1 = new MovingObject(water, [11], [277, 369, 474, 577], 1199, 57, 0, 99, 1199, 300, false, false, 0, 515)
-// water2 = new MovingObject(water, [11], [277, 369, 474, 577], 1199, 57, 0, 149, 1199, 60, false, false, 0, 515)
-// water3 = new MovingObject(water, [11], [277, 369, 474, 577], 1199, 57, 0, 299, 1199, 60, false, false, 0, 515)
-// water4 = new MovingObject(water, [11], [277, 369, 474, 577], 1199, 57, 0, 399, 1199, 60, false, false, 0, 515)
-// water2 = new MovingObject(water, [11], [369], 1199, 57, 0, 100, 1199, 60, false, false, 0, 15)
-// water3 = new MovingObject(water, [11], [474], 1199, 57, 0, 100, 1199, 60, false, false, 0, 15)
-// water4 = new MovingObject(water, [11], [577], 1199, 57, 0, 100, 1199, 60, false, false, 0, 15)
 water0 = new MovingObject(water, [765], [59], 317, 426, 0, 0, 317, 426, false, false, 0, 0)
 water1 = new MovingObject(water, [765], [59], 317, 426, 0, 0, 317, 426, false, false, 0, 0)
 water2 = new MovingObject(water, [765], [59], 317, 426, 300, 0, 317, 426, false, false, 0, 0)
@@ -57,13 +46,6 @@ cliff3 = new MovingObject(cliff, [467], [123], 385, 63, 630, 35, 385 * .5, 63 * 
 
 waterfall1 = new MovingObject(water, [14, 206, 390, 587], [375], 173, 233, 152, 0, 173 * .85, 233 * .5, false, false, 0, 4)
 waterfall2 = new MovingObject(water, [14, 206, 390, 587], [375], 173, 233, 487, 0, 173 * .85, 233 * .5, false, false, 0, 4)
-// cliff1 = new MovingObject(cliff, [31], [135], 151, 43, 10, 56, 151 * 1.1, 43 * 1.1, false, true, 0, 0)
-// cliff3 = new MovingObject(cliff, [945], [123], 161, 62, 33, 39, 161 * .75, 62, false, true, 0, 0)
-// cliff2 = new MovingObject(cliff, [945], [123], 161, 62, 310, 39, 161, 62, false, true, 0, 0)
-// cliff1 = new MovingObject(cliff, [945], [123], 161, 62, 633, 39, 161 * .75, 62, false, true, 0, 0)
-// waterfall1 = new MovingObject(water, [14, 206, 390, 587], [375], 173, 233, 157, 0, 173, 233 * .53, false, false, 0, 5)
-// waterfall2 = new MovingObject(water, [14, 206, 390, 587], [375], 173, 233, 460, 0, 173, 233 * .53, false, false, 0, 5)
-
 
 const redOnion = new MovingObject(image, [717], [5, 128], 111, 113, 675, 5, 88.8, 90.4, false, false, 0, 15)
 const blueOnion = new MovingObject(image, [1237], [9, 125], 111, 113, 28, 5, 88.8, 90.4, false, false, 0, 15)
@@ -107,7 +89,6 @@ const wogpole3 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 10
 const wogpole4 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1370 + 155, 151, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
 const wogpole5 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1330 + 155, 151, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
 const wogpole6 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1410 + 155, 151, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
-// 146.66 spaced evenly by 3
 const wogpole7 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1630 + 155, 151, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
 const wogpole8 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1670 + 155, 151, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
 const wogpole9 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1710 + 155, 151, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
@@ -129,7 +110,6 @@ const row2wogpole3 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23
 const row2wogpole4 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1370, 225, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
 const row2wogpole5 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1330, 225, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
 const row2wogpole6 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1410, 225, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
-// 146.66 spaced evenly by 3
 const row2wogpole7 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1630, 225, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
 const row2wogpole8 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1670, 225, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
 const row2wogpole9 = new MovingObject(leftImage, [3163], [911, 937, 963], 40, 23, 1710, 225, 40 * 1.05, 23, false, true, 2, 5, 'startRight')
@@ -144,13 +124,6 @@ const row3Flower7 = new MovingObject(image, [2106], [138], 60, 52, -855, 100, 60
 const row3Flower8 = new MovingObject(image, [2106], [138], 60, 52, -905, 100, 60, 52, false, true, 2, 4)
 const row3Flower9 = new MovingObject(image, [2106], [138], 60, 52, -700, 100, 60, 52, false, true, 2, 4)
 
-// const stationaryBridge1 = new MovingObject(image, [2229], [74], 60, 52, 100, 100, 100, 100, false, true, 1, 0)
-// const stationaryBridge2 = new MovingObject(image, [2229], [74], 60, 52, 100, 200, 100, 100, false, true, 1, 0)
-// const stationaryBridge2 = new MovingObject(image, [2229], [74], 60, 52, 300, 100, 200, 200, false, true, 3, 0)
-// const stationaryBridge2 = new MovingObject(image, [2229], [74], 60, 52, 300, 100, 200, 200, false, true, 3, 0)
-
-// const whale = new Image();
-// whale.src = './assets/images/tara.png'
 let gameStarted = false;
 const currentlyPressedKeys = {};
 window.addEventListener('keydown', (e) => {
@@ -186,17 +159,9 @@ let movingObjects = [
     row3Flower1, row3Flower2, row3Flower3, row3Flower4, row3Flower5, row3Flower6, row3Flower7, row3Flower8,
 ]
 
-// const player = 
-const red = new Player(playerImage, [14], [102], 16, 40, 300, 640, 16 * 1.5, 40 * 1.5, 7, 4, 'up') // player starting position
-// const red = new Player(playerImage, [14], [102], 16, 40, 700, 0, 16 * 1.5, 40 * 1.5, 7, 4, 'up') // player starting position
-// const yellow = new Player(playerImage, [101, 102])
-// const yellow = new Player(playerImage, [101], [102], 22, 40, 300, 640, 22 * 1.5, 40 * 1.5, 7, 4, 'up') // player starting position
+// Starting Player as Red
+const red = new Player(playerImage, [14], [102], 16, 40, 300, 640, 16 * 1.5, 40 * 1.5, 7, 4, 'up')
 let player = red
-
-
-// const player = new Player(playerImage, [14], [102], 16, 40, 680, 0, 16 * 1.5, 40 * 1.5, 7, 4, 'up')
-// constructor(image, animationFramesX, animationFramesY, pwidth, pheight, posX, posY, scaledWidth, scaledHeight, movementSpeed, frameTicks, moveDir) {
-
 
 let gameOver = false;
 let gameWon = false;
@@ -205,13 +170,6 @@ let playBgm = true;
 let playSound = true;
 
 function draw() {
-    if (isNaN(canvas.width)) {
-        return;
-    }
-    if (isNaN(canvas.height)) {
-        return;
-    }
-
     gameStarted = true;
     startBtn.style.display = 'none';
     resetBtn.style.display = 'none';
@@ -223,23 +181,17 @@ function draw() {
         gameOver = true;
     }
     if (gameOver) {
-        // bgm.pause();
         ctx.fillStyle = "darkblue";
         ctx.font = "150px Arial";
         ctx.fillText("Time's Up...", canvas.width - 990, 350);
-        // startBtn.style.display = 'inline';
         resetBtn.style.display = 'inline';
     } else if (gameWon) {
-        // bgm.pause();
-        // bgm.load();
         ctx.fillStyle = "gold";
         ctx.font = "150px Arial";
         ctx.fillText("You Win!", canvas.width - 900, 350);
-        // player.drawPlayer();
         blueOnion.drawMovingObject();
         redOnion.drawMovingObject();
         yellowOnion.drawMovingObject();
-        // startBtn.style.display = 'inline';
         resetBtn.style.display = 'inline';
     } else {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -262,17 +214,14 @@ function draw() {
         (target.posX + 8) + (target.scaledWidth - 17) >= (player.posX + 12) &&
         target.posY + 3 + target.scaledHeight - 12 >= (player.posY + 40) &&
         target.posY + 3 <= (player.posY + 40) + (player.height - 53)) {
-            // player.posY = 0
-            // player.posX = 600
-            // player.flowerY = 0
-            // player.flowerX = 600
             gameWon = true;
     }
+
     ctx.beginPath();
     ctx.lineWidth = "2";
     ctx.strokeStyle = "rgb(214, 214, 59)";
-    // ctx.rect(redTarget.posX + 8, redTarget.posY + 3, redTarget.scaledWidth - 17, redTarget.scaledHeight - 12); // red target box
-    // ctx.rect(player.posX + 12, player.posY + 40, player.width - 15, player.height - 53); // player wins box
+    // ctx.rect(redTarget.posX + 8, redTarget.posY + 3, redTarget.scaledWidth - 17, redTarget.scaledHeight - 12); // red winning target box
+    // ctx.rect(player.posX + 12, player.posY + 40, player.width - 15, player.height - 53); // player winning box
     ctx.stroke();
 
     ctx.drawImage(mapImage, 800, 0, 600, 700) // background image for ship
@@ -283,36 +232,21 @@ function draw() {
     ctx.rect(802, -2, 0, 705);
     ctx.stroke();
 
-    // stationaryBridge1.drawMovingObject();
-    // stationaryBridge2.drawMovingObject();
-    // stationaryBridge3.drawMovingObject();
-    // stationaryBridge4.drawMovingObject();
-
-    // whale.drawMovingObject();
-    // player.drawPlayer();
-        // setTimeout(10000).then(window.requestAnimationFrame(draw))
     window.requestAnimationFrame(draw);
     drawCycle += 1
 }}
-
 
 function reset() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ship.posY = 900;
     player.posY = 640;
     player.posX = 300;
-    // player.posY = 0;
-    // player.posX = 800;
     player.flowerY = player.posY - 8;
     player.flowerX = player.posX;
     gameOver = false;
     gameWon = false;
     draw();
-    // ctx.restore();
 }
-
-
-
 
 function movePlayer() {
      if (currentlyPressedKeys.m) {
@@ -333,15 +267,12 @@ function movePlayer() {
     } else {
         player.animate = true
     }
-    // if ((player.posX - 4 < 0) || (player.posX + 8 > 800) || (player.posY - 4 < 0) || (player.posY + 4 > 700)) { }
     if (currentlyPressedKeys.ArrowUp) {
         if (player.moveDir === 'right') {
             player.flowerX += 8;
         }
         player.image = image;
         player.moveDir = 'up';
-        // player.animationFrameX = [14, 41, 69];
-        // player.animationFrameY = [101, 102, 101];
         player.animationFrameX = framesUpX[rotation % 3]
         player.animationFrameY = framesUpY[rotation % 3]
         if (player.posY < 3) {} else {
@@ -353,8 +284,6 @@ function movePlayer() {
         }
         player.image = image;
         player.moveDir = 'down';
-        // player.animationFrameX = [12, 39, 67];
-        // player.animationFrameY = [14, 15, 14];
         player.animationFrameX = framesDownX[rotation % 3]
         player.animationFrameY = framesDownY[rotation % 3]
         if (player.posY + 4 > 640) {} else {
@@ -366,8 +295,6 @@ function movePlayer() {
         }
         player.image = leftImage;
         player.moveDir = 'left';
-        // player.animationFrameX = [3714, 3692, 3669];
-        // player.animationFrameY = [58];
         player.animationFrameX = framesLeftX[rotation % 3];
         player.animationFrameY = framesLeftY[rotation % 3];
         if (player.posX - 4 < 0) {} else {
@@ -379,8 +306,6 @@ function movePlayer() {
             player.flowerX -= 8;
         }
         player.moveDir = 'right';
-        // player.animationFrameX = [20, 65];
-        // player.animationFrameY = [58];
         player.animationFrameX = framesRightX[rotation % 3];
         player.animationFrameY = framesRightY[rotation % 3];
         if (player.posX + 4 > 778) {} else {
