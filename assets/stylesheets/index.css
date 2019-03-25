@@ -1,7 +1,3 @@
-/* body title {
-    width: 100px;
-    height: 30px;
-} */
 .center-screen-items {
     display: flex;
     flex-direction: column;
@@ -19,16 +15,10 @@ body {
 }
 
 canvas {
-    /* margin-top: 280px; */
-    /* background-image: url("../images/nimkip_instructions.png"); */
     background-image: url("../images/manual.gif");
-    /* background-image: url("../images/nimkip_instructions.jpg"); */
-    /* background-color: rgb(81, 196, 235); */
     background-color: rgb(67, 42, 42);
-    /* background-color: rgba(95, 98, 211, 0.7); */
     border: 4px solid rgb(214, 214, 59);
     border-radius: 3px;
-    /* margin-bottom: 180px; */
 }
 
 .startBtn {
@@ -39,8 +29,6 @@ canvas {
     font-family: sans-serif;
     border-radius: 3px;
     color: white;
-    /* background: #3e78ad; */
-    /* background-color: rgb(67, 42, 42); */
     background: #3e78ad;
     border: 1px solid rgb(78, 83, 162);
     box-shadow: 0 0 5px #888;
@@ -121,45 +109,23 @@ canvas {
     color: white;
 }
 
-/* .title-container {
-    width: 630px;
-    margin-bottom: 5px;
-    /* height: 100px; */
-    /* margin-bottom: 20px; */
-    /* background: black; */
-    /* background-image: url("../images/pikmin_title.png"); */
-    /* background-size: 55%; */
-    /* background-repeat: no-repeat; */
-    /* margin-left: 150px; */
-    /* width: 600px; */
-    /* height: 85px; */
-/* } */
-
 .left-column-items {
     display: flex; 
     padding-left: 15px;
     padding-right: 10px;
-    /* height: 600px; */
     width: 200px;
-    /* background: purple; */
      padding-top: 20px;
      margin-top: 150px;
      display: flex;
      flex-direction: column;
-     /* background-color: purple; */
-     /* background-color: #40da0073; */
      background-color: #0aa300bd;
      border: 4px solid rgb(214, 214, 59);
 }
 
 .right-column-items {
-    /* padding-top: 20px; */
-    /* margin-top: 150px; */
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background-color: purple; */
-    /* background-color: #40da0073; */
     background-color: #0aa300bd;
     border: 4px solid rgb(214, 214, 59);
     border-radius: 3px;
@@ -169,23 +135,19 @@ canvas {
 .github {
     height: 85px;
     width: 85px;
-    /* padding-left: 25px */
 }
 
 .linkedin {
-    /* margin-left: 10px; */
     height: 110px;
     width: 110px;
 }
 
 .angellist {
-    /* margin-left: 17px; */
     height: 95px;
     width: 95px;
 }
 
 .portfolio {
-    /* margin-left: 8px; */
     height: 120px;
     width: 120px;
 }
